@@ -1,8 +1,12 @@
 import './index.css';
+import {Images} from './components/Navbar';
+
 
 function App() {
   return (
-    <>hi</>
+    <><p> hello </p>
+    <Images/>
+    </>
   );
 }
 
