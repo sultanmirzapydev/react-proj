@@ -21,7 +21,7 @@ const initialstate = {
 	message: '',
 };
 
-const userReducer = (state=initialstate, action) => {
+const imageReducer = (state=initialstate, action) => {
 	if (action.type === SET_IMAGE) {
 		const images = action.payload
 		return {...state, images:images };
@@ -36,4 +36,4 @@ const userReducer = (state=initialstate, action) => {
 }
 
 
-export default userReducer;
+export default imageReducer;

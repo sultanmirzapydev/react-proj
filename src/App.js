@@ -1,11 +1,11 @@
 import './index.css';
-import {Images} from './components/images';
+import {RootComponent} from './components/rootcomponent';
 
 
 function App() {
   return (
     <><p> hello </p>
-    <Images/>
+    <RootComponent/>
     </>
   );
 }

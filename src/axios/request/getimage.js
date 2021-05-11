@@ -4,12 +4,7 @@ import axiosinstance from '../axios';
 export const getImage = () => {
 return axiosinstance.get('/album')
 		.then((response) => {
-			console.log('res', response.data);
-			return response.data
-			
-			
-
-			
+			return response.data			
 		})
 		.catch((error) => {
 			console.log(error);

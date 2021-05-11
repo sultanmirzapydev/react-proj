@@ -6,7 +6,6 @@ import {imgFetchFailed, setImage} from '../../redux/ducks/images';
 export function* handleImages(action) {
 	try{
 		const response =  yield call(getImage)
-		console.log(response)
 		const images = response
 		console.log( images[0].title)
 		yield put(setImage(images))
