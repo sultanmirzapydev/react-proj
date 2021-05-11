@@ -6,7 +6,9 @@ import {imgFetchFailed, setImage} from '../../redux/ducks/images';
 export function* handleImages(action) {
 	try{
 		const response =  yield call(getImage)
-		const images = response.data
+		console.log(response)
+		const images = response
+		console.log( images[0].title)
 		yield put(setImage(images))
 		//yield put({type:'SET_IMAGE', images:images})
 	} catch(e) {
@@ -15,4 +17,5 @@ export function* handleImages(action) {
 		yield put(imgFetchFailed(message));
 	}
 
-}
+};
+

@@ -1,5 +1,5 @@
 import './index.css';
-import {Images} from './components/Navbar';
+import {Images} from './components/images';
 
 
 function App() {

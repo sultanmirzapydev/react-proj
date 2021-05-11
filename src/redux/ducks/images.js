@@ -25,10 +25,12 @@ const userReducer = (state=initialstate, action) => {
 	if (action.type === SET_IMAGE) {
 		const images = action.payload
 		return {...state, images:images };
+	
 	}
 	if (action.type === IMAGE_FETCH_FAILED) {
 		const msg = action.payload
 		return {...state, message:msg};
+
 	}
 	return state;
 }
