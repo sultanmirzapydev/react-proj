@@ -22,8 +22,10 @@ const initialstate = {
 };
 
 const imageReducer = (state=initialstate, action) => {
+	console.log(action.type , 'images')
 	if (action.type === SET_IMAGE) {
-		const images = action.payload
+		const images = action.payload;
+		console.log(images)
 		return {...state, images:images };
 	
 	}

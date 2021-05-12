@@ -1,5 +1,5 @@
 import { call, put, takeEvery, takeLatest } from 'redux-saga/effects';
-import  {getImage} from '../request/getimage';
+import  {getImage} from '../../axios/request/getimage';
 import {imgFetchFailed, setImage} from '../../redux/ducks/images';
 
 
@@ -15,6 +15,7 @@ export function* handleImages(action) {
 		//yield put({type:'IMAGE_FETCH_FAILED', message: e.message})
 		yield put(imgFetchFailed(message));
 	}
+
 
 };
 
