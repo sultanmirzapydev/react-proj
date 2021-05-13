@@ -13,10 +13,3 @@ return axiosinstance.get('/album')
 
 export default getImage;
 
-
-// export function requestGetUser() {
-//   return axios.request({
-//     method: "get",
-//     url: "'http://127.0.0.1:8000/api/album"
-//   });
-// }

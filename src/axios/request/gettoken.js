@@ -1,15 +1,24 @@
 import axiosinstance from '../axios';
+import {useSelector} from 'react-redux';
 
-export const getToken = (data) => {
+
+
+export const GetToken = (cart) => {
+	console.log('gettoken', 'cart', cart)
+	console.log(cart['username'])
+	
 	return axiosinstance.post('token/', {
-		username : data.username,
-		password : data.password,
+		username: cart['username'],
+		password: cart['password'],
 	})
-	.then((response) =>{
-		localStorage.setItem('access_token', response.data.access);
-		localStorage.setItem('refresh_token', response.data.refresh);
-		axiosinstance.default.headers['Authorization'] 
-		= 'JWT ' + localStorage.getItem('access_token');
-		console.log(response)
+	.then((res) =>{
+		localStorage.setItem('access_token', res.data.access);
+		localStorage.setItem('refresh_token', res.data.refresh);
+		axiosinstance.defaults.headers.common['Authorization'] = 
+		'JWT ' + localStorage.getItem('access_token');
+		return ('successful login')
 	})
-}
+	.catch((error) => {
+			console.log(error);
+		})
+};

@@ -1,19 +1,31 @@
-const INPUT_DAT = "INPUT_DAT";
+const PASSWORD_DATA = 'PASSWORD_DATA';
+const USERNAME_DATA = 'USERNAME_DATA';
+export const GET_TOKEN     = 'GET_TOKEN';
 
-export const inputsData = (data) => ({
-	type: INPUT_DAT,
-	payload: data 
+export const getToken = () => ({
+	type: GET_TOKEN,
+})
+
+
+export const inputUsername = (data) => ({
+	type: USERNAME_DATA,
+	payload: data
 });
-
+export const inputPassword = (data) => ({
+	type: PASSWORD_DATA,
+	payload: data
+});
 
 const initialstate = {
 	username : '',
-	password : 0
+	password : '',
 };
 const loginReducer = (state=initialstate, action) => {
-	if  (action.type === INPUT_DAT) {
-		console.log('loginReducer', action.payload['username'], action.payload['password']);
-		return {...state,username:action.payload['username'], password: action.payload['password']};
+	if  (action.type === USERNAME_DATA) {
+		return ({...state, username: action.payload['username']})
+	}
+	if (action.type === PASSWORD_DATA) {
+		return ({...state, password: action.payload['password']})
 	}
 	return state;
 };

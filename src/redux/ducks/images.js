@@ -1,6 +1,9 @@
 export const GET_IMAGE = 'GET_IMAGE';
 export const SET_IMAGE = 'SET_IMAGE';
 export const IMAGE_FETCH_FAILED = 'IMAGE_FETCH_FAILED';
+export const GET_SEARCH_IMAGE = 'GET_SEARCH_IMAGE';
+export const SET_SEARCH_IMAGE = 'SET_SEARCH_IMAGE';
+
 
 export const imgFetchFailed = (message) => ({
 	type : IMAGE_FETCH_FAILED,
@@ -16,6 +19,14 @@ export const setImage = (images) => ({
 	payload : images
 });
 
+export const getSearchImage = () => ({
+	type: GET_SEARCH_IMAGE,
+})
+export const setSearchImage = (images) => ({
+	type: SET_SEARCH_IMAGE,
+	payload: images
+})
+
 const initialstate = {
 	images: [],
 	message: '',
@@ -29,10 +40,12 @@ const imageReducer = (state=initialstate, action) => {
 		return {...state, images:images };
 	
 	}
+	if (action.type === SET_SEARCH_IMAGE) {
+		return {...state, images: action.payload}
+	}
 	if (action.type === IMAGE_FETCH_FAILED) {
 		const msg = action.payload
 		return {...state, message:msg};
-
 	}
 	return state;
 }
