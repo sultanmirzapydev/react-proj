@@ -1,8 +1,7 @@
 import {call, put, select} from 'redux-saga/effects';
 import {GetToken} from '../../axios/request/gettoken';
 
-export const getData = state => state.login
-console.log(getData);
+export const getData = state => state.login;
 
 export function* handleLogin(action) {
 	console.log('action', action)

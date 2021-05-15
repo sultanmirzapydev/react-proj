@@ -1,5 +1,84 @@
+
+html {
+  box-sizing: border-box;
+}
+
 *, 
 *::before,
 *::after {
 	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	display: grid;
+	min-height: 100vh;
+	font-family:  sans-serif;
+ 	font-size: 1rem;
+  	line-height: 1.5;
+}
+.app-css {
+	min-height: 100vh;
+	margin: 0 auto;
+	background: #efeef0;
+}
+a{
+	text-decoration: none;
+	color: black;
+}
+.nav-root {
+	display: flex;
+	position: relative;
+	font-family: 'Kanit', sans-serif;
+	
+	top: .3em;
+	padding: .6em;
+
+}
+
+.nav-user {
+	right: .3em;
+	position: absolute;
+	
+}
+.nav-sign-up, .nav-log-in {	
+	border: .2em solid #ff8533;
+	margin-right: .2em;
+	padding: .1em .3em;
+	color: black; 
+	background-color: #fff4e6;	
+}
+.nav-sign-up:hover, .nav-log-in:hover
+{
+
+}
+
+.name {
+	letter-spacing: .1em;
+	margin-top: -.3em;
+	width: 26em;
+	text-align: right;
+	left: 50em;
+	font-family: 'Kanit', sans-serif;
+	font-weight: 700;
+	font-size: 120%	;
+}
+ 
+.name-span {
+	padding-left: .9em;
+}
+
+.github-icon {
+	font-size: 1.8em;
+	margin-top:  -.3em;
+	padding-left: 1em;
+}
+.g-icon {
+	padding:0;
+	margin: 0 .5em 0 .5em;
+	background: #ffdd99;
+	border-radius: 50%;
+	
+	border:.05em solid #ffcc99;
 }

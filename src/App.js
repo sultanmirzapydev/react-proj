@@ -4,8 +4,10 @@ import {RootComponent} from './components/rootcomponent';
 
 function App() {
   return (
-    <><p> hello </p>
+    <>
+    <div className = 'app-css'>
     <RootComponent/>
+    </div>
     </>
   );
 }
