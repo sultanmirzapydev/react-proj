@@ -9,6 +9,7 @@ export const RootComponent = () => {
 		<>
 		<Navbar/>
 		<Images/>
+		<Login/>
 		</>
 		)
 };

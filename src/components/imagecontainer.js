@@ -1,33 +1,50 @@
 import React from 'react';
-import {useEffect} from 'react';
-import {useDispatch} from 'react-redux';
-import { createClient } from 'pexels';
+import {useEffect, useState} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
+import {getPexel, inputForSearch} from '../redux/ducks/pexel';
+import {SingleImage} from './singleimage';
+import { FcSearch } from "react-icons/fc";
 
 
 export const Images = () => {
+	const pics = useSelector(state => state.pexel.images);
+console.log(pics.map((item) => {return item.count}));
+
+
+
 	const dispatch = useDispatch()
+	useEffect(() => {
+		dispatch(getPexel())
+	},[dispatch])
 
 	const handleInput = (e) => {
 		const searchText = e.target.value;
-		localStorage.setItem('search_text', searchText)
-	}
+		console.log(searchText)
+		dispatch(inputForSearch(searchText))
+	};
 	const handleClick = () => {
-		const apiKey = '563492ad6f91700001000001b8165a380d154f0da468b9310070d883';
-		const client = createClient(apiKey);
-		const query = 'small hat';
-		client.photos.search({query, per_page:18}).then(photos =>{
-			console.log(photos);
-		})
-	}
+		dispatch(getPexel())
+	};
 
 	return (
 		<>
-		<input  type='text' onChange = {handleInput}/>
-		<button type='submit' onClick = {handleClick}>
-		search 
+		<div className='imagecontainer'>
+		<div className='searchcontainer'>
+		<input className='search-input' type='text' onChange = {handleInput}/> 
+		<button  className='search-btn' type='submit' onClick = {handleClick}>
+		<FcSearch className='fasearch'> </FcSearch>
 		</button>
-		<p> sldfhfsgjk </p>
-
+		</div>
+		
+		<div className='img-container-sub-2'>
+		{ pics.map((singlePic, index) => {
+			return <SingleImage  key={index} {...singlePic} />
+		})
+		}
+		
+		</div>
+		
+		</div>
 		</>
 		)
 };

@@ -1,10 +1,10 @@
-///This is for drf 
+///This is for drf   
 
 import axios from 'axios';
 
 const baseURL = 'http://127.0.0.1:8000/api/';
 
-const axiosinstance = axios.create({
+export const axiosinstance = axios.create({
 	baseURL : baseURL, 
 	timeout : 5000,
 	headers : {

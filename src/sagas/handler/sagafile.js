@@ -1,7 +1,9 @@
 import createRootSaga from 'redux-root-saga';
 import { takeEvery, takeLatest } from 'redux-saga/effects';
 import {handleLogin}   from './handlelogin';
+import {handlePexel} from './handlepexel';
 import {GET_TOKEN} from '../../redux/ducks/users';
+import {GET_PEXEL} from '../../redux/ducks/pexel';
 
 //import { handleImages, handleSearchImages } from './handleimages';
 
@@ -12,6 +14,12 @@ import {GET_TOKEN} from '../../redux/ducks/users';
 export function* watchToken() {
 	yield takeLatest(GET_TOKEN, handleLogin)
 }
+
+export function* watchPexel() {
+	yield takeLatest(GET_PEXEL, handlePexel)
+}
+
+
 
 
 

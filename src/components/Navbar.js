@@ -11,11 +11,15 @@ export const Navbar = () => {
 		<a href='https://github.com/sultanmirzapydev' className='github-icon'> 
 		<  AiFillGithub className='g-icon'> </AiFillGithub> </a>
 		<div className='nav-user'>
+		<div className='signup'>
 		<a 
 		href='https://stackoverflow.com/questions/33999861/how-to-combine-multiple-css-into-one' 
 		className= 'nav-sign-up' >
 		sign up </a>
+		</div>
+		<div className='login'>
 		<a className='nav-log-in'> log in </a>
+		</div>
 		</div>
 		</nav>
 		</>
