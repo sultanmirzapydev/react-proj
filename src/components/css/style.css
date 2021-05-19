@@ -33,73 +33,27 @@ a{
 	font-family: 'Kanit', sans-serif;
 	
 	top: .3em;
-	padding: .6em;
+	padding: .2em;
 
 }
 
-.nav-user {
-	display: flex;
-	right: .3em;
-	position: absolute;
-	
-}
-.nav-sign-up, .nav-log-in {	
-	border: .1em solid #ff8533;
-	margin-right: .2em;
-	padding: .1em .3em;
-	color: black; 
-	border-radius: .7em;
-	background-color: #fff4e6;	
-}
-.signup:hover
-{
-	-webkit-transform: translateY(-.3em);
-	transition: all 1s linear ;
-	transform: translateY(-.3em);
-}
-
-.name {
-	letter-spacing: .1em;
-	margin-top: -.3em;
-	width: 29em;
-	text-align: right;
-	left: 50em;
-	font-family: 'Kanit', sans-serif;
-	font-weight: 700;
-	font-size: 120%	;
-}
- 
-.name-span {
-	padding-left: .9em;
-}
-
-.github-icon {
-	font-size: 1.8em;
-	margin-top:  -.3em;
-	padding-left: 1em;
-}
-.g-icon {
-	padding:0;
-	margin: 0 .5em 0 .5em;
-	background: #ffdd99;
-	border-radius: 50%;
-	
-	border:.05em solid #ffcc99;
-}
 
 .searchcontainer {
+	width:;
 	margin-top: .3em;
 	height: 1.9em;
-	display: flex;
-	justify-content: center;
+	display:flex; ;
 }	
 
 .search-input {
-	padding : .1em 1em .1em .6em;
-	width: 13em;
-	font-size: 1em;
-	color:#660022;
-	margin-right: .6em;
+	padding : .2em .6em .3em .6em;
+	width: 11em;
+	font-size: 1.3em;
+	letter-spacing: .1em;
+	font-family: 'Kanit', sans-serif;
+	font-weight: 400;
+	color:#4d1300;
+	margin-right: .4em;
 	background-color: #b3e6cc;
 	border: .12em solid orange;
 	border-radius: .5em;
@@ -108,17 +62,26 @@ a{
 }
 .search-btn {
 	cursor: pointer;
-
+	margin-left: 1em;
 	width: 4em;
 	border-radius: .4em;
+	transition: all .4s linear;
+	
 	border : .16em solid orange;
+	box-shadow: 3em orange;
+}
+.search-btn:hover {
+	transform: translateY(-.3em);	
+}
+.search-btn:active {
+	transform: translateY(0);
 }
 .fasearch {
 	height: 2em;
 	width: 2em;
 }
 .imagecontainer {
-	 	margin-top: 1.5em;
+	 	margin-top: 1em;
 }
 .search {
 	display: flex;
@@ -135,16 +98,17 @@ a{
 	max-width: 90%;
 	display: grid;
 	margin: 5em auto;
-	grid-template-columns: auto auto auto auto;
-	grid-gap: 1em;
+	grid-template-columns: auto auto auto auto ;
+	grid-gap: .8em;
 
 }
 
 .card {
+	margin-left: 2.7em;
 	height: 15rem;
-	width:14em ;
+	width:15em ;
 	position: relative;
-	/*overflow: hidden;*/
+	overflow: hidden;
 }
 
 
@@ -156,7 +120,11 @@ a{
 	border-radius: .7em;
 }
 .img-details-container {
-	transition: all .3s linear;
+	border-bottom-left-radius: .6em;
+	border-bottom-right-radius: .6em;
+	border-radius: .6em;
+	transition: all .4s linear;
+
 	position: absolute;
 	width: 100%;
 	justify-content: space-between;
@@ -164,10 +132,10 @@ a{
 	
 	display: grid;
 	grid-template-columns: 25% 60% 22% ;
-	background: #e0ebeb;
+	background: #c9d3d3;
 }
 .card:hover .img-details-container {
-	transform: translateY(-100%);
+	transform: translateY(-99.2%);
 }
 .photographer-name-container {
 	margin-right: 1em;
@@ -176,14 +144,14 @@ a{
 }
 .photographer {
 
-	margin-top: .5em;
+	margin-top: .2em;
 	padding : 0 0 0 .4em;
 }
 .photographer-name {
-	font-size: .8em;
+	font-size: .9em;
 	padding-left: .2em;
-	
 }
+
 .faeye {
 	margin-top: .28em;
 }
@@ -193,30 +161,51 @@ a{
 }
 .total-views {
 	font-family: 'Fira Sans', sans-serif;
-	font-size: 4em;
+	font-size: 1em;
 	margin-top: .2em;
 	padding: 0 0 0 .3em;
-	font-size: .89em;
 }
 .count-container {
-	margin-top: .6em;
+	margin-top: .7em;
 	padding: 0 0 0 .1em;
+	height: 2em;
 }
-.how-count {
 
-}
-.count-btn {
-
-}
-.show-liked {
-	
-}
 .like-icon {
 	padding: 0 0 0 -.3em;
 	margin: 0 0 0 0;
 }
 .add-to-wishlist {
-	border: .1em solid orange;
+	width: 100%;
+	cursor: pointer;
+	height: 2.2em;
+	padding-top:.1em !important;
+	border-bottom-left-radius: .6em;
+	border-bottom-right-radius: .6em;
+	border: .2em solid orange;
 	text-align: center;
+	font-family: 'Bebas Neue', cursive !important;
+	text-transform: capitalize;
+	font-weight: 400;
+	font-size: 1.3em;
+	transition: all 1s linear;
+	transition-timing-function: ease;
 }
-
+.add-to-wishlist:hover {
+	background-color:  #ff751a;
+	color: white;
+	border-color: #ff751a;
+ }
+ 
+ .big-basket {
+ 	position: absolute;
+ 	display: flex;
+ 	margin-left: 78em;
+ 	height:  ;
+ }
+ .main-big-basket {
+ 	height: 1em;
+ 	font-size: 3.4em;
+ 	margin-top: .5em;
+ 	color: orange;
+ }

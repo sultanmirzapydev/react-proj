@@ -4,13 +4,11 @@ import {useDispatch, useSelector} from 'react-redux';
 import {getPexel, inputForSearch} from '../redux/ducks/pexel';
 import {SingleImage} from './singleimage';
 import { FcSearch } from "react-icons/fc";
+import { FiShoppingCart } from "react-icons/fi";
 
 
 export const Images = () => {
-	const pics = useSelector(state => state.pexel.images);
-console.log(pics.map((item) => {return item.count}));
-
-
+	const pics = useSelector(state => state.pexel);
 
 	const dispatch = useDispatch()
 	useEffect(() => {
@@ -19,11 +17,13 @@ console.log(pics.map((item) => {return item.count}));
 
 	const handleInput = (e) => {
 		const searchText = e.target.value;
-		console.log(searchText)
 		dispatch(inputForSearch(searchText))
 	};
+	
 	const handleClick = () => {
+		if(pics.isInputValid) {
 		dispatch(getPexel())
+	}
 	};
 
 	return (
@@ -34,10 +34,16 @@ console.log(pics.map((item) => {return item.count}));
 		<button  className='search-btn' type='submit' onClick = {handleClick}>
 		<FcSearch className='fasearch'> </FcSearch>
 		</button>
+		<div style={{position:'relative', top:'-.1em', left:'37.6em',fontSize:'1.6em',padding:'.2em',
+			fontFamily:"'Teko', sans-serif", fontWeight:'200',color:'#e67300',  
+			transform: 'scaleX(1.7)',}}> 
+			{pics.totalCart}</div>
+		<div className='big-basket'><FiShoppingCart className='main-big-basket'> </FiShoppingCart></div>
+
 		</div>
 		
 		<div className='img-container-sub-2'>
-		{ pics.map((singlePic, index) => {
+		{ pics.images.map((singlePic, index) => {
 			return <SingleImage  key={index} {...singlePic} />
 		})
 		}
