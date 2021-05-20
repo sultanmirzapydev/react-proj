@@ -18,9 +18,10 @@ export function* handlePexel(action) {
 				{return {id:item.id,count:0, total_views: random(),is_liked: false,
 
 					photographer_url: item.photographer_url,
-				 name:item.photographer.slice(0,12),pic:item.src['medium']}});
+				 name:item.photographer.slice(0,8),pic:item.src['medium']}});
 		
 		yield put(setPexel(pics));
+		console.log('after render')
 
 	} catch(e) {
 		console.log(e.message);

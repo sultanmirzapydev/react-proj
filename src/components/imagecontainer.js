@@ -7,7 +7,7 @@ import { FcSearch } from "react-icons/fc";
 import { FiShoppingCart } from "react-icons/fi";
 
 
-export const Images = () => {
+export const Home = () => {
 	const pics = useSelector(state => state.pexel);
 
 	const dispatch = useDispatch()
@@ -30,14 +30,14 @@ export const Images = () => {
 		<>
 		<div className='imagecontainer'>
 		<div className='searchcontainer'>
-		<input className='search-input' type='text' onChange = {handleInput}/> 
+		<input className='search-input' type='text' placeholder='E.g., Nature' onChange = {handleInput}/> 
 		<button  className='search-btn' type='submit' onClick = {handleClick}>
 		<FcSearch className='fasearch'> </FcSearch>
 		</button>
-		<div style={{position:'relative', top:'-.1em', left:'37.6em',fontSize:'1.6em',padding:'.2em',
+		<div style={{position:'relative', top:'-.2em', left:'48.6em',fontSize:'1.6em',padding:'.2em',
 			fontFamily:"'Teko', sans-serif", fontWeight:'200',color:'#e67300',  
 			transform: 'scaleX(1.7)',}}> 
-			{pics.totalCart}</div>
+			 total-{pics.totalCart}</div>
 		<div className='big-basket'><FiShoppingCart className='main-big-basket'> </FiShoppingCart></div>
 
 		</div>

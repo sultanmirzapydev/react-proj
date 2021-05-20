@@ -45,7 +45,6 @@ const intialState = {
 }
 
 const pexelReducer = (state=intialState, action) => {
-	console.log(action.type,action.payload, 'pexel')
 	if (action.type === INPUT_FOR_SEARCH) {
 		console.log('pexel', action.type)
 		return {...state, searchText: action.payload, isInputValid: true}
@@ -76,13 +75,11 @@ const pexelReducer = (state=intialState, action) => {
 		return {...state, images:temp2 }
 	};
 	if (action.type === GET_TOTAL) {
-		console.log(action.type);
 		const sum = state.images.reduce((total, element) =>{
-			console.log('get total');
 			const {count} = element; 
 			return total + count;
 		}, 0);
-		console.log(sum);
+		
 
 		return {...state, totalCart: sum}
 	};

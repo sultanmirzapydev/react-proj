@@ -13,10 +13,11 @@ import ButtonGroup from '@material-ui/core/ButtonGroup';
 import Button from '@material-ui/core/Button';
 import AddIcon from '@material-ui/icons/Add';
 import RemoveIcon from '@material-ui/icons/Remove';
-
+import {BrowserRouter as Router,Route,Link,useHistory } from 'react-router-dom'
 
 
 export const SingleImage = (data) => {
+	const history = useHistory();
 	const dispatch = useDispatch();
 	    //const a = useSelector(state => {state.pexel.images.map((item) =>{console.log(item.count);return item.count})});
 		// console.log(a);
@@ -24,9 +25,7 @@ export const SingleImage = (data) => {
 	const showDbtn = data.count>0;
 
 	const toggleLiked = data.is_liked;
-	console.log('wtf')
 	useEffect (() => {
-		console.log('data count changed',data.id);
 		let itemId = data.id;
 		dispatch(getTotal(itemId))
 	},[data.count])
@@ -60,14 +59,14 @@ export const SingleImage = (data) => {
 			</RiShoppingCartLine> </span>
 			<div><ButtonGroup>
 			<Button  onClick={handleWishlist} height="25%"
-			style={{top:'4.5em', left:'.2em', width:'.2em',  height: '2.3em', backgroundColor:'#33cc33',
+			style={{position:'absolute',top:'4.5em', left:'.2em', width:'.2em',  height: '2.3em', backgroundColor:'#33cc33',
 			border:'none',
 			borderRadius:'.5em  ' }}>
 			 <AddIcon height="25%"> </AddIcon> </Button>
 
 
 			{showDbtn && <Button size="small" onClick={handleDecre} className='removebtn'
-			style={{ top: '7em', left:'-2.8em', 
+			style={{ top: '7em', left:'.31em', position:'absolute',
 			height:'2em',width: '.6em', overflow:'hidden', backgroundColor:'#ff751a',
 			border:'none',
 			borderRadius:'0 0 .5em .5em' }}>
@@ -90,9 +89,9 @@ export const SingleImage = (data) => {
 
 	<div className='count-container'>
 	<div className='count-btn'>
-	<pre className='photographer-name'>
+	<p className='photographer-name'>
 	 by, {data.name} 
-	</pre>
+	</p>
 	
 	</div>
 	</div>

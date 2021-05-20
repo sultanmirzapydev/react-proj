@@ -1,10 +1,15 @@
 import React, {useState,useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {inputUsername, inputPassword, getToken} from '../redux/ducks/users';
+import {BrowserRouter as Router,Switch,Route,Link,useHistory} from "react-router-dom";
+
 
 
 export const Login = () => {
 	const dispatch = useDispatch();
+	const history = useHistory()
+	console.log(history);
+
 
 	const changeUsername = (e) => {
 		const usernameData = {[e.target.name] : e.target.value}
@@ -15,7 +20,8 @@ export const Login = () => {
 		dispatch(inputPassword(changePassword))
 	}
 	const handleSubmit = () => {
-		dispatch(getToken())
+		dispatch(getToken());
+		history.push('/');
 	}
 	
 	return (
