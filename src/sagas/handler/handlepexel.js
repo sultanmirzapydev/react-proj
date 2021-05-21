@@ -1,6 +1,6 @@
 import {call, put, select} from 'redux-saga/effects';
-import {getPexel} from '../../axios/request/getpexel';
-import {setPexel} from '../../redux/ducks/pexel';
+import {getPexel, getProfile,} from '../../axios/request/getpexel';
+import {setPexel, error} from '../../redux/ducks/pexel';
 
 const data = state => state.pexel.searchText
 
@@ -21,9 +21,11 @@ export function* handlePexel(action) {
 				 name:item.photographer.slice(0,8),pic:item.src['medium']}});
 		
 		yield put(setPexel(pics));
-		console.log('after render')
+
+		
 
 	} catch(e) {
 		console.log(e.message);
+		yield put(error(e.message));
 	}
 }

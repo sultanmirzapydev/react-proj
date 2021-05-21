@@ -1,5 +1,5 @@
 import { createClient } from 'pexels';
-import axios from 'axios';
+ import axios from 'axios';
 
 
 export const getPexel = (searchText,a) => {
@@ -8,9 +8,10 @@ export const getPexel = (searchText,a) => {
 	const client = createClient(apiKey);
 	const query  = searchText
 	console.log('getting the request pexel');
- 	return client.photos.search({query, per_page:25})
+ 	return  client.photos.search({query, per_page:15})
 	// .then(photos =>  {return photos;})
 	.catch((error)=>{
 		console.log(error.message);
 	})
 }
+

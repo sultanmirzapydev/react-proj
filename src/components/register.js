@@ -2,6 +2,9 @@ import React from 'react';
 
 export const Register = () => {
 	return (<>
-		register
+			<div className='registerroot'>
+			<div className='registercontainer'>
+			</div>
+			</div>
 	 </>);
 }

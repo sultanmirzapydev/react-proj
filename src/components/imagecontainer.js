@@ -5,10 +5,19 @@ import {getPexel, inputForSearch} from '../redux/ducks/pexel';
 import {SingleImage} from './singleimage';
 import { FcSearch } from "react-icons/fc";
 import { FiShoppingCart } from "react-icons/fi";
+import TouchRipple from '@material-ui/core/ButtonBase/TouchRipple';
+import { StylesProvider } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
+import {Loading} from './loading';
+import {Alert} from './alert';
+
+
 
 
 export const Home = () => {
 	const pics = useSelector(state => state.pexel);
+	const isLoading = pics.isLoading
+	console.log(isLoading);
 
 	const dispatch = useDispatch()
 	useEffect(() => {
@@ -28,11 +37,15 @@ export const Home = () => {
 
 	return (
 		<>
+		{isLoading ?<Loading/> :
 		<div className='imagecontainer'>
+		<Alert/>
 		<div className='searchcontainer'>
 		<input className='search-input' type='text' placeholder='E.g., Nature' onChange = {handleInput}/> 
-		<button  className='search-btn' type='submit' onClick = {handleClick}>
+
+		<button  className='search-btn'  type='submit' onClick = {handleClick}>
 		<FcSearch className='fasearch'> </FcSearch>
+		
 		</button>
 		<div style={{position:'relative', top:'-.2em', left:'48.6em',fontSize:'1.6em',padding:'.2em',
 			fontFamily:"'Teko', sans-serif", fontWeight:'200',color:'#e67300',  
@@ -44,13 +57,14 @@ export const Home = () => {
 		
 		<div className='img-container-sub-2'>
 		{ pics.images.map((singlePic, index) => {
-			return <SingleImage  key={index} {...singlePic} />
-		})
-		}
+			return <SingleImage  key={index} {...singlePic} />}
+		)}
 		
+
 		</div>
 		
-		</div>
+		</div> 
+	}
 		</>
 		)
 };

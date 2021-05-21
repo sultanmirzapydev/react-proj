@@ -6,9 +6,11 @@ import {Navbar} from './navbar';
 import {Register} from './register';
 import {About} from './about';
 import {Notfound} from './notfound';
-import {BrowserRouter as Router,Switch,Route,Link} from "react-router-dom";
+import {Footer} from './footer';
+import {BrowserRouter as Router,Switch,Route,Link, useHistory} from "react-router-dom";
 	
 export const RootComponent = () => {
+	const history = useHistory()
 	return (
 		<>	
 	<Router>
@@ -20,6 +22,7 @@ export const RootComponent = () => {
 		<Route path = '/register' component = {Register}/>
 		<Route path="*" component={Notfound} />
 	</Switch>
+	<Footer/>
 	</Router>
 		</>
 		)

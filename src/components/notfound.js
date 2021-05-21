@@ -4,6 +4,7 @@ import { BiError } from "react-icons/bi";
 
 export const Notfound = () => {
 	return (<>
+		<div className='registerroot'>
 		<div className='notfoundcontainer'>
 		<div style={{ position:'absolute', top:'.4em', left:'.6em',paddingLeft:'10em',
 		
@@ -12,6 +13,7 @@ export const Notfound = () => {
 		<BiError style={{ color: '#F32013'}}> </BiError> </div>
 		
 		<pre className='notftext'> PAGE    NOT    FOUND </pre>
+		</div>
 		</div>
 	 </>);
 }

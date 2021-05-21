@@ -7,13 +7,16 @@ import FavoriteBorder from '@material-ui/icons/FavoriteBorder';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEye } from '@fortawesome/free-solid-svg-icons'
 import { RiShoppingCartLine } from "react-icons/ri";
-import {setLiked,getIncre,getTotal, getDecre} from '../redux/ducks/pexel';
+import {setLiked,getIncre,getTotal, getDecre,getRemove} from '../redux/ducks/pexel';
 import {useDispatch, useSelector} from 'react-redux';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 import Button from '@material-ui/core/Button';
 import AddIcon from '@material-ui/icons/Add';
 import RemoveIcon from '@material-ui/icons/Remove';
 import {BrowserRouter as Router,Route,Link,useHistory } from 'react-router-dom'
+import { IoIosRemoveCircleOutline } from "react-icons/io";
+
+
 
 
 export const SingleImage = (data) => {
@@ -43,6 +46,9 @@ export const SingleImage = (data) => {
 	const handleDecre = (e) => {
 		dispatch(getDecre(data.id));
 	}
+	const handleremove = (e) => {
+		dispatch(getRemove(data.id));
+	}
 
 
 	return (<>
@@ -57,6 +63,7 @@ export const SingleImage = (data) => {
 			style={{position:'absolute',marginTop:'.19em', top:'1.1em',left:'.23em', 
 			fontSize: '1.5em',  }}> 
 			</RiShoppingCartLine> </span>
+			<div> <IoIosRemoveCircleOutline className='removecir' onClick={handleremove}> </IoIosRemoveCircleOutline> </div>
 			<div><ButtonGroup>
 			<Button  onClick={handleWishlist} height="25%"
 			style={{position:'absolute',top:'4.5em', left:'.2em', width:'.2em',  height: '2.3em', backgroundColor:'#33cc33',
@@ -66,7 +73,7 @@ export const SingleImage = (data) => {
 
 
 			{showDbtn && <Button size="small" onClick={handleDecre} className='removebtn'
-			style={{ top: '7em', left:'.31em', position:'absolute',
+			style={{ top: '7em', left:'.29em', position:'absolute',
 			height:'2em',width: '.6em', overflow:'hidden', backgroundColor:'#ff751a',
 			border:'none',
 			borderRadius:'0 0 .5em .5em' }}>

@@ -5,6 +5,18 @@ export const SET_LIKED  = 'SET_LIKED';
 export const INCREASE = 'INCREASE';
 export const DECREASE = 'DECREASE';
 export const GET_TOTAL = 'GET_TOTAL';
+export const GET_REMOVE = 'GET_REMOVE';
+export const ERROR     = 'ERROR';
+
+export const error = (data) => ({
+	type: ERROR,
+	payload: data
+});
+
+export const getRemove = (data) => ({
+	type: GET_REMOVE,
+	payload: data
+});
 
 export const getTotal = (data) => ({
 	type: GET_TOTAL,
@@ -41,7 +53,10 @@ const intialState = {
 	images:[],
 	searchText: 'cute puppies',
 	totalCart : 0,
-	isInputValid: false
+	isInputValid: false,
+	isLoading : true,
+	isError : false,
+	errormsg: ''
 }
 
 const pexelReducer = (state=intialState, action) => {
@@ -51,7 +66,7 @@ const pexelReducer = (state=intialState, action) => {
 	}
 	if (action.type === SET_PEXEL) {
 		
-		return {...state, images: action.payload }
+		return {...state, images: action.payload, isLoading: false }
 
 		}
 	if (action.type === SET_LIKED) {
@@ -92,7 +107,15 @@ const pexelReducer = (state=intialState, action) => {
 		});
 		return {...state, images: temp3}
 	}
-
+	if (action.type === GET_REMOVE) {
+		console.log(state);
+		let temp4 = state.images.filter((item) => item.id !== action.payload);
+		return {...state, images: temp4}
+	}
+	if (action.type === ERROR) {
+		console.log(action.payload)
+		return {...state, isError:true, errormsg: action.payload}
+	}	
 
 	return state;
 			
