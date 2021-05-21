@@ -6,29 +6,29 @@ import {removeAlert, showAlert} from '../redux/ducks/alertd';
 
 export const Alert = () => {
 	const alertData = useSelector(state=> state.alert);
-
+	
 	const dispatch = useDispatch();
 	const location = useLocation();
 	const whichLocation =  location.pathname
 	const currentLocation = whichLocation.substring(1);
 	const isHome = whichLocation === '/';
-	console.log(isHome)
-	console.log(currentLocation)
 
 	useEffect (() => {
-		setTimeout(() => {
+	const timeout =	setTimeout(() => {
+		console.log('fsldjk')
 			dispatch(removeAlert());
-		},5000);
+		},5000)
+		return () => clearTimeout(timeout)
 		
-	},[dispatch, ]);
-	
+	},[dispatch, alertData.supprotingEle]);
+
 
 
 	return (<>
-		{ currentLocation || isHome ?
-		<div className ={`alertroot ${ alertData.showAlert || currentLocation || isHome ? 'alertfadein' : 'alertfadeout' }`}>
+		
+		<div className ={`alertroot ${ alertData.showAlert  ? 'alertfadein' : 'alertfadeout' }`}>
 
 		{isHome? 'welcome to home' :`welcome to ${currentLocation}`}
-		</div> : null }
+		</div> 
 	 </>);
 }

@@ -56,7 +56,8 @@ const intialState = {
 	isInputValid: false,
 	isLoading : true,
 	isError : false,
-	errormsg: ''
+	errormsg: '',
+	removedItem: []
 }
 
 const pexelReducer = (state=intialState, action) => {
@@ -110,7 +111,8 @@ const pexelReducer = (state=intialState, action) => {
 	if (action.type === GET_REMOVE) {
 		console.log(state);
 		let temp4 = state.images.filter((item) => item.id !== action.payload);
-		return {...state, images: temp4}
+		let removeditem = state.images.filter((item)=> item.id == action.payload);
+		return {...state, images: temp4 , removedItem:removeditem}
 	}
 	if (action.type === ERROR) {
 		console.log(action.payload)

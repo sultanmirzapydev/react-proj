@@ -11,18 +11,19 @@ export const removeAlert = (data) => ({
 });
 
 const initialState = {
-	showAlert : true
+	showAlert : true,
+
 }
 
 const alertReducer = (state=initialState, action) => {
 	console.log(action.type)
 	if (action.type === REMOVE_ALERT) {
 		console.log(action.type);
-		return {showAlert: false}
+		return {...state,showAlert: false}
 	}
 	if (action.type === SHOW_ALERT) {
 		console.log(action.type);
-		return {showAlert:true}
+		return {...state,showAlert:true, }
 	}
 	return state
 };

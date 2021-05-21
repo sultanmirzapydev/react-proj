@@ -15,7 +15,7 @@ import AddIcon from '@material-ui/icons/Add';
 import RemoveIcon from '@material-ui/icons/Remove';
 import {BrowserRouter as Router,Route,Link,useHistory } from 'react-router-dom'
 import { IoIosRemoveCircleOutline } from "react-icons/io";
-
+import {showAlert, removeAlert} from '../redux/ducks/alertd';
 
 
 
@@ -48,8 +48,10 @@ export const SingleImage = (data) => {
 	}
 	const handleremove = (e) => {
 		dispatch(getRemove(data.id));
+		
 	}
 
+	
 
 	return (<>
 		<div className='card'>

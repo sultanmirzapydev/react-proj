@@ -2,7 +2,7 @@ import React, {useState,useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {inputUsername, inputPassword, getToken} from '../redux/ducks/users';
 import {BrowserRouter as Router,Switch,Route,Link,useHistory} from "react-router-dom";
-
+import {Alert} from './alert';
 
 
 export const Login = () => {
@@ -27,6 +27,7 @@ export const Login = () => {
 	return (
 		<>
 		<div className='loginroot'>
+		<Alert/>
 		<div className='logincontainer'>
 		<input name='username' onChange = {changeUsername} />
 		<input name='password' onChange = {changePassword} />

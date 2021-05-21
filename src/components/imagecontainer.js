@@ -57,9 +57,9 @@ export const Home = () => {
 		
 		<div className='img-container-sub-2'>
 		{ pics.images.map((singlePic, index) => {
-			return <SingleImage  key={index} {...singlePic} />}
-		)}
-		
+			return <SingleImage  key={index} {...singlePic} />
+		})
+		}
 
 		</div>
 		
