@@ -7,9 +7,8 @@ const data = state => state.pexel.searchText
 export function* handlePexel(action) {
 	try{
 		const searchText = yield select(data);
-		console.log('getting pexel');
+
 		const response = yield call(getPexel, searchText);
-		console.log('got the pexel');
 		
 		const random = () => {
 			return Math.floor((Math.random() * 964)+483);

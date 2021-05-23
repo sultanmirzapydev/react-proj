@@ -13,6 +13,7 @@ html {
 
 body {
 	display: grid;
+	width: 100vw;
 	min-height: 100vh;
 	font-family:  sans-serif;
  	font-size: 1rem;
@@ -23,78 +24,12 @@ body {
 	opacity: .5;
 	text-align: center;
 	}
-.app-css {
-	min-height: 100vh;
-	margin: 0 auto;
-	background: #efeef0;
-}
+
 a{
 	text-decoration: none;
 	color: black;
 }
 
-
-.navroot {
-	display: flex;
-	display: relative;
-	height: 3.5em;
-	outline: none;
-	background-color: #708090;
-	box-shadow: 1px 2px 10px 0px #888888;
-}
-.register {
-	position: absolute;
-	top: .5em;
-	left:76em;
-}
-.login {
-	position: absolute;
-	top: .5em;
-	left: 70em;
-}
-.about {
-	position: absolute;
-	top: .5em;
-	left: 37em;
-}
-.name {
-	position: absolute;
-	top:.7em;
-	left: 1.6em;
-	font-size: 1.2em;
-
-}
-.github {
-	position: absolute;
-	top: .17em;
-	left: 5.5em;
-	font-size: 2.1em;
-	color: 	green;
-	border: none;
-	outline: none;
-}
-.home {
-	position: absolute;
-	top: .5em;
-	left:30em;
-}
-.link {
-	font-size: 1.5em;
-	font-weight: 500;
-	
-	/*font-family: 'Kanit', sans-serif;*/
-
-}
-.reuseroute {
-
-	border: .1em solid orange;
-	background: orange;
-	border-radius: .2em;
-	color: white;
-	padding: .1em;
-	/*font-family: 'Kanit', sans-serif;*/
-
-}
 
 .searchcontainer {
 	width:;
@@ -145,9 +80,7 @@ a{
 	width: 2em;
 }
 
-.imagecontainer {
-	 	margin-top: 1em;
-}
+
 .search {
 	display: flex;
 	width: 70em;
@@ -159,37 +92,8 @@ a{
 	
 	
 }
-.img-container-sub-2 {
-	max-width: 90%;
-	height: 100%;
-	display: grid;
-	margin: 0 auto ;
-	margin-top: 6em !important;
-	grid-template-columns: auto auto auto auto ;
-	grid-gap: .8em;
-	row-gap: 2.4em;
-	padding-bottom: 3.5em;
-
-}
-
-.card {
-	margin-left: 2.7em;
-	height: 15rem;
-	width:15em ;
-	position: relative;
-	overflow: hidden;
-
-}
 
 
-.card-img {
-	width: 100%;
-	height: 100%;
-	display: block;
-	object-fit: cover;
-	border-radius: .7em;
-
-}
 .img-details-container {
 	border-bottom-left-radius: .6em;
 	border-bottom-right-radius: .6em;
@@ -270,18 +174,7 @@ a{
 	border-color: #ff751a;
  }
  
- .big-basket {
- 	position: absolute;
- 	display: flex;
- 	margin-left: 78em;
- 	height:  ;
- }
- .main-big-basket {
- 	height: 1em;
- 	font-size: 3.4em;
- 	margin-top: .5em;
- 	color: orange;
- }
+
 .notfoundcontainer {	
 	position: relative;
 	width: 70vw;
@@ -299,7 +192,7 @@ a{
 .notftext  {
 	font-family:  'Rajdhani', sans-serif;
 	position: absolute;
-	color: ;
+	
 	top: 7.2em;
 	left: 3em;
 	padding-left: 2.7em;
@@ -307,71 +200,14 @@ a{
 	font-weight: 800;
 }
 
-.aboutmaincontainer {
-	position: relative;
-	width: 70vw;
-	height: 80vh;
-	margin-bottom: 30em;
-	margin: 2.2em auto  auto;
-	background: #c9d3d3;
-	border-radius: .8em;
-	box-shadow: 4px 6px 20px 0px #888888;
-}
-.about1line {
-	font-family: 'Kanit', sans-serif;
-	position: absolute;
-
-	top: .7em;
-	left: 4em;
-	font-size: 3em;
-}
-.abooutline {
-	position: absolute;
-	width: 30em;
-	height: .45em;
-	background: orange;
-	left: 12.5em;
-	top: 6.3em;
-	border-radius: .3em;
-}
-.aboutdes {
-	position: absolute;
-	font-family: 'Poppins', sans-serif;
-	font-weight: Light 300 italic;
-	top:7em;
-	left: 3.6em;
-	font-size: 1.4em;
-}
-.libicons {
-	position: absolute;
-	top: 13em;
-	left: 2.4em;
-	width: 54em;
-	height: 16em;
-	border-radius: .8em;
-	background: orange;
-}
 
 
-.footercontainer {
-	margin-top: ;
-	position: absolute;
-	padding-top: 3em;
-	width: 100%;
-	height: 3.4em;
-	background: #708090;
-}
-.aboutfooter {
-	font-size: .9em;
-	position: absolute;
-	top: -.1em;
-	margin-top: 1em;
-	left: 45em;
-}
-.aboutroot {
-	width: 100%;
-	height: 100%;
-	padding-bottom: 4em;
+
+
+
+
+@media only screen and (max-width: 600px){
+	
 }
 .loadingroot {
 	position: relative;
@@ -412,36 +248,6 @@ a{
 }
 
 
-.loginroot {
-	width: 100%;
-	height: 36em;
-}
-
-.logincontainer {
-	position: absolute;
-	width: 47%;
-	height: 28em;
-	background: #c9d3d3;
-	top: 6em;
-	left: 19em;
-	border-radius: .9em;
-	box-shadow: 5px 7px 20px 0px #888888;
-
-}
-.registerroot, .errorroot {
-	width: 100%;
-	height: 36em;
-}
-.registercontainer, .errorcontainer {
-	position: absolute;
-	width: 70%;
-	height: 29em;
-	background: #c9d3d3;
-	top: 6em;
-	left: 13em;
-	border-radius: 1em;
-	box-shadow: 5px 7px 20px 0px #888888;
-}
 .removecir {
 	cursor: pointer;
 	position: absolute;
@@ -469,6 +275,7 @@ a{
 	justify-content: center;
 	align-items: center;
 	animation: 2s ease 0s 1 slide;
+	z-index: 1;
 	}
 
 @keyframes slide {
@@ -499,3 +306,236 @@ a{
 		transform: translateX(-13em);
 	}
 }
+
+.undo {
+	margin-left: .4em;
+	color: green;
+}
+.undo:hover {
+	cursor: pointer;
+	border: none;
+	color: blue;
+}
+
+
+
+@media only screen and (min-width: 720px){
+	.aboutmaincontainer{
+	display: flex;
+
+	position: relative;
+	width: 70vw;
+	height: 80vh;
+	justify-content: center;
+	align-content: flex-start;
+	
+	margin: 2.2em auto  auto;
+	background: #c9d3d3;
+	border-radius: .8em;
+	box-shadow: 4px 6px 20px 0px #888888;
+	}
+	.libicons {
+	display: flex;
+	align-items: center;
+	align-content: center;
+
+	justify-content: center;
+	margin: 11rem  auto auto ;
+	position: absolute;
+	
+	
+	width: 64vw;
+	height: 49vh;
+	border-radius: .8rem;
+	background:  #e6e6e6;
+}
+
+.navroot {
+	
+	height: 3rem;
+	outline: none;
+	background-color: #708090;
+	box-shadow: 1px 2px 5px 0px #888888;
+}
+
+.register {
+	margin-right: 1.4rem;
+}
+.login {
+	margin-right: 3rem;	
+}
+.about {
+	position: absolute;
+	margin-left: 27rem;	
+}
+.name {
+	position: absolute;
+	font-size: 1.2em;
+}
+.github {
+	position: absolute;
+	
+	font-size: 2.1em;
+	color: 	green;
+	border: none;
+	outline: none;
+}
+.home {
+	position: absolute;
+	margin-left: 20rem;
+	
+}
+
+.reuseroute {
+
+	border: .1em solid orange;
+	background: orange;
+	border-radius: .2em;
+	color: white;
+	padding: .1em;
+	font-family: 'Kanit', sans-serif;
+
+}
+.app-css {
+	min-width: 100vw;
+	min-height: 100vh;
+	margin: 0 auto;
+	background: #efeef0;
+}
+.aboutroot {
+	width: 100%;
+	height: 100%;
+	padding-bottom: 2em;
+	
+}
+
+.about1line {
+	font-family: 'Kanit', sans-serif;
+	position: absolute;
+
+	
+	font-size: 1.5em;
+}
+.abooutline {
+
+	width: 30rem;
+	height: .45rem;
+	margin-top: 3em;
+	background: orange;
+	position: absolute;
+	border-radius: .3rem;
+}
+.aboutdes {
+	font-family: 'Poppins', sans-serif;
+	font-weight: Light 300 italic;
+	margin-top: 4em;
+	margin-bottom: 2em;
+	position: absolute;
+	font-size: 1.1rem;
+}
+.navusercontainer {
+	display: flex;
+	float: right;
+}
+.footercopyright {
+	text-align: center;
+}
+.footercontainer {
+
+}
+
+.loginroot {
+	position: relative;
+	display: flex;
+	width: 100%;
+	height: 36em;
+	justify-content: center;
+}
+
+.logincontainer {
+	position: absolute;
+	margin-top: 3em;
+	width: 69%;
+	height: 28em;
+	background: #c9d3d3;
+	
+	border-radius: .9em;
+	box-shadow: 5px 7px 20px 0px #888888;
+
+}
+.link {
+	font-size: 1.2rem;
+	font-weight: 500;
+	
+	font-family: 'Kanit', sans-serif;
+
+}
+
+.registerroot, .errorroot {
+	position: relative;
+	display: flex;
+	
+	width: 100%;
+	height: 36em;
+	justify-content: center;
+}
+.registercontainer, .errorcontainer {
+	
+
+	position: absolute;
+	margin-top: 5rem;
+	width: 70%;
+	height: 29em;
+	background: #c9d3d3;
+	border-radius: 1em;
+	box-shadow: 5px 7px 20px 0px #888888;
+}
+.imagecontainer {
+	 	margin-top: 1em;
+}
+.img-container-sub-2 {
+	max-width: 90%;
+	height: 100%;
+	display: grid;
+	margin: 0 auto ;
+	margin-top: 6em !important;
+	grid-template-columns: auto auto auto auto ;
+	
+	padding-bottom: 3.5em;
+
+}
+
+.card {
+	
+	height: 15rem;
+	width:15em ;
+	position: relative;
+	overflow: hidden;
+
+}
+
+
+.card-img {
+	width: 100%;
+	height: 100%;
+	display: block;
+	object-fit: cover;
+	border-radius: .7em;
+
+}
+ .big-basket {
+ 	position: absolute;
+ 	display: flex;
+ 	
+ 	height:  ;
+ }
+ .main-big-basket {
+ 	height: 1em;
+ 	font-size: 3.4em;
+ 	margin-top: .5em;
+ 	color: orange;
+ }
+}
+
+
+

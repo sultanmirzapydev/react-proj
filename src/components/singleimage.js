@@ -19,6 +19,7 @@ import {showAlert, removeAlert} from '../redux/ducks/alertd';
 
 
 
+
 export const SingleImage = (data) => {
 	const history = useHistory();
 	const dispatch = useDispatch();
@@ -48,14 +49,23 @@ export const SingleImage = (data) => {
 	}
 	const handleremove = (e) => {
 		dispatch(getRemove(data.id));
-		
+		dispatch(showAlert(data.id));
 	}
+	useEffect(() => {
+			
+			let time = setTimeout(() => {
+				
+				dispatch(removeAlert());
+			},5000)
+			return () => clearTimeout(time);
+		}, [dispatch,handleremove])
+	
 
 	
 
 	return (<>
 		<div className='card'>
-		<div style={{position:'absolute'}}>
+		{/*<div style={{position:'absolute'}}>
 			<div style={{position:'absolute', top:'.2em', left:'.5em',fontSize:'1.6em',
 			fontFamily:"'Teko', sans-serif", fontWeight:'200',color:'#FFA500',  
 			transform: 'scaleX(1.5)'}}> 
@@ -82,7 +92,7 @@ export const SingleImage = (data) => {
 			<RemoveIcon height='25%'> </RemoveIcon>
 			  </Button>}
 			</ButtonGroup> </div>
-			 </div>
+			 </div>  */}
 
 
 		<img className='card-img' src={`${data.pic}`}/>

@@ -22,7 +22,7 @@ export const RootComponent = () => {
 		<Route path = '/register' component = {Register}/>
 		<Route path="*" component={Notfound} />
 	</Switch>
-	<Footer/>
+	
 	</Router>
 		</>
 		)

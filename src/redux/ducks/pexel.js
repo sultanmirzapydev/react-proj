@@ -7,6 +7,12 @@ export const DECREASE = 'DECREASE';
 export const GET_TOTAL = 'GET_TOTAL';
 export const GET_REMOVE = 'GET_REMOVE';
 export const ERROR     = 'ERROR';
+export const RECOVER_ITEM = 'RECOVER_ITEM';
+
+export const recoverItem = (data) => ({
+	type: RECOVER_ITEM,
+	payload:data
+})
 
 export const error = (data) => ({
 	type: ERROR,
@@ -57,12 +63,15 @@ const intialState = {
 	isLoading : true,
 	isError : false,
 	errormsg: '',
-	removedItem: []
+	removedItem: [],
+	isRemoved: false
 }
 
 const pexelReducer = (state=intialState, action) => {
+	
+	
 	if (action.type === INPUT_FOR_SEARCH) {
-		console.log('pexel', action.type)
+	
 		return {...state, searchText: action.payload, isInputValid: true}
 	}
 	if (action.type === SET_PEXEL) {
@@ -109,15 +118,19 @@ const pexelReducer = (state=intialState, action) => {
 		return {...state, images: temp3}
 	}
 	if (action.type === GET_REMOVE) {
-		console.log(state);
+
 		let temp4 = state.images.filter((item) => item.id !== action.payload);
 		let removeditem = state.images.filter((item)=> item.id == action.payload);
-		return {...state, images: temp4 , removedItem:removeditem}
+		return {...state, images: temp4 , removedItem:removeditem, isRemoved: true}
 	}
 	if (action.type === ERROR) {
-		console.log(action.payload)
 		return {...state, isError:true, errormsg: action.payload}
-	}	
+	}
+	if (action.type === RECOVER_ITEM) {
+		let temp = state.removedItem.concat(state.images);
+		console.log(temp);
+		return {...state, images: temp}
+	}
 
 	return state;
 			

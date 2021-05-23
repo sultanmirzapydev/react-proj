@@ -17,7 +17,6 @@ import {Alert} from './alert';
 export const Home = () => {
 	const pics = useSelector(state => state.pexel);
 	const isLoading = pics.isLoading
-	console.log(isLoading);
 
 	const dispatch = useDispatch()
 	useEffect(() => {
@@ -47,9 +46,7 @@ export const Home = () => {
 		<FcSearch className='fasearch'> </FcSearch>
 		
 		</button>
-		<div style={{position:'relative', top:'-.2em', left:'48.6em',fontSize:'1.6em',padding:'.2em',
-			fontFamily:"'Teko', sans-serif", fontWeight:'200',color:'#e67300',  
-			transform: 'scaleX(1.7)',}}> 
+		<div > 
 			 total-{pics.totalCart}</div>
 		<div className='big-basket'><FiShoppingCart className='main-big-basket'> </FiShoppingCart></div>
 

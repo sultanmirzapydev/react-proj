@@ -29,8 +29,7 @@ export const Login = () => {
 		<div className='loginroot'>
 		<Alert/>
 		<div className='logincontainer'>
-		<input name='username' onChange = {changeUsername} />
-		<input name='password' onChange = {changePassword} />
+		
 		<button type='submit' onClick= {handleSubmit} > click me </button>
 		</div>
 		</div>
