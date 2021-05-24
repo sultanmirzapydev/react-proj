@@ -65,34 +65,26 @@ export const SingleImage = (data) => {
 
 	return (<>
 		<div className='card'>
-		{/*<div style={{position:'absolute'}}>
-			<div style={{position:'absolute', top:'.2em', left:'.5em',fontSize:'1.6em',
-			fontFamily:"'Teko', sans-serif", fontWeight:'200',color:'#FFA500',  
-			transform: 'scaleX(1.5)'}}> 
+			<div className='cardcountandremove'>
+			<div className='count'> 
 			{data.count}</div>
+
 			
-			<span><RiShoppingCartLine color='#FF8C00'
-			style={{position:'absolute',marginTop:'.19em', top:'1.1em',left:'.23em', 
-			fontSize: '1.5em',  }}> 
+			<div className='removecirdiv'><IoIosRemoveCircleOutline className='removecir' onClick={handleremove}> </IoIosRemoveCircleOutline></div> 
+			</div>
+			<span><RiShoppingCartLine color='#FF8C00'> 
 			</RiShoppingCartLine> </span>
-			<div> <IoIosRemoveCircleOutline className='removecir' onClick={handleremove}> </IoIosRemoveCircleOutline> </div>
+			
 			<div><ButtonGroup>
-			<Button  onClick={handleWishlist} height="25%"
-			style={{position:'absolute',top:'4.5em', left:'.2em', width:'.2em',  height: '2.3em', backgroundColor:'#33cc33',
-			border:'none',
-			borderRadius:'.5em  ' }}>
-			 <AddIcon height="25%"> </AddIcon> </Button>
+			<Button  onClick={handleWishlist} >
+			 <AddIcon > </AddIcon> </Button>
 
 
-			{showDbtn && <Button size="small" onClick={handleDecre} className='removebtn'
-			style={{ top: '7em', left:'.29em', position:'absolute',
-			height:'2em',width: '.6em', overflow:'hidden', backgroundColor:'#ff751a',
-			border:'none',
-			borderRadius:'0 0 .5em .5em' }}>
-			<RemoveIcon height='25%'> </RemoveIcon>
+			{showDbtn && <Button size="small" onClick={handleDecre} className='removebtn'>
+			<RemoveIcon > </RemoveIcon>
 			  </Button>}
-			</ButtonGroup> </div>
-			 </div>  */}
+			</ButtonGroup> </div> 
+			 
 
 
 		<img className='card-img' src={`${data.pic}`}/>
@@ -100,36 +92,41 @@ export const SingleImage = (data) => {
 	<div className='photographer'>
 		
 		<div className='pic-view'>
+		<div className='faeye'>
 	<FontAwesomeIcon icon={faEye} className='faeye' />
+	</div>
 		 <div className='total-views'>{data.total_views} </div>
 		</div>
 		
 	</div>
 
 	<div className='count-container'>
-	<div className='count-btn'>
+	
 	<p className='photographer-name'>
 	 by, {data.name} 
 	</p>
 	
-	</div>
+	
 	</div>
 
 	<div className='show-liked'>
 	<div className='like-icon'>
 	<FormControlLabel
         control={<Checkbox checked={toggleLiked} icon={<FavoriteBorder />} checkedIcon={<Favorite />} 
-        onChange={handleChange} />}
+        onChange={handleChange} className='	mobicon' />}
       />
 
 	</div>
 	</div>
 	<div className='photographer-name-container'>	
-	<Button style={{ width: '100%', margin:'0', padding: '0'}}>
+	<div className='onlyforsmwishlist'> Add to wishlist </div>
+	<div className='disableonsmallscreen'>
+	<Button >
 	<div className='add-to-wishlist' onClick = {handleWishlist}>
 	<pre>Add to wishlist</pre>
 	</div>
 	</Button>
+	</div>
 	
 	</div>
 	</div>
