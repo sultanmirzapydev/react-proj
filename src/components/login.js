@@ -28,7 +28,7 @@ export const Login = () => {
 		<>
 		<div className='loginroot'>
 		<Alert/>
-		<div className='logincontainer'>
+		<div className='logincontainer' style={{ width: '100%', }}>
 		
 		<button type='submit' onClick= {handleSubmit} > click me </button>
 		</div>
