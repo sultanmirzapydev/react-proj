@@ -46,7 +46,7 @@ export const Home = () => {
 		<FcSearch className='fasearch'> </FcSearch>
 		
 		</button>
-		<div > 
+		<div className='totalcart'> 
 			 total-{pics.totalCart}</div>
 		<div className='big-basket'><FiShoppingCart className='main-big-basket'> </FiShoppingCart></div>
 

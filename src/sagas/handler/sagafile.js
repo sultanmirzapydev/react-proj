@@ -1,5 +1,5 @@
-import createRootSaga from 'redux-root-saga';
-import { takeEvery, takeLatest } from 'redux-saga/effects';
+// import createRootSaga from 'redux-root-saga';
+import {takeLatest } from 'redux-saga/effects';
 import {handleLogin}   from './handlelogin';
 import {handlePexel} from './handlepexel';
 import {GET_TOKEN} from '../../redux/ducks/users';

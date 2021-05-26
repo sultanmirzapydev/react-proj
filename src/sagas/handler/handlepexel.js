@@ -1,5 +1,5 @@
 import {call, put, select} from 'redux-saga/effects';
-import {getPexel, getProfile,} from '../../axios/request/getpexel';
+import {getPexel, } from '../../axios/request/getpexel';
 import {setPexel, error} from '../../redux/ducks/pexel';
 
 const data = state => state.pexel.searchText

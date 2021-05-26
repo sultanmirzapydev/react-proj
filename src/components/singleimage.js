@@ -30,9 +30,9 @@ export const SingleImage = (data) => {
 
 	const toggleLiked = data.is_liked;
 	useEffect (() => {
-		let itemId = data.id;
-		dispatch(getTotal(itemId))
-	},[data.count])
+		
+		dispatch(getTotal(data.id))
+	},[data.count,data.id,dispatch])
 
 	const handleChange = (e) => {
 		let qs2 = data.id;
@@ -47,6 +47,7 @@ export const SingleImage = (data) => {
 	const handleDecre = (e) => {
 		dispatch(getDecre(data.id));
 	}
+	
 	const handleremove = (e) => {
 		dispatch(getRemove(data.id));
 		dispatch(showAlert(data.id));
@@ -58,7 +59,7 @@ export const SingleImage = (data) => {
 				dispatch(removeAlert());
 			},5000)
 			return () => clearTimeout(time);
-		}, [dispatch,handleremove])
+		}, [dispatch,])
 	
 
 	
@@ -72,22 +73,22 @@ export const SingleImage = (data) => {
 			
 			<div className='removecirdiv'><IoIosRemoveCircleOutline className='removecir' onClick={handleremove}> </IoIosRemoveCircleOutline></div> 
 			</div>
-			<span><RiShoppingCartLine color='#FF8C00'> 
-			</RiShoppingCartLine> </span>
+			<div className='cartplusminus'>
+			<span > <RiShoppingCartLine color='#FF8C00' className='cardcart'> </RiShoppingCartLine> </span>
 			
-			<div><ButtonGroup>
-			<Button  onClick={handleWishlist} >
-			 <AddIcon > </AddIcon> </Button>
+			<div ><ButtonGroup className=''>
+			<Button size='small' onClick={handleWishlist} className='addbtn' style={{border:'.2em solid orange'}}  > 
+			<AddIcon > </AddIcon> </Button>
+			
 
+			{showDbtn && <Button size="small" onClick={handleDecre} className='decrebtn' style={{border:'.2em solid orange'}}>
+			<RemoveIcon > </RemoveIcon></Button>}
 
-			{showDbtn && <Button size="small" onClick={handleDecre} className='removebtn'>
-			<RemoveIcon > </RemoveIcon>
-			  </Button>}
 			</ButtonGroup> </div> 
-			 
+			 </div>
 
 
-		<img className='card-img' src={`${data.pic}`}/>
+		<img className='card-img' alt='failed' src={`${data.pic}`}/>
 		<div className='img-details-container'>
 	<div className='photographer'>
 		
@@ -118,12 +119,12 @@ export const SingleImage = (data) => {
 
 	</div>
 	</div>
-	<div className='photographer-name-container'>	
-	<div className='onlyforsmwishlist'> Add to wishlist </div>
+	<div className='addtowishlistcontainer'>	
+	<a href='me.co' className='onlyforsmwishlist'> Add to wishlist </a>
 	<div className='disableonsmallscreen'>
 	<Button >
 	<div className='add-to-wishlist' onClick = {handleWishlist}>
-	<pre>Add to wishlist</pre>
+	<pre>Add to Wishlist</pre>
 	</div>
 	</Button>
 	</div>

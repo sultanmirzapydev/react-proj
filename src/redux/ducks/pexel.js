@@ -120,7 +120,7 @@ const pexelReducer = (state=intialState, action) => {
 	if (action.type === GET_REMOVE) {
 
 		let temp4 = state.images.filter((item) => item.id !== action.payload);
-		let removeditem = state.images.filter((item)=> item.id == action.payload);
+		let removeditem = state.images.filter((item)=> item.id === action.payload);
 		return {...state, images: temp4 , removedItem:removeditem, isRemoved: true}
 	}
 	if (action.type === ERROR) {
