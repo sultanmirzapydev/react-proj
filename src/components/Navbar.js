@@ -4,75 +4,137 @@ import { AiFillGithub } from "react-icons/ai";
 import {showAlert, removeAlert} from '../redux/ducks/alertd';
 import {BrowserRouter as Router,Route,Link, useLocation } from 'react-router-dom';
 import { GoThreeBars } from "react-icons/go";
+import { makeStyles, fade } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
+import Button from '@material-ui/core/Button';
+import SearchIcon from '@material-ui/icons/Search';
+import InputBase from '@material-ui/core/InputBase';
+import Icon from '@material-ui/core/Icon';
 
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
 
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+  },
+  menuButton: {
+    marginRight: theme.spacing(0),
+  },
+  
+  toolBar: {
+  	minHeight: '70px',
+  	
+  },
+  colorPrimary :{
+  	backgroundColor: '#f2f5f7',
+  },
+  menuIcon : {
+  	fontSize : '2rem',
+  	color: 'black',
+  	width: '2rem'
+  },
+  text: {
+  	color: 'black',
+  	marginLeft: '.5rem',
+  },
+  search: {
+    position: 'relative',
+    borderRadius: theme.shape.borderRadius,
+    backgroundColor: 'orange',
+    '&:hover': {
+      backgroundColor: 'red',
+    },
+    marginLeft: 0,
+    width: '100%',
+    [theme.breakpoints.up('sm')]: {
+      marginLeft: theme.spacing(1),
+      width: 'auto',
+    },
+  },
+  searchIcon: {
+    padding: theme.spacing(0, 1),
+    
+    height: '100%',
+    position: 'absolute',
+    
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  searchIconroot: {
+  	fontSize:'2rem',
+  	
+  },
+  focused: {
+  	color:'green',
+  },backgroundColor:'green',
+  inputRoot: {
+    color: 'inherit',
+  },
+  inputInput: {
+    padding: '1rem',
+   	 
+    paddingLeft: '3rem',
+    transition: theme.transitions.create('width'),
+    width: '100%',
+    [theme.breakpoints.up('sm')]: {
+      width: '30ch',
+      '&:focus': {
+        width: '43ch',
+      },
+    },
+  },
+}));
 
 export const Navbar = () => {
-	const [shownav, setShownav] = useState(false);
-	let removeItem = useSelector(state=> state.alert.isRemovedId)
-	console.log(removeItem);
-	const dispatch = useDispatch();
-	const location = useLocation();
-	const test =  location.pathname
-	console.log(test);
-
+	const classes = useStyles();
 	const handleNavClick = (e) => {
-		setShownav(!shownav);
+		console.log('dsfl;')
 	}
-
-
-		const handleAlert = (e) => {
-		dispatch(showAlert());
-		
-		}
-		useEffect(() => {
-			
-			let time = setTimeout(() => {
-				
-				dispatch(removeAlert());
-			},6000)
-			return () => clearTimeout(time);
-		}, [dispatch, removeItem])
-	
-	
 	return (
 		<>
-		<div  className='fullwidthnav'>
-		<nav  className='navroot'>
-		<div className='navwrapper'>
-		<p className='name '> SULTAN MIRZA </p>
-		<a  href='https://github.com/sultanmirzapydev' className='github'>                                                  
-		<  AiFillGithub style={{ background:'black', borderRadius:'50%'}}> </AiFillGithub> </a>
-
-		<div className='home' ><Link to='/' 
-		className={`link ${test==='/'?'reuseroute':null}`} onClick={handleAlert}>Home</Link> </div>
-		<div className='about'><Link to="/about" 
-		className={`link ${test==='/about'?'reuseroute':null}`} onClick={handleAlert}>About</Link> </div>
+		<AppBar position='sticky' classes = {{ colorPrimary: classes.colorPrimary}}>
+		<Toolbar classes = {{ regular: classes.toolBar}}>
+		<IconButton >
+		 <MenuIcon classes = {{root: classes.menuIcon}} onClick={handleNavClick} />
+		 </IconButton>
 		
-	
-		<div className='login' > <Link to='/login' 
-		className={`link ${test==='/login'?'reuseroute':null}`} onClick={handleAlert}> log in </Link> </div>
-		<div className='register'> <Link to='/register' 
-		className={`link ${test==='/register'?'reuseroute':null}`} onClick={handleAlert}> Register </Link> </div>
-		
-		<div className='threebar'> <GoThreeBars onClick={handleNavClick}> </GoThreeBars> </div>
-		</div>
+		 <Typography classes={{root: classes.text}} variant="h6" noWrap>
+            Home
+          </Typography>
+           <Typography classes={{root: classes.text}} variant="h6" noWrap>
+            About
+          </Typography>
+           <Typography classes={{root: classes.text}} variant="h6" noWrap>
+            Trending
+          </Typography>
+           <Typography classes={{root: classes.text}} variant="h6" noWrap>
+            Log in
+          </Typography>
+          <Typography classes={{root: classes.text}} variant="h6" noWrap>
+            Register
+          </Typography>
+          <div className={classes.root}/>
+          <div className = {classes.search}>
+          <div className = {classes.searchIcon}>
+          <SearchIcon classes = {{root: classes.searchIconroot}} />
+          </div>
+          <InputBase 
+          	placeholder =' Search.....'
+          	classes = {{root: classes.inputRoot, input: classes.inputInput}} />
+          </div>
 
-		</nav>
-		 { shownav ? <div className='threebarcontainer'>
-		
-		<ul style={{listStyleType: 'none'}}>
-		<hr style={{ color: 'black', background:'black'}}/>
-		<li style={{marginLeft:'1%'}}> #home </li>
-		<hr style={{ color: 'black', background:'black'}}/>
-		<li style={{marginLeft:'1%'}}> #about </li>
-		<hr style={{ color: 'black', background:'black'}}/>
-		<li style={{marginLeft:'1%'}}> #login </li>
-		<hr style={{ color: 'black', background:'black'}}/>
-		</ul> 
-		</div> : null }
 
-		</div>
+          
+		</Toolbar>
+		</AppBar>
+
+
+		
+  
 		</>
 		)
 }
