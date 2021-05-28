@@ -8,12 +8,8 @@
 	box-sizing: border-box;
 }
 
+
 @media only screen and (max-width: 425px) {
-
-
-html {
-  box-sizing: border-box;
-}
 
 *, 
 *::before,

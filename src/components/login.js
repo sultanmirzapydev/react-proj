@@ -33,6 +33,13 @@ export const Login = () => {
 		<button type='submit' onClick= {handleSubmit} > click me </button>
 		</div>
 		</div>
+		<div className='alive'> 
+		<div className='ant' style= {{display:'flex', margin:'4rem', transform: 'translateX(-8rem)',
+
+	}}> 
+		slghfksd
+		</div>
+		</div>
 		</>
 		);
 };

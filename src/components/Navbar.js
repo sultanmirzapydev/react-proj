@@ -12,9 +12,20 @@ import Button from '@material-ui/core/Button';
 import SearchIcon from '@material-ui/icons/Search';
 import InputBase from '@material-ui/core/InputBase';
 import Icon from '@material-ui/core/Icon';
-
+import Menu from '@material-ui/core/Menu';
+import MenuItem from '@material-ui/core/MenuItem';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
+import { BsInfoCircle } from "react-icons/bs";
+import { FiLogIn,FiTrendingUp } from "react-icons/fi";
+import {MdAssignmentInd } from "react-icons/md";
+import { IoMdContacts  } from "react-icons/io";
+import { IoLanguageOutline, IoCheckmarkOutline } from "react-icons/io5";
+import styled, { keyframes } from "styled-components";
+import HomeIcon from '@material-ui/icons/Home';
+
+import clsx from 'clsx';
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -87,27 +98,89 @@ const useStyles = makeStyles((theme) => ({
       },
     },
   },
+
+menucontainer: {
+    position:'absolute',
+    backgroundColor:'#E0E0E0',
+    width: ' 17rem',
+    margin: '0rem 0 0 0 ',
+    borderRadius: '0 0 .7rem 0',
+    boxShadow: '2px 4px 6px  2px rgba(0, 0, 0, 0.2)',
+    animation: `$slide .6s ease`,
+  
+  },
+  
+ '@keyframes slide': {
+    'from': {
+      left : '-18rem'
+    },
+    'to': {
+      left: '0'
+    } 
+},
+
+
+
+menusubcon :{
+  display: 'flex',
+  flexDirection: 'column',
+  marginTop: '2rem',
+  fontSize: '1.4rem',
+  marginLeft: '2rem',
+  marginBottom: '1rem',
+},
+menulangcon : {
+  display: 'flex',
+  flexDirection: 'column',
+  fontSize: '1.4rem',
+  marginLeft: '2rem',
+  marginTop: '1rem',
+  marginBottom: '2rem',
+},
+menutext: {
+  display: 'flex',
+  justifyContent: 'space-between',
+},
+Icons : {
+  marginRight: '2rem',
+},
+
 }));
+  
+
 
 export const Navbar = () => {
 	const classes = useStyles();
-	const handleNavClick = (e) => {
-		console.log('dsfl;')
-	}
+	const [show, setShow] = useState(false);
+
+  const handleClick = (e) => {
+    setShow(!show);
+  }
+
+  
 	return (
 		<>
-		<AppBar position='sticky' classes = {{ colorPrimary: classes.colorPrimary}}>
+
+		<AppBar position='sticky' style={{overflow: 'hidden'}} 
+    classes = {{ colorPrimary: classes.colorPrimary}}>
+   
 		<Toolbar classes = {{ regular: classes.toolBar}}>
-		<IconButton >
-		 <MenuIcon classes = {{root: classes.menuIcon}} onClick={handleNavClick} />
-		 </IconButton>
+    
+   
+		  <IconButton onClick = {handleClick} >
+		  <MenuIcon classes = {{root: classes.menuIcon}}  />
+		  </IconButton> 
+    
+ 
+
 		
 		 <Typography classes={{root: classes.text}} variant="h6" noWrap>
             Home
           </Typography>
-           <Typography classes={{root: classes.text}} variant="h6" noWrap>
+           <Typography classes={{root: classes.text}}  variant="h6" noWrap>
             About
           </Typography>
+
            <Typography classes={{root: classes.text}} variant="h6" noWrap>
             Trending
           </Typography>
@@ -126,12 +199,41 @@ export const Navbar = () => {
           	placeholder =' Search.....'
           	classes = {{root: classes.inputRoot, input: classes.inputInput}} />
           </div>
-
-
           
-		</Toolbar>
+         </Toolbar>
+        
+        
 		</AppBar>
+		
+   
+     { show ? <div className={classes.menucontainer}> 
+     
+          <div className={classes.menusubcon}>
+        <div className={classes.menutext}> Home 
+        <HomeIcon className={classes.Icons}/> </div>
+        <div className={classes.menutext}> About 
+        <BsInfoCircle className={classes.Icons}/></div>
+        <div className={classes.menutext}> Log In 
+        <FiLogIn className={classes.Icons}/></div>
+        <div className={classes.menutext}> Register 
+        <MdAssignmentInd className={classes.Icons}/></div>
+        <div className={classes.menutext} > Trending 
+        <FiTrendingUp className={classes.Icons}/></div>
+        <div  className={classes.menutext}>  Contact 
+        <IoMdContacts className={classes.Icons}/></div>
+          </div>
+          <hr />
+          <div className={classes.menulangcon}>
+            <div className={classes.menutext} style={{color:'black'}}> Language: </div>
+            <div className={classes.menutext}> English 
+            <IoCheckmarkOutline className={classes.Icons}/></div>
+            <div className={classes.menutext}> Hindi 
+            <IoLanguageOutline className={classes.Icons}/> </div>
+            <div className={classes.menutext}> Telugu 
+            <IoLanguageOutline className={classes.Icons}/></div>
+          </div>
 
+        </div>  : null}
 
 		
   
