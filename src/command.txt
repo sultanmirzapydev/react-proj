@@ -1,0 +1,8 @@
+####  How to add material ui customize classes to jsx   ####
+
+className={`${active==='nature'?[classes.showActive]:null}`}
+
+
+className={clsx(classes.menucontainer,  {[classes.showSlido]:show})}
+
+className={`link ${test==='/about'?'reuseroute':null}`}
