@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from 'react';
 
-import {setLiked,getIncre,getTotal, getDecre,getRemove} from '../redux/ducks/pexel';
+import {setLiked,getIncre,getTotal, getDecre,getRemove} from '../../redux/ducks/pexel';
 import {useDispatch, useSelector} from 'react-redux';
 
-import {showAlert, removeAlert} from '../redux/ducks/alertd';
+import {showAlert, removeAlert} from '../../redux/ducks/alertd';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardMedia from '@material-ui/core/CardMedia';

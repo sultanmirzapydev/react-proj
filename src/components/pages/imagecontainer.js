@@ -1,11 +1,11 @@
 import React from 'react';
 import {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {getPexel, inputForSearch} from '../redux/ducks/pexel';
+import {getPexel, inputForSearch} from '../../redux/ducks/pexel';
 import {SingleImage} from './singleimage';
-import {HomeSugg} from './utils/homesugg';
+import {HomeSugg} from '../utils/homesugg';
 
-import {Loading} from './loading';
+import {Loading} from '../utils/loading';
 
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';

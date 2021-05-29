@@ -9,6 +9,21 @@
 }
 
 
+.app-css {
+	
+	min-height: 100vh;
+	margin: 0 auto;
+	background: #f0f0f0;
+}
+a{
+	text-decoration: none;
+	
+}
+
+::-webkit-scrollbar {
+display: none;
+}
+
 @media only screen and (max-width: 425px) {
 
 *, 
@@ -42,13 +57,6 @@ a{
 
 
 
-
-.app-css {
-	min-width: 100vw;
-	min-height: 100vh;
-	margin: 0 auto;
-	background: #efeef0;
-}
 
 .name {
 	display: none;

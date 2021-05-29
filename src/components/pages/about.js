@@ -1,5 +1,5 @@
 import React from 'react';
-import {Alert} from './alert';
+import {Alert} from '../utils/alert';
 
 
 export const About = () => {

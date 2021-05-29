@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import { AiFillGithub } from "react-icons/ai";
-import {showAlert, removeAlert} from '../redux/ducks/alertd';
+import {showAlert, removeAlert} from '../../redux/ducks/alertd';
 import {BrowserRouter as Router,Route,Link, useLocation } from 'react-router-dom';
 import { GoThreeBars } from "react-icons/go";
 import { makeStyles, fade } from '@material-ui/core/styles';
@@ -27,7 +27,7 @@ import { CgClose } from "react-icons/cg";
 import { FiShoppingCart } from "react-icons/fi";
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import clsx from 'clsx';
-import useStyles from './material-ui/navbarcustom';
+import useStyles from '../material-ui/navbarcustom';
 
   
 

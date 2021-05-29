@@ -1,5 +1,5 @@
 import React from 'react';
-import axiosinstance from '../axios/axios';
+import axiosinstance from '../../axios/axios';
 
 export const Logout = () => {
 

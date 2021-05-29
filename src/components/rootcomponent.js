@@ -1,12 +1,12 @@
 import React from 'react';
-import {Home} from './imagecontainer';
-import {Login} from './login'; 
-import {Logout} from './logout';
-import {Navbar} from './navbar';
-import {Register} from './register';
-import {About} from './about';
-import {Notfound} from './notfound';
-import {Footer} from './footer';
+import {Home} from './pages/imagecontainer';
+import {Login} from './pages/login'; 
+import {Logout} from './pages/logout';
+import {Navbar} from './utils/navbar';
+import {Register} from './pages/register';
+import {About} from './pages/about';
+import {Notfound} from './utils/notfound';
+import {Footer} from './utils/footer';
 import {BrowserRouter as Router,Switch,Route,Link, useHistory} from "react-router-dom";
 	
 export const RootComponent = () => {
