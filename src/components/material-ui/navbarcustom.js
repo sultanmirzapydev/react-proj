@@ -98,14 +98,14 @@ const useStyles = makeStyles((theme) => ({
       fontSize:'1.2rem',
       paddingRight:'.5rem',
       paddingLeft:'.5rem',
-      left: '-.4rem',
+      left: '-.1rem',
       top:'-1rem',
 
     },
     [theme.breakpoints.between(420,600)] : {
       fontSize: '1.2rem',
       top: '-1rem',
-      left: '-1.2rem',
+      left: '-1rem',
       paddingRight: '.5rem',
       paddingLeft: '.5rem',
 
@@ -113,21 +113,21 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.between(600,960)] : {
       fontSize: '1.2rem',
       top: '-1rem',
-      left: '-1rem',
+      left: '-.7rem',
       paddingRight: '.5rem',
       paddingLeft: '.5rem',
     },
     [theme.breakpoints.between(960,1280)] : {
       fontSize: '1.2rem',
-      top: '-1rem',
-      left: '-1rem',
+      top: '-.8rem',
+      left: '-.9rem',
       paddingRight: '.5rem',
       paddingLeft: '.5rem',
     },
     [theme.breakpoints.between(1280,1920)] : {
       fontSize: '1.2rem',
       top: '-.9rem',
-      left: '-2.3rem',
+      left: '-2.1rem',
       paddingRight: '.5rem',
       paddingLeft: '.5rem',
     }
@@ -313,6 +313,7 @@ const useStyles = makeStyles((theme) => ({
   },
 
 menucontainer: {
+  
     position:'absolute',
     zIndex: '3',
     backgroundColor:'#E0E0E0',

@@ -95,7 +95,7 @@ export const Navbar = () => {
           </div>
           <ShoppingCartIcon className={classes.cartIcon}/>
           <div  className={classes.totalCart}>
-          76
+          7
           </div>
          </Toolbar>
         

@@ -1,5 +1,5 @@
-import {call, put, select} from 'redux-saga/effects';
-import {getPexel, } from '../../axios/request/getpexel';
+import {call, put,all, select} from 'redux-saga/effects';
+import {getPexel, gePexel2} from '../../axios/request/getpexel';
 import {setPexel, error} from '../../redux/ducks/pexel';
 
 const data = state => state.pexel.searchText
@@ -21,7 +21,9 @@ export function* handlePexel(action) {
 		
 		yield put(setPexel(pics));
 
-		
+		const test = response.photos.map((item) => {return {id: item.id, picurl : item.photographer_url}});
+		const trio = yield all (test.map(item=> {return call(gePexel2,item)}));
+		console.log(trio);
 
 	} catch(e) {
 		console.log(e.message);

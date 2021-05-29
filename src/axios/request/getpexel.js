@@ -1,5 +1,6 @@
 import { createClient } from 'pexels';
  import axios from 'axios';
+ import axiosinstance from '../axios';
 
 
 export const getPexel = (searchText,a) => {
@@ -14,3 +15,15 @@ export const getPexel = (searchText,a) => {
 	})
 }
 
+
+export const gePexel2 = (item ) => {
+	console.log(item);
+	return axiosinstance.post('getpro/', {
+		picId : item,
+		//picUrl : item.picurl,
+	})
+	.then((response) => {
+		console.log(response);
+		return response;
+	})
+}
