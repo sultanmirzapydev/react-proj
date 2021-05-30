@@ -88,9 +88,11 @@ const useStyles = makeStyles((theme) => ({
 		}
 	},
 	forbutton : {
-		textTransform: 'capitalize',
+		
 		borderRadius: '.7rem',
-
+	},
+	texttransform : {
+		textTransform: 'lowercase',
 	},
 	showActive : {
 		background: '#BDBDBD',

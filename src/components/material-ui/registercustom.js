@@ -5,7 +5,7 @@ const  useStyles = makeStyles((theme) => ({
 	gridmaincontainer : {
 		background: '#ECEFF1',
 		width: '100%',
-		height:'50rem',
+		height:'40rem',
 		margin: 'auto 0',
 	},
 	griditemsub: {
@@ -51,9 +51,9 @@ const  useStyles = makeStyles((theme) => ({
 	},
 	registerform : {
 		width: '50%',
-		marginTop:'7rem',
+		marginTop:'6rem',
 		margin: '0 auto',
-		height:'31rem',
+		height:'32rem',
 		[theme.breakpoints.down(600)]: {
 			width:'100%',
 			marginTop:'6rem'
@@ -71,10 +71,10 @@ const  useStyles = makeStyles((theme) => ({
  	 },
  	 margin : {
  	 	margin: '0 auto',
- 	 	marginTop: '.9rem',
+ 	 	marginTop: '1rem',
  	 },
  	buttonroot : {
- 		width: '16.7rem',
+ 		width: '16.3rem',
  		padding: '.7rem',
  		background: 'linear-gradient(210deg, #2196F3 30%, #21CBF3 90%)',
  		outline: 'none',

@@ -11,7 +11,7 @@ import Button from '@material-ui/core/Button';
 import clsx from 'clsx';
 import LockIcon from '@material-ui/icons/Lock';
 import useStyles from '../material-ui/registercustom';
-
+import {Link} from 'react-router-dom';
 
 
 
@@ -21,17 +21,18 @@ const CssTextField = withStyles({
 			color: 'green',
 		},
 		'& .MuiInput-underline:after': {
-			borderBottomColor: 'green',
+			borderBottomColor: 'black',
 		},
 		'& .MuiOutlinedInput-root':{
 			'& fieldset': {
 				borderColor: 'green',
 			},
 			'&:hover fieldset': {
-				borderColor: 'yellow',
+				borderColor: '#76FF03',
 			},
 			'&.Mui-focused fieldset': {
 				borderColor: 'green',
+				borderLeftWidth:6,
 			},
 		},
 		width: '30ch',
@@ -56,7 +57,11 @@ export const Register = () => {
 			 </Grid>
 			 <Grid item  container  direction='column' classes = {{root: classes.registerform}}>
 			 <div style={{ margin:'0 auto',fontSize:'1.3em'}}> Already a member? 
-			 <span style={{ color: '#1B5E20', cursor:'pointer'}}> log in </span> </div>
+			 <Link to='/login'>
+			 <span style={{ color: '#1B5E20', cursor:'pointer'}}> log in </span>
+			 </Link>
+			  </div> 
+
 			 <Grid item classes={{root: classes.margin}}>
 			 	
 			 <CssTextField

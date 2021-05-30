@@ -80,17 +80,18 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.between(1280,1920)] : {
       marginTop: '1.5rem',
+      marginRight: '1rem',
     }
 
   },
   totalCart:{
     position:'relative',
     fontSize:'1.2rem',
-    color: 'white',
-    backgroundColor:'#0288D1',
+    color: '#0288D1',
+    fontWeight: '700',
+    //backgroundColor:'#0288D1',
    
-    paddingLeft:'.1rem',
-    paddingRight: '.1rem',
+    
     borderRadius: '3rem',
     left: '-2rem',
     top:'-.4rem',
@@ -98,14 +99,14 @@ const useStyles = makeStyles((theme) => ({
       fontSize:'1.2rem',
       paddingRight:'.5rem',
       paddingLeft:'.5rem',
-      left: '-.1rem',
-      top:'-1rem',
+      left: '-.3rem',
+      top:'-.7rem',
 
     },
     [theme.breakpoints.between(420,600)] : {
       fontSize: '1.2rem',
       top: '-1rem',
-      left: '-1rem',
+      left: '-1.2rem',
       paddingRight: '.5rem',
       paddingLeft: '.5rem',
 
@@ -113,23 +114,22 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.between(600,960)] : {
       fontSize: '1.2rem',
       top: '-1rem',
-      left: '-.7rem',
+      left: '-.9rem',
       paddingRight: '.5rem',
       paddingLeft: '.5rem',
     },
     [theme.breakpoints.between(960,1280)] : {
       fontSize: '1.2rem',
       top: '-.8rem',
-      left: '-.9rem',
+      left: '-1rem',
       paddingRight: '.5rem',
       paddingLeft: '.5rem',
     },
     [theme.breakpoints.between(1280,1920)] : {
       fontSize: '1.2rem',
-      top: '-.9rem',
-      left: '-2.1rem',
-      paddingRight: '.5rem',
-      paddingLeft: '.5rem',
+      top: '-.8rem',
+      left: '-2.8rem',
+      
     }
 
     
@@ -226,7 +226,7 @@ const useStyles = makeStyles((theme) => ({
     //borderTopStyle: 'none',
     //border: '.07rem solid #BDBDBD',
     borderRadius: '0 .6rem .6rem 0',
-    padding: '.4rem 0 .4rem 0',
+    padding: '.35rem 0 .35rem 0',
     color:'#455A64',
     },
       [theme.breakpoints.between(420,600)] : {

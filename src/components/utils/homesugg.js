@@ -23,57 +23,57 @@ export const HomeSugg = () => {
 				<Toolbar classes = {{ root: classes.toolBar}}>
 				<div className={classes.tooldiv}>
 				<div className={`${active==='nature'?[classes.showActive]:null}`}>
-				<Button classes= {{root: classes.forbutton}} onClick={handleClick} >
+				<Button classes= {{root: classes.forbutton,label: classes.texttransform}} onClick={handleClick} >
 					<Typography classes = {{ root: classes.typography}} >
 					nature
 					</Typography  >
 				</Button>
 				</div>
 					<div className={`${active==='puppies'?[classes.showActive]:null}`}>
-					<Button classes= {{root:classes.forbutton}} 
+					<Button classes= {{root:classes.forbutton,label: classes.texttransform}} 
 					onClick={handleClick}>
-					<Typography classes = {{ root: classes.typography}} >
+					<Typography classes = {{ root: classes.typography,}} >
 					puppies
 					</Typography>
 					</Button >
 					</div>
 					<div className={`${active==='cat'?[classes.showActive]:null}`}>
-					<Button classes= {{root: classes.forbutton}} onClick={handleClick} >
+					<Button classes= {{root: classes.forbutton,label: classes.texttransform}} onClick={handleClick} >
 					<Typography classes = {{ root: classes.typography}}>
 					cat
 					</Typography>
 					</Button>
 					</div>
 					<div className={`${active==='sports'?[classes.showActive]:null}`}>
-					<Button classes= {{root: classes.forbutton}} onClick={handleClick}>
+					<Button classes= {{root: classes.forbutton, label: classes.texttransform}} onClick={handleClick}>
 					<Typography classes = {{ root: classes.typography}}>
 					sports
 					</Typography>
 					</Button>
 					</div>
 					<div className={`${active==='summer'?[classes.showActive]:null}`}>
-					<Button classes= {{root: classes.forbutton}} onClick={handleClick}>
+					<Button classes= {{root: classes.forbutton,label: classes.texttransform}} onClick={handleClick}>
 					<Typography classes = {{ root: classes.typography}}>
 					summer
 					</Typography>
 					</Button>
 					</div>
 					<div className={`${active==='outside'?[classes.showActive]:null}`}>
-					<Button classes= {{root: classes.forbutton}} onClick={handleClick}>
+					<Button classes= {{root: classes.forbutton,label: classes.texttransform}} onClick={handleClick}>
 					<Typography classes = {{ root: classes.typography}}>
 					outside
 					</Typography>
 					</Button>
 					</div>
 					<div className={`${active==='fashion'?[classes.showActive]:null}`}>
-					<Button classes= {{root: classes.forbutton}} onClick={handleClick}>
+					<Button classes= {{root: classes.forbutton,label: classes.texttransform}} onClick={handleClick}>
 					<Typography classes = {{ root: classes.typography}}>
 					fashion
 					</Typography>
 					</Button>
 					</div>
 					<div className={`${active==='experimental'?[classes.showActive]:null}`}>
-					<Button classes= {{root: classes.forbutton}} onClick={handleClick}>
+					<Button classes= {{root: classes.forbutton,label: classes.texttransform}} onClick={handleClick}>
 					<Typography classes = {{ root: classes.typography}}>
 					experimental
 					</Typography>
