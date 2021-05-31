@@ -10,12 +10,29 @@ import { makeStyles,  withStyles, } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
 	firstcontainer : {
-		//background: '#ECEFF1',
-		background: 'green',
+		background: '#ECEFF1',
+		
 		width: '100%',
 		height:'40rem',
 		margin: 'auto 0',
 	},
+	secondcontainer : {
+		marginBottom: '1rem ',
+	},
+	thirdcontainer : {
+		background: 'orange',
+
+	},
+	fourthcontainer : { 
+		marginTop: '1rem',
+		width:  '95%',
+		margin: '0 auto',
+		gap: '2rem ',
+	},
+	fifthcontainer : {
+		width: 'auto',
+	}
+
 }))
 
 
@@ -36,16 +53,17 @@ export const Home = () => {
 	return (
 		<>
 		<Grid container classes={{root: classes.firstcontainer}}>
-		<Grid item>
+		<Grid item container classes={{root: classes.secondcontainer}}>
 		<HomeSugg/>
-		<Grid>
-		<Grid item container>
-		 <Grid item container >
+		</Grid>
+		<Grid item container classes={{root: classes.thirdcontainer}}>
+		 <Grid item container classes={{root: classes.fourthcontainer}} >
+		 <Grid item container classes={{root: classes.fiffthcontainer}}>
 		{ pics.images.map((singlePic, index) => {
 			return <SingleImage  key={index} {...singlePic} />
 		})
 		}
-
+		</Grid>
 		</Grid>  
 		</Grid>
 		</Grid>

@@ -79,6 +79,7 @@ const useStyles = makeStyles((theme) => ({
 
     },
     [theme.breakpoints.between(1280,1920)] : {
+      position: 'sticky',
       marginTop: '1.5rem',
       marginRight: '1rem',
     }
@@ -93,8 +94,7 @@ const useStyles = makeStyles((theme) => ({
    
     
     borderRadius: '3rem',
-    left: '-2rem',
-    top:'-.4rem',
+    
     [theme.breakpoints.down(420)] : {
       fontSize:'1.2rem',
       paddingRight:'.5rem',
@@ -126,9 +126,12 @@ const useStyles = makeStyles((theme) => ({
       paddingLeft: '.5rem',
     },
     [theme.breakpoints.between(1280,1920)] : {
+      position: 'absolute',
+      margin: '0 auto',
       fontSize: '1.2rem',
-      top: '-.8rem',
-      left: '-2.8rem',
+
+      top: '.5rem ',
+      left: '2.5rem',
       
     }
 

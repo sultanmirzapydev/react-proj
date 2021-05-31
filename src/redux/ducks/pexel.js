@@ -8,6 +8,12 @@ export const GET_TOTAL = 'GET_TOTAL';
 export const GET_REMOVE = 'GET_REMOVE';
 export const ERROR     = 'ERROR';
 export const RECOVER_ITEM = 'RECOVER_ITEM';
+export const SET_PEOPLE = 'SET_PEOPLE';
+
+export const setPeople = (data) => ({
+	type : SET_PEOPLE,
+	payload: data
+})
 
 export const recoverItem = (data) => ({
 	type: RECOVER_ITEM,
@@ -78,7 +84,14 @@ const pexelReducer = (state=intialState, action) => {
 		
 		return {...state, images: action.payload, isLoading: false }
 
-		}
+	};
+	if (action.type === SET_PEOPLE) {
+		console.log(action.payload)
+		let tempf = state.images.map((item, i) => Object.assign({}, item, action.payload[i]));
+		console.log(tempf);
+		return {...state, images: tempf}
+	};
+
 	if (action.type === SET_LIKED) {
 		let temp = state.images.map((item) =>
 			{if (item.id === action.payload.qs2)

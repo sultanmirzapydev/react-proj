@@ -94,12 +94,12 @@ export const Navbar = () => {
           <SearchIcon classes = {{root: classes.searchIconroot}}   />
           </div>
                    
-         
+         <div style={{position: 'relative'}}>
           <ShoppingCartIcon className={classes.cartIcon}/>
-           <div  className={classes.totalCart}>
+           <Typography  classes={{root:classes.totalCart}}>
           7
-          </div>
-                
+          </Typography>
+           </div>     
 
          </Toolbar>
         
