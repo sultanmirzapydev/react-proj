@@ -1,5 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
+import { useHistory } from "react-router-dom";
+
 import { AiFillGithub } from "react-icons/ai";
 import {showAlert, removeAlert} from '../../redux/ducks/alertd';
 import {BrowserRouter as Router,Route,Link, useLocation } from 'react-router-dom';
@@ -33,13 +35,20 @@ import useStyles from '../material-ui/navbarcustom';
 
 
 export const Navbar = () => {
+  const [active, setActive] = useState('');
 	const classes = useStyles();
 	const [show, setShow] = useState(false);
-
+  const history = useHistory();
+  const path    = history.location.pathname;
+  console.log(path);
+  console.log('hello')
   const handleClick = (e) => {
     setShow(!show);
   }
-
+  const handleActive = (e) => {
+    console.log(e.currentTarget.textContent)
+    setActive(e.currentTarget.textContent);
+  };
   
 	return (
 		<>
@@ -59,12 +68,12 @@ export const Navbar = () => {
  
 
 		<Link to='/'>
-    		 <Typography classes={{root: classes.text}} variant="h6" >
+    		 <Typography className={`${classes.text} ${active  ==='Home' || path ==='/' ? classes.showActive:null}`}  variant="h6" onClick={handleActive} >
             Home
           </Typography>
       </Link>
       <Link to='/about'>
-           <Typography classes={{root: classes.text,}}  variant="h6" >
+           <Typography className={`${classes.text} ${active==='About' || path ==='/about'?classes.showActive:null}`  }  variant="h6" onClick={handleActive} >
             About
           </Typography>
         </Link>
@@ -72,12 +81,12 @@ export const Navbar = () => {
             Trending
           </Typography>
         <Link to='/login'>
-           <Typography classes={{root: classes.text}} variant="h6" >
+           <Typography className={`${classes.text} ${active==='Log in' || path === '/login' ? classes.showActive: null}`} variant="h6"  onClick={handleActive}>
             Log in
           </Typography>
         </Link>
         <Link to='/register'>
-          <Typography classes={{root: classes.text}} variant="h6">
+          <Typography className={`${classes.text} ${active === 'Register' || path === '/register'? classes.showActive:null}`} variant="h6" onClick={handleActive}>
             Register
           </Typography>
         </Link>

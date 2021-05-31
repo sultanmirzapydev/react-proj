@@ -39,7 +39,7 @@ const CssTextField = withStyles({
 		},
 		width: '30ch',
 	},
-	input: {padding: '.3rem',},
+	
 	
 })(TextField);
 
@@ -47,6 +47,9 @@ const CssTextField = withStyles({
 
 export const Login = () => {
 	const classes = useStyles();
+	const history = useHistory();
+  const path    = history.location.pathname;
+  console.log(path);
 	
 	
 	

@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
   toolBar: {
   	minHeight: '70px',
   	[theme.breakpoints.down(420)] : {
-      minHeight: '45px',
+      minHeight: '35px',
     },
     [theme.breakpoints.between(420,600)] : {
       minHeight: '45px',
@@ -62,20 +62,21 @@ const useStyles = makeStyles((theme) => ({
       color: '#616161',
       marginLeft:'0rem',
 
-      marginRight: '-2rem',
+      marginRight: '0rem',
 
     },
     [theme.breakpoints.between(420,600)] : {
-      marginRight: '-1rem', 
+      marginRight: '0rem', 
       marginTop: '1.3rem',   
     },
     [theme.breakpoints.between(600,960)] : {
-      marginRight: '-1.3rem',
+      marginRight: '1.5rem',
       marginTop: '1.3rem',
     },
     [theme.breakpoints.between(960,1280)] : {
-      marginRight: '-1.2rem',
-      marginTop: '1.5rem',
+      position: 'sticky',
+      marginRight: '1.5rem',
+      marginTop: '1rem',
 
     },
     [theme.breakpoints.between(1280,1920)] : {
@@ -96,32 +97,35 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: '3rem',
     
     [theme.breakpoints.down(420)] : {
+      position:'absolute',
       fontSize:'1.2rem',
       paddingRight:'.5rem',
       paddingLeft:'.5rem',
-      left: '-.3rem',
-      top:'-.7rem',
+      left: '.2rem',
+      top:'.4rem',
 
     },
     [theme.breakpoints.between(420,600)] : {
+      position: 'absolute',
       fontSize: '1.2rem',
-      top: '-1rem',
-      left: '-1.2rem',
+      top: '.4rem',
+      left: '2.3rem',
       paddingRight: '.5rem',
       paddingLeft: '.5rem',
 
     },
     [theme.breakpoints.between(600,960)] : {
+      position:'absolute',
       fontSize: '1.2rem',
-      top: '-1rem',
-      left: '-.9rem',
+      top: '.3rem',
+      left: '2.3rem',
       paddingRight: '.5rem',
       paddingLeft: '.5rem',
     },
     [theme.breakpoints.between(960,1280)] : {
-      fontSize: '1.2rem',
-      top: '-.8rem',
-      left: '-1rem',
+      position: 'absolute',
+      top: '0rem',
+      left: '2.2rem',
       paddingRight: '.5rem',
       paddingLeft: '.5rem',
     },
@@ -131,7 +135,7 @@ const useStyles = makeStyles((theme) => ({
       fontSize: '1.2rem',
 
       top: '.5rem ',
-      left: '2.5rem',
+      left: '2.7rem',
       
     }
 
@@ -163,7 +167,7 @@ const useStyles = makeStyles((theme) => ({
     borderRadius:'.7rem',
     transition: 'all .1s linear',
     '&:hover':{
-      backgroundColor:'#424242',
+      backgroundColor:'#BDBDBD',
       color:'white',
     },
      [theme.breakpoints.down(420)]: {
@@ -318,7 +322,7 @@ const useStyles = makeStyles((theme) => ({
 menucontainer: {
   
     position:'absolute',
-    zIndex: '3',
+    zIndex: '6',
     backgroundColor:'#E0E0E0',
     width: ' 17rem',
     margin: '0rem 0 0 0 ',
@@ -366,7 +370,7 @@ menutext: {
   marginBottom: '.28rem',
   borderRadius:'.5rem',
   '&:hover':{
-    backgroundColor: '#212121',
+    backgroundColor: '#BDBDBD',
     color:'white',
     transition:'all 60ms linear',
   }
@@ -375,6 +379,11 @@ menutext: {
 Icons : {
   marginRight: '2rem',
 },
+showActive : {
+    background: '#BDBDBD',
+    color: '#455A64',
+    borderRadius:'.7rem',
+  },
 
 }));
 

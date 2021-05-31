@@ -1,8 +1,12 @@
 import React from 'react';
 import {Alert} from '../utils/alert';
+import { useHistory } from "react-router-dom";
 
 
 export const About = () => {
+	const history = useHistory();
+  const path    = history.location.pathname;
+  //console.log(path);
 	return (<>
 		<div className='aboutroot'>
 		<Alert/>

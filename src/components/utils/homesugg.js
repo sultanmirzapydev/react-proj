@@ -11,7 +11,7 @@ import {Link} from 'react-router-dom';
 export const HomeSugg = () => {
 	const [active, setActive] = useState('');
 	const classes = useStyles();
-  const a = active 
+  
 	const handleClick = (e) => {
 		console.log(e.currentTarget.textContent);
 		setActive(e.currentTarget.textContent);

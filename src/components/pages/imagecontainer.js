@@ -20,14 +20,14 @@ const useStyles = makeStyles((theme) => ({
 		marginBottom: '1rem ',
 	},
 	thirdcontainer : {
-		background: 'orange',
+		background: '',
 
 	},
 	fourthcontainer : { 
 		marginTop: '1rem',
-		width:  '95%',
+		width:  '88%',
 		margin: '0 auto',
-		gap: '2rem ',
+		gap: '.2rem ',
 	},
 	fifthcontainer : {
 		width: 'auto',
@@ -58,13 +58,13 @@ export const Home = () => {
 		</Grid>
 		<Grid item container classes={{root: classes.thirdcontainer}}>
 		 <Grid item container classes={{root: classes.fourthcontainer}} >
-		 <Grid item container classes={{root: classes.fiffthcontainer}}>
+		 
 		{ pics.images.map((singlePic, index) => {
 			return <SingleImage  key={index} {...singlePic} />
 		})
 		}
 		</Grid>
-		</Grid>  
+		  
 		</Grid>
 		</Grid>
 		</>

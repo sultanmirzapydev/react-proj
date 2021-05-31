@@ -11,7 +11,7 @@ export function* handlePexel(action) {
 		const response = yield call(getPexel, searchText);
 		
 		const random = () => {
-			return Math.floor((Math.random() * 964)+483);
+			return Math.floor((Math.random() * 964)+48);
 		};
 		const pics = response.photos.map((item) => 
 				{return {id:item.id,count:0, total_views: random(),is_liked: false,
