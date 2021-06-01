@@ -42,28 +42,27 @@ const useStyles = makeStyles((theme) => ({
     },
 },
 	firstcontainer: {
+		
 		position: 'relative',
-		marginBottom: '2rem',
+		marginBottom: '3rem',
 		borderRadius: '.9rem',
 		margin: '0 auto',
-		width: '12rem',
+		width: '16rem',
 		boxShadow: '2px 2px 20px 6px rgba(0, 0, 0, 0.2)',
-		[theme.breakpoints.between(960,1280)] : {
-
+		[theme.breakpoints.down(600)] : {
+			marginBottom: '1rem',
 		},
 
 	},
 	grid : {
-		width: 'auto',
+		width: '16rem',
 		margin: '0 auto',
+		gap: '.3rem',
 	},
 	cardmedia: {
 		height: '14rem',
 		width: 'auto',
-		[theme.breakpoints.down(600)] : {
-			height: '8rem',
-			width: '8rem',
-		}
+		
 	},
 	getPexelPeople : {
 

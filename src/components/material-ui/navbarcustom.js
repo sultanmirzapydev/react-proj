@@ -159,11 +159,16 @@ const useStyles = makeStyles((theme) => ({
     }
   },
   text: {
+    padding: '.3rem .6rem .3rem .6rem',
     cursor: 'pointer',
     fontSize: '1rem',
+    color: '#424242',
+    margin: '0 auto',
+    
+    fontSize: '.9rem',
   	color: 'black',
   	marginLeft: '1rem',
-    padding:'.5rem',
+    
     borderRadius:'.7rem',
     transition: 'all .1s linear',
     '&:hover':{

@@ -79,7 +79,8 @@ const useStyles = makeStyles((theme) => ({
 	},
 	member : {
 		margin: '0 auto',
-		fontWeight: '400',
+		fontWeight: '200',
+		fontSize:' .9rem',
 	},
 	membercon : {
 		width: '100%',

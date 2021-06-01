@@ -11,13 +11,19 @@ import { makeStyles,  withStyles, } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({
 	firstcontainer : {
 		background: '#ECEFF1',
-		
+		//gap: '1rem',
 		width: '100%',
-		height:'40rem',
+		height:'auto',
 		margin: 'auto 0',
+		[theme.breakpoints.down(600)] : {
+
+		}
 	},
 	secondcontainer : {
 		marginBottom: '1rem ',
+	[theme.breakpoints.down(600)] : {
+		height: '5rem',
+	}
 	},
 	thirdcontainer : {
 		background: '',
@@ -25,9 +31,49 @@ const useStyles = makeStyles((theme) => ({
 	},
 	fourthcontainer : { 
 		marginTop: '1rem',
-		width:  '88%',
+		
 		margin: '0 auto',
 		gap: '.2rem ',
+		[theme.breakpoints.between(1840,1920)] : {
+			width: '80%',
+		},
+		[theme.breakpoints.between(1780,1840)] : {
+				width:'84%',
+		},
+		[theme.breakpoints.between(1720,1780)] : {
+			width: '85%',
+		},
+		[theme.breakpoints.between(1613,1720)] : {
+			width: '90%',
+		},
+		[theme.breakpoints.between(1540,1613)] : {
+			width:' 94%',
+
+		},
+		[theme.breakpoints.between(1400, 1540)] : {
+				width: '84%',
+		},
+		[theme.breakpoints.between(1280,1400)] : {
+			width: '88%',
+		},
+		[theme.breakpoints.between(1220,1280)] : {
+			width: '90%',
+		},
+		[theme.breakpoints.between(1020,1220)] : {
+			width: '84%',
+		},
+		[theme.breakpoints.between(900,1020)] : {
+			width: '90%',
+		},
+		[theme.breakpoints.between(680, 900)] : {
+			width: ' 85%',
+		},
+		[theme.breakpoints.between(600,680)] : {
+			width: '90%',
+		},
+		[theme.breakpoints.between(400,600)] : {
+			width: ' 85%',
+		}
 	},
 	fifthcontainer : {
 		width: 'auto',
