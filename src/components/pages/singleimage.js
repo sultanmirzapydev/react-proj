@@ -30,6 +30,9 @@ import { FiPlus } from "react-icons/fi";
 import AddIcon from '@material-ui/icons/Add';
 import { FiMinus } from "react-icons/fi";
 import clsx from 'clsx';
+import Popover from '@material-ui/core/Popover';
+import Popup from 'reactjs-popup';
+import Tooltip from '@material-ui/core/Tooltip';
 
 
 
@@ -136,12 +139,12 @@ const useStyles = makeStyles((theme) => ({
 	datacountcontainer : {
 
 		left: '.4rem',
-		top: '.6rem', 
+		top: '.8rem', 
 		margin: '0 auto',
 		position: 'absolute',
 		//border: '.2rem solid orange', 
 		width:'2rem',
-		background:'#FF6F00',
+		background:'#E65100',
 		//background: '#616161',
 		borderRadius: '.5rem',
 		
@@ -155,14 +158,14 @@ const useStyles = makeStyles((theme) => ({
 	},
 	opencartcontainer : {
 		position: 'absolute',
-		top: '2rem',
+		top: '2.3rem',
 		left: '.5rem',
 		color:'#FF6F00',
 	},
 	plusbtn : {
 		position: 'absolute',
-		top:'4.2rem',
-		left: '.3rem',
+		top:'4.9rem',
+		left: '.5rem',
 
 		minWidth: '1rem',
 		border:'.6rem ',
@@ -174,6 +177,7 @@ const useStyles = makeStyles((theme) => ({
 	plusbtnsub : {
 		fontSize: '1.2rem',
 		background: 'green',
+		color:'white',
 		width: '2rem' ,
 		height: ' 2rem',
 		padding:' 0rem' ,
@@ -185,16 +189,17 @@ const useStyles = makeStyles((theme) => ({
 	},
 	minusbtn : {
 		position: 'absolute',
-		top: '6.2rem',
-		left: '.32rem',
+		top: '6.8rem',
+		left: '.51rem',
 		
-		background: ' red',
+		background: '#EF5350',
 		borderRadius:'.5rem',
 		padding: ' 0rem',
 		minWidth: '2rem',
 	},
 	minus: {
-		background:'red',
+		background:'#FF8F00',
+		color:'white',
 		fontSize: '1.2rem',
 		height:'2rem',
 		width:'2rem',
@@ -232,11 +237,43 @@ const useStyles = makeStyles((theme) => ({
 },
 slideshow: {
 	left: '0rem',
+},
+menu : {
+	background:'#BDBDBD',
+	position:'relative',
+	top: '1.8rem',
+	right: '2.5rem',
+	borderRadius:'.5rem',
+},
+menuItem: {
+	
+	textAlign:'center',
+	marginBottom:'.2rem',
+	fontSize:'.8rem',
+	//padding: '.3rem 1.5rem .3rem 1.5rem',
+	cursor: 'pointer',
+	//borderBottom:'.1rem solid black',
+	margin:'0 auto',
+	padding:'.5rem 0 .5rem 0',
+	width: '8rem',
+	borderRadius:'.5rem',
+	'&:hover' :{
+		background:'#4CAF50',
+	},
+	
+},
+tooltip : {
+	top:'-1rem',
 }
+
 
 	
 }));
 
+const myPopupArrow = {
+		color:' red',
+		background:'red',
+	};
 
 
 export const SingleImage = (data) => {
@@ -245,6 +282,8 @@ export const SingleImage = (data) => {
 	const dispatch = useDispatch();
 	   
 	const showDbtn = data.count>0;
+
+
 
 	useEffect(()=> {
 		
@@ -267,21 +306,48 @@ export const SingleImage = (data) => {
 			<div className={ classes.datacount}> 69 </div>
 			
 			</div>
+			
+			<Tooltip arrow title='Remove' classes={{tooltip: classes.tooltip}}>
 			<IconButton classes={{root: classes.deliconbutton}}>
 			<MdDelete/>
-			</IconButton>
-			<IconButton classes={{root: classes.moreiconbutton}}>
-			  <MoreVertIcon />
-			</IconButton>
+			</IconButton> 
+			</Tooltip>
+				
+			
+			
+    		<Popup 
+				trigger={ 
+					<IconButton classes={{root: classes.moreiconbutton}} >
+			  <MoreVertIcon  />
+			</IconButton>    }
+			position='center center'
+			on = 'click'
+			closeOnDocumentClick
+     		
+     		 contentStyle={{ padding: '0px', border: 'none', }}
+     		 arrow={false}
+			 >
+		  <div className={classes.menu}>
+       		 <div className={classes.menuItem}>Buy</div>
+       		 <div className={classes.menuItem}> Like</div>
+        	<div className={classes.menuItem}> Report</div>
+      	 </div>
+  			</Popup>
+  			
+			
 			<Icon classes={{root: classes.opencartcontainer}}>
 			<RiShoppingCartLine/>
 			</Icon>
+			<Tooltip arrow title='Add ' placement='right-end'>
 			<Button classes= {{root: classes.plusbtn}}>
 			<AddIcon classes={{root: classes.plusbtnsub}}/>
 			</Button>
+			</Tooltip>
+			<Tooltip arrow title='remove' placement='right-end'>
 			<Button classes={{root: classes.minusbtn}}>
 			<FiMinus className={classes.minus}/>
 			</Button>
+			</Tooltip>
 			<CardMedia image={`${data.pic}`} classes={{root: classes.cardmedia}} />
 
 			<Toolbar classes={{root: classes.toolbar, gutters: classes.gutters,regular: classes.toolbarregular, }}>
@@ -289,10 +355,12 @@ export const SingleImage = (data) => {
 			
 			<Avatar src={`${data.propic}`} classes= {{ root: classes.avatar}} />
 			 <div className={classes.name}> by , <span> {data.name}  </span> </div>
+			 
 			 <GoVerified className= { classes.verified}> </GoVerified>
 			 <div className={classes.flexgrow}/>
+			 
 			 <FormControlLabel classes={{root: classes.formcontrol}}
-			control={<Checkbox icon={<FavoriteBorder/>} checkedIcon={<Favorite/>}/>} />
+			control={<Checkbox icon={<FavoriteBorder/>} checkedIcon={<Favorite/>}/> } /> 
 			<div className={classes.totalviews}> {data.total_views} </div>
 			 </Toolbar>
 			 

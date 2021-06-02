@@ -99,10 +99,13 @@ export const Navbar = () => {
           	placeholder =' Search....'
           	classes = {{root: classes.inputRoot, input: classes.inputInput}} />
           </div>
+          
           <div className = {classes.searchIcon} >
+
           <SearchIcon classes = {{root: classes.searchIconroot}}   />
+          
           </div>
-                   
+            
          <div style={{position: 'relative'}}>
           <ShoppingCartIcon className={classes.cartIcon}/>
            <Typography  classes={{root:classes.totalCart}}>

@@ -60,6 +60,7 @@ const useStyles = makeStyles((theme) => ({
 		cursor: 'pointer',
 		fontSize: '1rem',
 		color: '#424242',
+		
 		margin: '0 auto',
 		[theme.breakpoints.down(960)] : {
 			fontSize: '.7rem',
@@ -96,9 +97,16 @@ const useStyles = makeStyles((theme) => ({
 		textTransform: 'lowercase',
 	},
 	showActive : {
-		background: '#BDBDBD',
-		color: '#455A64',
+		background: '#4CAF50',
+		color: 'white',
 		borderRadius:'.7rem',
+		'& button':{
+			'& span' : {
+				'& p' :{
+					color:'white',
+				}
+			}
+		}
 	},
 	signUp : {
 		cursor: 'pointer',
@@ -108,6 +116,9 @@ const useStyles = makeStyles((theme) => ({
 		cursor: 'pointer',
 		color: 'green',
 	},
+	tooltip : {
+		fontSize:'200',
+	}
 	
 
 }))

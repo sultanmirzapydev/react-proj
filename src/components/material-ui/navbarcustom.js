@@ -170,10 +170,9 @@ const useStyles = makeStyles((theme) => ({
   	marginLeft: '1rem',
     
     borderRadius:'.7rem',
-    transition: 'all .1s linear',
+    //transition: 'all .1s linear',
     '&:hover':{
-      backgroundColor:'#BDBDBD',
-      color:'white',
+      borderBottom : '.2rem solid #FFA726',
     },
      [theme.breakpoints.down(420)]: {
       display: 'none',
@@ -375,9 +374,9 @@ menutext: {
   marginBottom: '.28rem',
   borderRadius:'.5rem',
   '&:hover':{
-    backgroundColor: '#BDBDBD',
+    backgroundColor: '#FF8F00',
     color:'white',
-    transition:'all 60ms linear',
+    //transition:'all 60ms linear',
   }
 },
 
@@ -385,9 +384,12 @@ Icons : {
   marginRight: '2rem',
 },
 showActive : {
-    background: '#BDBDBD',
-    color: '#455A64',
+  borderBottom:'.2rem solid #FFA726',
+    //background2 '#FFA726',
+    color: '#FF8F00',
     borderRadius:'.7rem',
+    fontWeight:'500',
+
   },
 
 }));
