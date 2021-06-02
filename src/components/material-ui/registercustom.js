@@ -3,9 +3,10 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const  useStyles = makeStyles((theme) => ({
 	gridmaincontainer : {
-		background: '#ECEFF1',
+
+		background: '#f0f0f0',
 		width: '100%',
-		height:'40rem',
+		height:'auto',
 		margin: 'auto 0',
 	},
 	griditemsub: {
@@ -13,8 +14,9 @@ const  useStyles = makeStyles((theme) => ({
 		width: '70%',
 		height: '31rem',
 		background:'#F1F8E9',
+		marginBottom:'4rem',
 		margin: '0 auto',
-		marginTop: '3rem',
+		marginTop: '2rem',
 		boxShadow: '2px 4px 6px  3px rgba(0, 0, 0, 0.2)',
 
 		[theme.breakpoints.down(600)]: {

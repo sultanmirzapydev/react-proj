@@ -30,6 +30,7 @@ const useStyles= makeStyles((theme) =>({
 		margin: '0 auto',
 		borderRadius:'1rem',
 		boxShadow:'0px 6px 5px -3px #616161',
+		marginBottom: '4.9rem',
 		//0 3px 5px -3px
 	},
 	thirdcontainer : {
@@ -314,11 +315,11 @@ const useStyles= makeStyles((theme) =>({
 
 export const About = () => {
 	const classes = useStyles();
-	const history = useHistory();
-  const path    = history.location.pathname;
+	
   
 	return (<>
 			<Grid container  classes={{ root: classes.firstcontainer}} >
+			<Alert/>
 			<Grid item container classes={{root: classes.seconcontainer}}>
 				<Grid item container classes={{root: classes.thirdcontainer}}>
 
@@ -328,7 +329,7 @@ export const About = () => {
 				<Grid item container classes={{root:classes.iconscontainer}}>
 				<div >
 				<FaReact className={classes.reacticon}/>
-				<a className={classes.reacttext}> React </a>
+				<a  href='https://reactjs.org/' className={classes.reacttext}> React </a>
 				</div>
 				<div>
 				<FaReact className={classes.redux} />

@@ -7,6 +7,8 @@ import {HomeSugg} from '../utils/homesugg';
 import {Loading} from '../utils/loading';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles,  withStyles, } from '@material-ui/core/styles';
+import {Alert} from '../utils/alert';
+
 
 const useStyles = makeStyles((theme) => ({
 	firstcontainer : {
@@ -26,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
 	}
 	},
 	thirdcontainer : {
-		background: '',
+		height:'auto',
 
 	},
 	fourthcontainer : { 
@@ -97,8 +99,9 @@ export const Home = () => {
 
 
 	return (
-		<>
+		<>{isLoading ? <Loading/> :
 		<Grid container classes={{root: classes.firstcontainer}}>
+		<Alert/>
 		<Grid item container classes={{root: classes.secondcontainer}}>
 		<HomeSugg/>
 		</Grid>
@@ -112,7 +115,7 @@ export const Home = () => {
 		</Grid>
 		  
 		</Grid>
-		</Grid>
+		</Grid> }
 		</>
 	
 )};

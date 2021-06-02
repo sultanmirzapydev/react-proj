@@ -50,10 +50,16 @@ const useStyles = makeStyles((theme) => ({
 		borderRadius: '.9rem',
 		margin: '0 auto',
 		width: '16rem',
+		transition:'all .5s ease',
 		boxShadow: '2px 2px 20px 6px rgba(0, 0, 0, 0.2)',
 		[theme.breakpoints.down(600)] : {
 			marginBottom: '1rem',
 		},
+		'&:hover': {
+			transform: 'scale(1.01)',
+			boxShadow: '6px 5px 20px 4px rgba(0, 0, 0, 0.2)',
+
+		}
 
 	},
 	grid : {
@@ -64,6 +70,7 @@ const useStyles = makeStyles((theme) => ({
 	cardmedia: {
 		height: '14rem',
 		width: 'auto',
+		
 		
 	},
 	getPexelPeople : {
@@ -76,7 +83,8 @@ const useStyles = makeStyles((theme) => ({
 
 	toolbarregular : {
 		minHeight: '3.5rem ',
-		borderRadius: '2rem ',
+		borderRadius: '0 0 2rem 2rem',
+
 	},
 	gutters : {
 		padding: '0rem',

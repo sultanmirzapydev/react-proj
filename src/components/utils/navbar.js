@@ -151,7 +151,7 @@ export const Navbar = () => {
 
          </Toolbar>
         <div className={classes.progressroot}>
-        <LinearProgress variant='determinate' value={progress} />
+        <LinearProgress variant='determinate' value={progress} classes={{barColorPrimary: classes.barColorPrimary}} />
         </div>
         
 		</AppBar>

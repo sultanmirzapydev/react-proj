@@ -26,7 +26,7 @@ const CssTextField = withStyles({
 				padding: '.1rem ',
 			},
 			'& input': {
-				padding: '.8rem',
+				//padding: '.8rem',
 			},
 			
 			'&:hover fieldset': {
@@ -47,15 +47,12 @@ const CssTextField = withStyles({
 
 export const Login = () => {
 	const classes = useStyles();
-	const history = useHistory();
-  const path    = history.location.pathname;
-  console.log(path);
-	
 	
 	
 	return (
 		<>
 		<Grid container   classes={{root: classes.firstcontainer}} >
+		<Alert/>
 		<Grid item container classes={{root: classes.secondcontainer}}>
 		<Grid item>
 		 <Typography variant="body1" gutterBottom classes={{root: classes.typography}}>

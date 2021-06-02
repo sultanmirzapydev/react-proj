@@ -83,6 +83,25 @@ const pexelReducer = (state=intialState, action) => {
 
 	if (action.type === SHOW_LIKE) {
 		console.log(action);
+		if (action.payload['liked'] === false) {
+			let tempfile = state.images.map((item)=> {
+				if (item.id === action.payload['id']) {
+					return{...item, total_liked:item.total_liked + 1} }
+				return item;
+			});
+			console.log(tempfile);
+			return {...state,images: tempfile}
+		}
+		else if(action.payload['liked']=== true) {
+			let tempfile = state.images.map((item) => {
+				if (action.payload['id'] === item.id) {
+					return {...item, total_liked : item.total_liked -1}
+				}
+				return item;
+			});
+
+			return {...state, images: tempfile}
+		}
 	}
 	
 	

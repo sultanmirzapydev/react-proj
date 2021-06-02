@@ -5,7 +5,8 @@ import { makeStyles} from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({
 	firstcontainer: {
 		width: '100%',
-		height: '30rem',	
+		height: '30rem',
+		marginBottom:'3rem',	
 	},
 	secondcontainer : {
 		width: '40%',
@@ -45,6 +46,7 @@ const useStyles = makeStyles((theme) => ({
  	},
  	typography : {
  		marginTop: '3rem',
+ 		fontSize: '.9rem',
  	}
 	}))
 		

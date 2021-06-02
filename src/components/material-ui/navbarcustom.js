@@ -397,6 +397,10 @@ showActive : {
   progressroot: {
     width:'100%',
   },
+  barColorPrimary: {
+    backgroundColor:'white',
+
+  }
 
  
 
