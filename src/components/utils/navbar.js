@@ -30,24 +30,62 @@ import { FiShoppingCart } from "react-icons/fi";
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import clsx from 'clsx';
 import useStyles from '../material-ui/navbarcustom';
+import LinearProgress from '@material-ui/core/LinearProgress';
+import {inputForSearch, getPexel} from '../../redux/ducks/pexel';
 
-  
 
 
 export const Navbar = () => {
+  const dispatch = useDispatch();
+  const classes = useStyles();
+  const [progress, setProgress] = useState(0);
   const [active, setActive] = useState('');
-	const classes = useStyles();
+	const [input, setInput] = useState('');
 	const [show, setShow] = useState(false);
   const history = useHistory();
   const path    = history.location.pathname;
-  console.log(path);
-  console.log('hello')
-  const handleClick = (e) => {
+  
+ useEffect(() => {
+  const timer = setInterval(() =>{
+     setProgress((val) => {
+    
+   if (val === 100) {
+          return 100;
+        }
+      const diff = Math.random() * 70;
+      return Math.min(val + diff, 100);
+
+  });
+  },500);
+  return () => {
+    clearInterval(timer);
+  };
+ 
+ },[active, path]);
+
+    
+ const handleClick = (event) => {
+    event.preventDefault();
     setShow(!show);
   }
-  const handleActive = (e) => {
-    console.log(e.currentTarget.textContent)
-    setActive(e.currentTarget.textContent);
+  const handleActive = (event) => {
+    
+    console.log(event.currentTarget.textContent)
+    setActive(event.currentTarget.textContent);
+    setProgress(0);
+  };
+  const handleSearchInput = (event) => {
+    event.preventDefault();
+    const input = event.target.value
+    console.log(input);
+    setInput(input);
+
+  };
+  const handleSearch = (event) => {
+    event.preventDefault();
+    dispatch(inputForSearch(input));
+    console.log(input)
+    dispatch(getPexel(input));
   };
   
 	return (
@@ -96,16 +134,14 @@ export const Navbar = () => {
           
            <div className = {classes.search}>
           <InputBase 
-          	placeholder =' Search....'
-          	classes = {{root: classes.inputRoot, input: classes.inputInput}} />
+          	placeholder =' e.g., nature'
+          	classes = {{root: classes.inputRoot, input: classes.inputInput}} onChange={handleSearchInput} />
           </div>
-          
           <div className = {classes.searchIcon} >
 
-          <SearchIcon classes = {{root: classes.searchIconroot}}   />
+          <SearchIcon classes = {{root: classes.searchIconroot}} onClick={handleSearch}  />
           
           </div>
-            
          <div style={{position: 'relative'}}>
           <ShoppingCartIcon className={classes.cartIcon}/>
            <Typography  classes={{root:classes.totalCart}}>
@@ -114,13 +150,17 @@ export const Navbar = () => {
            </div>     
 
          </Toolbar>
-        
+        <div className={classes.progressroot}>
+        <LinearProgress variant='determinate' value={progress} />
+        </div>
         
 		</AppBar>
 		
    
      <div className={clsx(classes.menucontainer,
-      {[classes.showSlido]:show})}> 
+      {[classes.showSlido]:show,
+        [classes.hideslido]: !show
+      })}> 
      
           <div className={classes.menusubcon}>
           <Link to='/'>

@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {setLiked,getIncre,getTotal, getDecre,getRemove} from '../../redux/ducks/pexel';
+import {setLiked,getIncre,getTotal, getDecre,getRemove,showLike} from '../../redux/ducks/pexel';
 import {useDispatch, useSelector} from 'react-redux';
 import {showAlert, removeAlert} from '../../redux/ducks/alertd';
 import { makeStyles } from '@material-ui/core/styles';
@@ -33,7 +33,6 @@ import clsx from 'clsx';
 import Popover from '@material-ui/core/Popover';
 import Popup from 'reactjs-popup';
 import Tooltip from '@material-ui/core/Tooltip';
-
 
 
 
@@ -121,38 +120,25 @@ const useStyles = makeStyles((theme) => ({
 
 		color: '#E65100', 
 	},
-	// square: {
-	// 	position: 'absolute',
-	// 	color: '#E65100',
-	// 	width:'2rem',
-	// 	background:'red',
-	// 	zIndex: 2,
-		
-		
-	// 	fontSize: '1.5rem ',
-	// 	'& svg': {
-			
-	// 	}
-
-
+	
 	
 	datacountcontainer : {
 
-		left: '.4rem',
+		left: '.5rem',
 		top: '.8rem', 
 		margin: '0 auto',
 		position: 'absolute',
-		//border: '.2rem solid orange', 
-		width:'2rem',
+		padding:'.1rem .3rem .1rem .3rem',
+		width:' auto',
 		background:'#E65100',
-		//background: '#616161',
+		
 		borderRadius: '.5rem',
 		
 	},
 	datacount : {
-		//position: 'absolute',
+	
 		color: 'white',
-		marginLeft:'.4rem',
+		//marginLeft:'.4rem',
 		fontWeight: '600',
 		fontSize: '1.1rem',
 	},
@@ -170,8 +156,7 @@ const useStyles = makeStyles((theme) => ({
 		minWidth: '1rem',
 		border:'.6rem ',
 		padding: ' 0rem' ,
-		//color: '#FF6F00',
-		//background: 'green',
+		
 		
 	},
 	plusbtnsub : {
@@ -181,8 +166,11 @@ const useStyles = makeStyles((theme) => ({
 		width: '2rem' ,
 		height: ' 2rem',
 		padding:' 0rem' ,
-		borderRadius: ' .5rem  ',
-		//margin: '.3rem',
+		borderRadius: '.5rem',
+		
+	},
+	plusbtnborder : {
+		borderRadius : '.5rem .5rem 0 0',
 	},
 	plusradius: {
 		borderRadius:'.5rem .5rem 0 0',
@@ -212,14 +200,14 @@ const useStyles = makeStyles((theme) => ({
 		height:' 100%',
 		background: 'linear-gradient(45deg, #FF6F00 50%, #FF8E53 90%)',
 		zIndex:3,
-		left: '16.5rem',
+		//left: '16.5rem',
 		transition: ' all 0.5s ease',
 	},
 
 	bouncingball : {
 		position:' absolute',
-		width: '2rem',
-		height: '2rem',
+		width: '1.3rem',
+		height: '1.3rem',
 		borderRadius:' 50%' ,
 		background: '#1B5E20',
 		top: '7rem',
@@ -237,6 +225,9 @@ const useStyles = makeStyles((theme) => ({
 },
 slideshow: {
 	left: '0rem',
+},
+hideslido : {
+	left: '16.5rem',
 },
 menu : {
 	background:'#BDBDBD',
@@ -263,7 +254,14 @@ menuItem: {
 	
 },
 tooltip : {
-	top:'-1rem',
+	backgroundColor: '#f5f5f9',
+    color: 'rgba(0, 0, 0, 0.87)',
+    maxWidth: 220,
+    fontSize: theme.typography.pxToRem(12),
+    border: '1px solid #dadde9',
+},
+arrow:{
+	color: 'white',
 }
 
 
@@ -276,20 +274,44 @@ const myPopupArrow = {
 	};
 
 
-export const SingleImage = (data) => {
+export const SingleImage = (item) => {
 	const classes = useStyles();
-	const [truce, setTruce] = useState(true)
+	const [liked, setLiked] = useState(false);
+	const [truce, setTruce] = useState(true);
 	const dispatch = useDispatch();
 	   
-	const showDbtn = data.count>0;
+	const showDbtn = item.count>0;
 
+	const handleDelete = (event) => {
+		 event.preventDefault();
+		console.log(item.id);
+		dispatch(getRemove(item.id));
+	};
+	const handleDecre = (event) => {
+		 event.preventDefault();
+		 dispatch(getDecre(item.id))
+	};
+	const handleIncre = (event) => {
+		 event.preventDefault();
+		 dispatch(getIncre(item.id))
+	};
+	const handleLike = (event) => {
+
+		setLiked(!liked);
+		
+		let id = item.id;
+		let data = {liked, id }
+		
+		dispatch(showLike(data))
+	};
+	
 
 
 	useEffect(()=> {
 		
 		const timer = setTimeout(()=> {
 				setTruce(false);
-		},500);
+		},1000);
 		return () => clearTimeout(timer);
 	},[]);
 	
@@ -298,17 +320,17 @@ export const SingleImage = (data) => {
 	return (<>
 		<Grid container classes={{root: classes.grid}}>
 			<Card classes={{root: classes.firstcontainer}}>
-			<Grid container className={clsx(classes.slide,{[classes.slideshow]: truce})}>
+			<Grid container className={clsx(classes.slide,{[classes.slideshow]: truce, [classes.hideslido]: !truce})}>
 			<div className={classes.bouncingball}> 
 			</div>
 			</Grid>
 			<div className={classes.datacountcontainer}>
-			<div className={ classes.datacount}> 69 </div>
+			<div className={ classes.datacount}> {item.count} </div>
 			
 			</div>
 			
-			<Tooltip arrow title='Remove' classes={{tooltip: classes.tooltip}}>
-			<IconButton classes={{root: classes.deliconbutton}}>
+			<Tooltip arrow title='Remove' classes={{tooltip: classes.tooltip, arrow: classes.arrow}}>
+			<IconButton classes={{root: classes.deliconbutton}} onClick={handleDelete}>
 			<MdDelete/>
 			</IconButton> 
 			</Tooltip>
@@ -338,30 +360,32 @@ export const SingleImage = (data) => {
 			<Icon classes={{root: classes.opencartcontainer}}>
 			<RiShoppingCartLine/>
 			</Icon>
-			<Tooltip arrow title='Add ' placement='right-end'>
-			<Button classes= {{root: classes.plusbtn}}>
-			<AddIcon classes={{root: classes.plusbtnsub}}/>
+			<Tooltip arrow title='Add ' placement='right-end' classes={{tooltip: classes.tooltip, arrow: classes.arrow}}>
+			<Button classes= {{root: classes.plusbtn}} onClick={handleIncre}>
+			<AddIcon className={clsx(classes.plusbtnsub,{[classes.plusbtnborder]: item.count>0})}/>
 			</Button>
+			
 			</Tooltip>
-			<Tooltip arrow title='remove' placement='right-end'>
-			<Button classes={{root: classes.minusbtn}}>
-			<FiMinus className={classes.minus}/>
+			{item.count> 0 ?
+			<Tooltip arrow title='remove' placement='right-end' classes={{tooltip: classes.tooltip, arrow: classes.arrow}}>
+			<Button classes={{root: classes.minusbtn}}   onClick={handleDecre}  >
+			<FiMinus className={classes.minus} />
 			</Button>
-			</Tooltip>
-			<CardMedia image={`${data.pic}`} classes={{root: classes.cardmedia}} />
+			</Tooltip> : null } 
+			<CardMedia image={`${item.pic}`} classes={{root: classes.cardmedia}} />
 
 			<Toolbar classes={{root: classes.toolbar, gutters: classes.gutters,regular: classes.toolbarregular, }}>
 			
 			
-			<Avatar src={`${data.propic}`} classes= {{ root: classes.avatar}} />
-			 <div className={classes.name}> by , <span> {data.name}  </span> </div>
+			<Avatar src={`${item.propic}`} classes= {{ root: classes.avatar}} />
+			 <div className={classes.name}> by , <span> {item.name}  </span> </div>
 			 
 			 <GoVerified className= { classes.verified}> </GoVerified>
 			 <div className={classes.flexgrow}/>
 			 
-			 <FormControlLabel classes={{root: classes.formcontrol}}
+			 <FormControlLabel checked={liked} classes={{root: classes.formcontrol}} onChange={handleLike}
 			control={<Checkbox icon={<FavoriteBorder/>} checkedIcon={<Favorite/>}/> } /> 
-			<div className={classes.totalviews}> {data.total_views} </div>
+			<div className={classes.totalviews}> {item.total_liked} </div>
 			 </Toolbar>
 			 
 			</Card>

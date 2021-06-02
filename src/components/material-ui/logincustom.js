@@ -18,6 +18,9 @@ const useStyles = makeStyles((theme) => ({
 		background: '#F1F8E9',
 		borderRadius: '.7rem',
 		boxShadow: '2px 4px 6px  3px rgba(0, 0, 0, 0.2)',
+		[theme.breakpoints.down(800)] : {
+			width:'80%',
+		}
 
 	}, 
 	username : {

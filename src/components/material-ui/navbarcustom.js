@@ -220,8 +220,8 @@ const useStyles = makeStyles((theme) => ({
     //borderTopStyle: 'none',
     border: '.07rem solid #BDBDBD',
     borderRadius: '0 .6rem .6rem 0',
-    paddingRight: '.3rem',
-    paddingLeft: '.5rem',
+    //paddingRight: '.3rem',
+    //paddingLeft: '.5rem',
     color:'#455A64',
     
     display: 'flex',
@@ -332,12 +332,15 @@ menucontainer: {
     margin: '0rem 0 0 0 ',
     borderRadius: '0 0 .7rem 0',
     boxShadow: '2px 4px 6px  2px rgba(0, 0, 0, 0.2)',
-    left: '-18rem',
+   // left: '-18rem',
     transition: 'all .4s linear',
   },
   showSlido : {
     
-    left: '0rem'
+    left: '0rem',
+  },
+  hideslido : {
+    left: '-18rem',
   },
   
  
@@ -391,6 +394,11 @@ showActive : {
     fontWeight:'500',
 
   },
+  progressroot: {
+    width:'100%',
+  },
+
+ 
 
 }));
 

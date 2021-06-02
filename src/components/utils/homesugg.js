@@ -8,6 +8,9 @@ import clsx from 'clsx';
 import {Link} from 'react-router-dom';
 import Tooltip from '@material-ui/core/Tooltip';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
+import {inputForSearch, getPexel} from '../../redux/ducks/pexel';
+import {useDispatch} from 'react-redux';
+
 
 
 const HtmlTooltip = withStyles((theme) => ({
@@ -27,12 +30,17 @@ const HtmlTooltip = withStyles((theme) => ({
 
 
 export const HomeSugg = () => {
-	const [active, setActive] = useState('');
 	const classes = useStyles();
+	const dispatch = useDispatch();
+	const [active, setActive] = useState('');
+	
   
 	const handleClick = (e) => {
 		console.log(e.currentTarget.textContent);
 		setActive(e.currentTarget.textContent);
+		dispatch(inputForSearch(e.currentTarget.textContent));
+		dispatch(getPexel());
+
 	};
 	return (<> 
 			<Grid container  classes={{root: classes.root}}> 
@@ -127,7 +135,7 @@ export const HomeSugg = () => {
 
 					<Link to='/register'>
 					
-					<span className = {classes.signUp}>sign up  </span>  </Link> 
+					<span className = {classes.signUp}>sign up  </span>  </Link>  
 					&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
 					already a member? &nbsp;
 					<Link to='/login'>

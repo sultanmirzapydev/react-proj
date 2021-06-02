@@ -9,6 +9,12 @@ export const GET_REMOVE = 'GET_REMOVE';
 export const ERROR     = 'ERROR';
 export const RECOVER_ITEM = 'RECOVER_ITEM';
 export const SET_PEOPLE = 'SET_PEOPLE';
+export const SHOW_LIKE = 'SHOW_LIKE';
+
+export const showLike = (data) => ({
+	type:SHOW_LIKE,
+	payload:data
+})
 
 export const setPeople = (data) => ({
 	type : SET_PEOPLE,
@@ -74,6 +80,10 @@ const intialState = {
 }
 
 const pexelReducer = (state=intialState, action) => {
+
+	if (action.type === SHOW_LIKE) {
+		console.log(action);
+	}
 	
 	
 	if (action.type === INPUT_FOR_SEARCH) {

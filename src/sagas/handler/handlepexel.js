@@ -7,14 +7,15 @@ const data = state => state.pexel.searchText
 export function* handlePexel(action) {
 	try{
 		const searchText = yield select(data);
+		//console.log(action.payload);
 
-		const response = yield call(getPexel, searchText);
+		const response = yield call(getPexel, searchText );
 		
 		const random = () => {
 			return Math.floor((Math.random() * 64)+48);
 		};
 		const pics = response.photos.map((item) => 
-				{return {id:item.id,count:0, total_views: random(),is_liked: false,
+				{return {id:item.id,count:0, total_liked: random(),is_liked: false,
 
 					photographer_url: item.photographer_url,
 				 name:item.photographer.slice(0,15),pic:item.src['medium']}});

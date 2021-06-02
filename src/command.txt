@@ -13,3 +13,10 @@ className={`${classes.text}`}
 
 
 className={`${classes.text} ${path==='/about'?classes.showActive:null}`  } 
+
+
+
+
+className={clsx(classes.slide,{[classes.slideshow]: truce, [classes.hideslido]: !truce})}
+
+
