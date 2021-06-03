@@ -1,8 +1,8 @@
 import React from 'react';
 import {Alert} from '../utils/alert';
-import { useHistory } from "react-router-dom";
+
 import Grid from '@material-ui/core/Grid';
-import { makeStyles, withStyles } from '@material-ui/core/styles';
+import { makeStyles} from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import { FaReact } from "react-icons/fa";
 import django from '../../images/django2.png';
@@ -333,7 +333,7 @@ export const About = () => {
 				</div>
 				<div>
 				<FaReact className={classes.redux} />
-				<a  className={classes.reduxtext}> Redux </a>
+				<a href='#' className={classes.reduxtext}> Redux </a>
 				</div>
 				<Grid item className={classes.djangocontainer}>
 				<img src={`${django}`} className={classes.django} />

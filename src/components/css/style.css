@@ -23,6 +23,32 @@ a{
 display: none;
 }
 
+
+
+
+ /*   Alert config    */
+
+
+alertroot: {
+		position:absolute;
+		top:7rem;
+		background:#F57C00;
+		color: white;
+		padding:.8rem 1rem;
+		zIndex: 3;
+		left: -14rem;
+		transition:  all 2s linear;
+		borderRadius: .6rem;
+	},
+	showslido: {
+		left:1rem;
+	},
+	hideslido: {
+		left:-10rem,
+
+}
+
+
 @media only screen and (max-width: 425px) {
 
 *, 

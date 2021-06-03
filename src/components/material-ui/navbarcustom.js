@@ -1,4 +1,4 @@
-import { withStyles, makeStyles } from '@material-ui/core/styles';
+import {makeStyles } from '@material-ui/core/styles';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -161,12 +161,12 @@ const useStyles = makeStyles((theme) => ({
   text: {
     padding: '.3rem .6rem .3rem .6rem',
     cursor: 'pointer',
-    fontSize: '1rem',
+   
     color: '#424242',
     margin: '0 auto',
     
     fontSize: '.9rem',
-  	color: 'black',
+  	
   	marginLeft: '1rem',
     
     borderRadius:'.7rem',

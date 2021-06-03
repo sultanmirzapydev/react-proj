@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {setLiked,getIncre,getTotal, getDecre,getRemove,showLike} from '../../redux/ducks/pexel';
+import {setLiked,getIncre,getTotal, getDecre,getRemove,showLike,clearRemovedItem,removeRecoverAlert} from '../../redux/ducks/pexel';
 import {useDispatch, useSelector} from 'react-redux';
 import {showAlert, removeAlert} from '../../redux/ducks/alertd';
 import { makeStyles } from '@material-ui/core/styles';
@@ -36,6 +36,7 @@ import Tooltip from '@material-ui/core/Tooltip';
 
 
 
+
 const useStyles = makeStyles((theme) => ({
 	flexgrow: {
     flexGrow: 1,
@@ -56,7 +57,7 @@ const useStyles = makeStyles((theme) => ({
 			marginBottom: '1rem',
 		},
 		'&:hover': {
-			transform: 'scale(1.01)',
+			//transform: 'scale(1.01)',
 			boxShadow: '6px 5px 20px 4px rgba(0, 0, 0, 0.2)',
 
 		}
@@ -126,7 +127,7 @@ const useStyles = makeStyles((theme) => ({
 		position: 'absolute',
 		left: '11rem ',
 
-		color: '#E65100', 
+		color: '#263238', 
 	},
 	
 	
@@ -294,14 +295,20 @@ export const SingleImage = (item) => {
 		 event.preventDefault();
 		console.log(item.id);
 		dispatch(getRemove(item.id));
+		dispatch(showAlert(item.id));
+		dispatch(getTotal());
+		dispatch(removeRecoverAlert());
+
 	};
 	const handleDecre = (event) => {
 		 event.preventDefault();
 		 dispatch(getDecre(item.id))
+		 dispatch(getTotal());
 	};
 	const handleIncre = (event) => {
 		 event.preventDefault();
 		 dispatch(getIncre(item.id))
+		 dispatch(getTotal());
 	};
 	const handleLike = (event) => {
 
@@ -313,7 +320,12 @@ export const SingleImage = (item) => {
 		dispatch(showLike(data))
 	};
 	
-
+	useEffect(() => {
+		const time = setTimeout(()=> {
+			dispatch(removeAlert());
+		},4000);
+		return () => clearTimeout(time);
+	},[handleDelete])
 
 	useEffect(()=> {
 		

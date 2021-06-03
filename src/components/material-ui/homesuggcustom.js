@@ -45,12 +45,12 @@ const useStyles = makeStyles((theme) => ({
 		textDecoration: 'none',
 		borderRadius: '.7rem',
 		[theme.breakpoints.down(500)] : {
-			//width:'60%',
+			
 			width: '100%',
 			display: 'flex',
 			flexDirection: 'row',
 			overflow: 'scroll',
-			display: '',
+			
 			flexWrap: 'wrap',
 		}
 		

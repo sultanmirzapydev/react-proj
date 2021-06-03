@@ -10,7 +10,25 @@ export const ERROR     = 'ERROR';
 export const RECOVER_ITEM = 'RECOVER_ITEM';
 export const SET_PEOPLE = 'SET_PEOPLE';
 export const SHOW_LIKE = 'SHOW_LIKE';
+export const CLEAR_REMOVED_ITEM = 'CLEAR_REMOVED_ITEM';
+export const REMOVE_RECOVER_ITEM = 'REMOVE_RECOVER_ITEM';
+export const REMOVE_RECOVER_ALERT = 'REMOVE_RECOVER_ALERT';
 
+
+export const removeRecoverAlert = (data) => ({
+	type: REMOVE_RECOVER_ALERT,
+})
+
+
+export const removeRecoverItem = (data) => ({
+	type:REMOVE_RECOVER_ITEM,
+
+})
+
+export const  clearRemovedItem = (data) => ({
+	type:CLEAR_REMOVED_ITEM,
+	payload: data
+})
 export const showLike = (data) => ({
 	type:SHOW_LIKE,
 	payload:data
@@ -76,7 +94,8 @@ const intialState = {
 	isError : false,
 	errormsg: '',
 	removedItem: [],
-	isRemoved: false
+	isRemoved: false,
+	isRcovered: false
 }
 
 const pexelReducer = (state=intialState, action) => {
@@ -165,13 +184,22 @@ const pexelReducer = (state=intialState, action) => {
 		let removeditem = state.images.filter((item)=> item.id === action.payload);
 		return {...state, images: temp4 , removedItem:removeditem, isRemoved: true}
 	}
+	if (action.type === CLEAR_REMOVED_ITEM) {
+		return {...state, removedItem:[' '], isRemoved:false}
+	}
 	if (action.type === ERROR) {
 		return {...state, isError:true, errormsg: action.payload}
 	}
 	if (action.type === RECOVER_ITEM) {
 		let temp = state.removedItem.concat(state.images);
 		console.log(temp);
-		return {...state, images: temp}
+		return {...state, images: temp, removedItem:[''], isRemoved:false, isRcovered: true}
+	}
+	if (action.type === REMOVE_RECOVER_ITEM) {
+		return {...state, isRemoved: false, isRcovered: false}
+	}
+	if (action.type === REMOVE_RECOVER_ALERT) {
+		return {...state, isRcovered:false}
 	}
 
 	return state;

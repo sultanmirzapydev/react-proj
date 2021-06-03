@@ -51,6 +51,7 @@ export const Register = () => {
 	
 	return (<>
 			<Grid  container   classes = {{root: classes.gridmaincontainer}} >
+			<Alert/>
 			 <Grid item  container classes = {{root: classes.griditemsub}}>
 			 <Grid item  classes = {{root: classes.registeravatar}}>
 			 <CardMedia classes = {{root: classes.cardmediaroot}} image = {Registerimage} />

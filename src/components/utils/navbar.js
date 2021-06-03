@@ -44,6 +44,8 @@ export const Navbar = () => {
 	const [show, setShow] = useState(false);
   const history = useHistory();
   const path    = history.location.pathname;
+  const totalData = useSelector(state => state.pexel.totalCart);
+
   
  useEffect(() => {
   const timer = setInterval(() =>{
@@ -145,7 +147,7 @@ export const Navbar = () => {
          <div style={{position: 'relative'}}>
           <ShoppingCartIcon className={classes.cartIcon}/>
            <Typography  classes={{root:classes.totalCart}}>
-          7
+          {totalData}
           </Typography>
            </div>     
 
