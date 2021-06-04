@@ -18,7 +18,7 @@ export function* handlePexel(action) {
 				{return {id:item.id,count:0, total_liked: random(),is_liked: false,
 
 					photographer_url: item.photographer_url,
-				 name:item.photographer.slice(0,15),pic:item.src['original']}});
+				 name:item.photographer.slice(0,15),pic:item.src['medium']}});
 		
 		yield put(setPexel(pics));
 
