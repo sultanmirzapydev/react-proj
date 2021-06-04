@@ -87,7 +87,7 @@ export const getIncre = (data) => ({
 
 const intialState = {
 	images:[],
-	searchText: 'nature',
+	searchText: 'puppies',
 	totalCart : 0,
 	isInputValid: false,
 	isLoading : true,
