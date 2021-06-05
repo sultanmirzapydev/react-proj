@@ -23,7 +23,7 @@ export function* handlePexel(action) {
 		yield put(setPexel(pics));
 
 		const responsePeople = yield call(getPexelPeople);
-		console.log(responsePeople);
+		
 		const peoplePic = responsePeople.photos.map((item) =>
 			{ return {propic : item.src['medium']}});
 		yield put(setPeople(peoplePic));

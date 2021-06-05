@@ -6,7 +6,7 @@ import { AiFillGithub } from "react-icons/ai";
 import {showAlert, removeAlert} from '../../redux/ducks/alertd';
 import {BrowserRouter as Router,Route,Link, useLocation } from 'react-router-dom';
 import { GoThreeBars } from "react-icons/go";
-import { makeStyles, fade } from '@material-ui/core/styles';
+import { makeStyles,withStyles, fade } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
@@ -32,6 +32,18 @@ import clsx from 'clsx';
 import useStyles from '../material-ui/navbarcustom';
 import LinearProgress from '@material-ui/core/LinearProgress';
 import {inputForSearch, getPexel} from '../../redux/ducks/pexel';
+import Tooltip from '@material-ui/core/Tooltip';
+
+
+
+
+const CustomTooltip = withStyles((theme) =>({
+  tooltip: {
+     maxWidth: 420,
+    fontSize: theme.typography.pxToRem(12),
+    //border: '1px solid #dadde9',
+  }
+}) )(Tooltip)
 
 
 
@@ -106,30 +118,42 @@ export const Navbar = () => {
 		  </IconButton> 
     
  
-
+      <CustomTooltip arrow   title='home'>
 		<Link to='/'>
     		 <Typography className={`${classes.text} ${active  ==='Home' || path ==='/' ? classes.showActive:null}`}  variant="h6" onClick={handleActive} >
             Home
           </Typography>
       </Link>
+      </CustomTooltip>
       <Link to='/about'>
+      <CustomTooltip arrow title='about'>
            <Typography className={`${classes.text} ${active==='About' || path ==='/about'?classes.showActive:null}`  }  variant="h6" onClick={handleActive} >
             About
           </Typography>
+        </CustomTooltip>
         </Link>
+          <CustomTooltip arrow title='work in progress'>
            <Typography classes={{root: classes.text}} variant="h6" >
             Trending
           </Typography>
+          </CustomTooltip>
+
         <Link to='/login'>
+        <CustomTooltip arrow title='log in here'>
            <Typography className={`${classes.text} ${active==='Log in' || path === '/login' ? classes.showActive: null}`} variant="h6"  onClick={handleActive}>
             Log in
           </Typography>
+          </CustomTooltip>
         </Link>
+        
         <Link to='/register'>
+        <CustomTooltip  arrow title='Register'>
           <Typography className={`${classes.text} ${active === 'Register' || path === '/register'? classes.showActive:null}`} variant="h6" onClick={handleActive}>
             Register
           </Typography>
+          </CustomTooltip>
         </Link>
+        
           <div className={classes.root}/>
          
           

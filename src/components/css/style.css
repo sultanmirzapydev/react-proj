@@ -48,7 +48,7 @@ alertroot: {
 
 }
 
-
+/*
 @media only screen and (max-width: 425px) {
 
 *, 
@@ -317,7 +317,7 @@ margin-bottom: .2em;
 
 
 
-/*  About page customization*/
+/*  About page customization
 
 .aboutroot {
 	position: relative;
@@ -351,4 +351,4 @@ margin-bottom: .2em;
 	background: white;
 }
 
-}
+}*/

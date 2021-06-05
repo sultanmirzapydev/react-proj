@@ -134,9 +134,9 @@ const pexelReducer = (state=intialState, action) => {
 
 	};
 	if (action.type === SET_PEOPLE) {
-		console.log(action.payload)
+		
 		let tempf = state.images.map((item, i) => Object.assign({}, item, action.payload[i]));
-		console.log(tempf);
+		
 		return {...state, images: tempf}
 	};
 
@@ -180,7 +180,7 @@ const pexelReducer = (state=intialState, action) => {
 	}
 	if (action.type === GET_REMOVE) {
 
-		let temp4 = state.images.filter((item) => item.id !== action.payload);
+		let temp4 = state.images.filter((item) =>item.id !== action.payload);
 		let removeditem = state.images.filter((item)=> item.id === action.payload);
 		return {...state, images: temp4 , removedItem:removeditem, isRemoved: true}
 	}
@@ -191,8 +191,10 @@ const pexelReducer = (state=intialState, action) => {
 		return {...state, isError:true, errormsg: action.payload}
 	}
 	if (action.type === RECOVER_ITEM) {
+		
+		
 		let temp = state.removedItem.concat(state.images);
-		console.log(temp);
+		
 		return {...state, images: temp, removedItem:[''], isRemoved:false, isRcovered: true}
 	}
 	if (action.type === REMOVE_RECOVER_ITEM) {

@@ -5,6 +5,7 @@ import {removeAlert, showAlert} from '../../redux/ducks/alertd';
 import {recoverItem,removeRecoverItem} from '../../redux/ducks/pexel';
 import { makeStyles, } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
+import {getTotal } from '../../redux/ducks/pexel';
 import clsx from 'clsx';
 
 const useStyles = makeStyles((theme)=> ({
@@ -48,19 +49,20 @@ export const Alert = () => {
 	const alertData = useSelector(state=> state.alert);
 	const checkremoveditem = useSelector(state=> state.pexel.isRemoved);
 	const isRcovered = useSelector(state=> state.pexel.isRcovered);
-	console.log(alertData)
+	
 	const dispatch = useDispatch();
 	const location = useLocation();
 	const whichLocation =  location.pathname
 	const currentLocation = whichLocation.substring(1);
 	const isHome = whichLocation === '/';
 	const removedId = alertData.isRemovedId;
-	console.log(isRcovered);
+	
 
 
 	const handlebacktolife = (e) => {
-		//e.preventDefault();
-		dispatch(recoverItem())
+		
+		dispatch(recoverItem());
+		dispatch(getTotal());
 	}
 
 	useEffect(()=>{
@@ -74,7 +76,7 @@ export const Alert = () => {
 		return ()=> clearTimeout(timer)
 	},[])
 
-	console.log(alertData)
+	
 	useEffect(()=> {
 		dispatch(showAlert());
 		let timer = setTimeout(() => {
