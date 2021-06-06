@@ -371,7 +371,7 @@ export const SingleImage = (item) => {
 			 >
 		  <div className={classes.menu}>
        		 <div className={classes.menuItem}>Buy</div>
-       		 <div className={classes.menuItem}> Like</div>
+       		 <div className={clsx(classes.menuItem,{[classes.like]:true})}> Like</div>
         	<div className={classes.menuItem}> Report</div>
       	 </div>
   			</Popup>

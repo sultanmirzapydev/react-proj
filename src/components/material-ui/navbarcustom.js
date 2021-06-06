@@ -50,6 +50,7 @@ const useStyles = makeStyles((theme) => ({
     color:'black',
   },
   cartIcon : {
+    cursor:'pointer',
     position:'relative',
     fontSize:'2.4rem',
     color: '#616161',
@@ -87,6 +88,7 @@ const useStyles = makeStyles((theme) => ({
 
   },
   totalCart:{
+    cursor:'pointer',
     position:'relative',
     fontSize:'1.2rem',
     color: '#0288D1',

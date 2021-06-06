@@ -89,6 +89,7 @@ const intialState = {
 	images:[],
 	searchText: 'puppies',
 	totalCart : 0,
+	cart  : [],
 	isInputValid: false,
 	isLoading : true,
 	isError : false,
@@ -154,11 +155,14 @@ const pexelReducer = (state=intialState, action) => {
 
 		let temp2 = state.images.map((item) => 
 			{if (item.id === action.payload)
-				{return {...item, count: item.count + 1}}
+				{return {...item, count: item.count + 1 }}
 			return item;
 			}
 		);
-		return {...state, images:temp2 }
+		let addToCart = state.cart.filter((item) => item.id === action.payload);
+		console.log(addToCart);
+		let tempCart = Object.assign({}, state.cart, addToCart)
+		return { ...state, images:temp2 , cart: tempCart }
 	};
 	if (action.type === GET_TOTAL) {
 		const sum = state.images.reduce((total, element) =>{

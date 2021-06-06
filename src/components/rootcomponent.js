@@ -7,8 +7,10 @@ import {Register} from './pages/register';
 import {About} from './pages/about';
 import {Notfound} from './utils/notfound';
 import {Footer} from './utils/footer';
+import {Cart} from './pages/cart';
 import {BrowserRouter as Router,Switch,Route,Link, useHistory} from "react-router-dom";
-	
+
+
 export const RootComponent = () => {
 	const history = useHistory()
 	return (
@@ -16,7 +18,9 @@ export const RootComponent = () => {
 	<Router>
 		<Navbar/>
 	<Switch>
+
 		<Route exact path='/' component = {Home} />
+		<Route path='/cart' component = {Cart} />
 		<Route path ='/about' component ={About}/>
 		<Route path ='/login' component = {Login} />
 		<Route path = '/register' component = {Register}/>

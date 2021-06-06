@@ -169,10 +169,12 @@ export const Navbar = () => {
           
           </div>
          <div style={{position: 'relative'}}>
+         <Link to='/cart'>
           <ShoppingCartIcon className={classes.cartIcon}/>
            <Typography  classes={{root:classes.totalCart}}>
           {totalData}
           </Typography>
+          </Link>
            </div>     
 
          </Toolbar>

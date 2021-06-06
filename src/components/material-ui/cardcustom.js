@@ -237,6 +237,9 @@ tooltip : {
 },
 arrow:{
 	color: 'white',
+},
+like : {
+	cursor:' pointer',
 }
 
 
