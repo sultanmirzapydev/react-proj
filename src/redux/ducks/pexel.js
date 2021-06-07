@@ -159,10 +159,8 @@ const pexelReducer = (state=intialState, action) => {
 			return item;
 			}
 		);
-		let addToCart = state.cart.filter((item) => item.id === action.payload);
-		console.log(addToCart);
-		let tempCart = Object.assign({}, state.cart, addToCart)
-		return { ...state, images:temp2 , cart: tempCart }
+		
+		return { ...state, images:temp2 }
 	};
 	if (action.type === GET_TOTAL) {
 		const sum = state.images.reduce((total, element) =>{

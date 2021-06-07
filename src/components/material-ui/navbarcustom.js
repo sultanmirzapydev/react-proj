@@ -400,8 +400,32 @@ showActive : {
     width:'100%',
   },
   barColorPrimary: {
-    backgroundColor:'white',
+    //backgroundColor:'white',
 
+  },
+  newsletter : {
+   display:'flex',
+   // position:'absolute',
+    backgroundColor:'orange',
+    justifyContent:'center',
+    textAlign:'center',
+    margin:'0 auto',
+    width:'20rem',
+
+    
+  },
+  newslettercontainer : {
+    width:'70%',
+    position:'relative',
+    justifyContent:'center',
+    margin:'0 auto',
+  },
+  emailfield: {
+    '& div': {
+      '& input' : {
+        padding:'8px 4px',
+      }
+    }
   }
 
  

@@ -33,6 +33,8 @@ import useStyles from '../material-ui/navbarcustom';
 import LinearProgress from '@material-ui/core/LinearProgress';
 import {inputForSearch, getPexel} from '../../redux/ducks/pexel';
 import Tooltip from '@material-ui/core/Tooltip';
+import TextField from '@material-ui/core/TextField';
+
 
 
 
@@ -169,8 +171,9 @@ export const Navbar = () => {
           
           </div>
          <div style={{position: 'relative'}}>
-         <Link to='/cart'>
+         <Link to='/cart' >
           <ShoppingCartIcon className={classes.cartIcon}/>
+          
            <Typography  classes={{root:classes.totalCart}}>
           {totalData}
           </Typography>
@@ -184,7 +187,12 @@ export const Navbar = () => {
         
 		</AppBar>
 		
-   
+   <div className={classes.newslettercontainer}>
+    <div className={classes.newsletter}> signup to our newsletter </div>
+    <TextField variant="outlined" classes={{root:classes.emailfield}}>
+    </TextField >
+    </div>
+
      <div className={clsx(classes.menucontainer,
       {[classes.showSlido]:show,
         [classes.hideslido]: !show
