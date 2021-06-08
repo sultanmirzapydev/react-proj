@@ -6,7 +6,7 @@ const useStyles = makeStyles((theme) => ({
 	root: {
 		height: '10rem',
 		[theme.breakpoints.down(500)] : {
-			width: 'auto',
+			//width: 'a',
 		}
 	},
 	suggestcon: {
@@ -22,19 +22,19 @@ const useStyles = makeStyles((theme) => ({
 	class2: {
 		width: '100%',
 		[theme.breakpoints.down(500)] : {
-			//width: 'auto',
+			//width: '50%',
 		}
 	},
 	toolBar : {
 		//width: '70%',
 		margin: '0 auto',
 		marginTop: '2rem',
-
+		width:'80%',
 		[theme.breakpoints.down(960)] : {
 			width: '70%',
 		},
 		[theme.breakpoints.down(500)] : {
-			width: '100%',
+			width: '70%',
 		}
 	},
 	tooldiv : {
@@ -44,22 +44,25 @@ const useStyles = makeStyles((theme) => ({
 		overflow: 'scroll',
 		textDecoration: 'none',
 		borderRadius: '.7rem',
+		//mixBlendMode: 'hard-light',
 		[theme.breakpoints.down(500)] : {
 			
-			width: '100%',
-			display: 'flex',
-			flexDirection: 'row',
-			overflow: 'scroll',
+			// width: '100%',
+			// display: 'flex',
+			// flexDirection: 'row',
+			// overflow: 'scroll',
 			
-			flexWrap: 'wrap',
+			// flexWrap: 'wrap',
 		}
 		
 	},
+	
 	typography : {
 		padding: '0 .6rem 0 .6rem',
 		cursor: 'pointer',
-		fontSize: '1rem',
+		fontSize: '.9rem',
 		color: '#424242',
+
 		
 		margin: '0 auto',
 		[theme.breakpoints.down(960)] : {
@@ -118,9 +121,14 @@ const useStyles = makeStyles((theme) => ({
 	},
 	tooltip : {
 		fontSize:'200',
+	},
+	fading:{
+		// backgroundImage:'linear-gradient(to left, #e90606, transparent)',
+		// marginLeft:'-5rem',
+		// width:'7rem',
+		// height:'2.4rem',
+		// //backgroundColor:'transparent',
 	}
-	
-
 }))
 
 export default useStyles;

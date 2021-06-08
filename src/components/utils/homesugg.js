@@ -104,11 +104,81 @@ export const HomeSugg = () => {
 					</Button>
 					</div>
 				</HtmlTooltip>
-				<HtmlTooltip arrow title='fashion'>
-					<div className={`${active==='fashion'?[classes.showActive]:null}`}>
+				<HtmlTooltip arrow title='Health'>
+					<div className={`${active==='Health'?[classes.showActive]:null}`}>
 					<Button classes= {{root: classes.forbutton,label: classes.texttransform}} onClick={handleClick}>
 					<Typography classes = {{ root: classes.typography}}>
-					fashion
+					Health
+
+					</Typography>
+					</Button>
+					</div>
+				</HtmlTooltip>
+				<HtmlTooltip arrow title='leafy'>
+					<div className={`${active==='leafy'?[classes.showActive]:null}`}>
+					<Button classes= {{root: classes.forbutton,label: classes.texttransform}} onClick={handleClick}>
+					<Typography classes = {{ root: classes.typography}}>
+					leafy
+					</Typography>
+					</Button>
+					</div>
+				</HtmlTooltip>
+				<HtmlTooltip arrow title='Events'>
+					<div className={`${active==='Events'?[classes.showActive]:null}`}>
+					<Button classes= {{root: classes.forbutton,label: classes.texttransform}} onClick={handleClick}>
+					<Typography classes = {{ root: classes.typography}}>
+					Events
+
+					</Typography>
+					</Button>
+					</div>
+				</HtmlTooltip>
+				<HtmlTooltip arrow title='Work'>
+					<div className={`${active==='Work'?[classes.showActive]:null}`}>
+					<Button classes= {{root: classes.forbutton,label: classes.texttransform}} onClick={handleClick}>
+					<Typography classes = {{ root: classes.typography}}>
+					Work
+
+					</Typography>
+					</Button>
+					</div>
+				</HtmlTooltip>
+				<HtmlTooltip arrow title='Technology'>
+					<div className={`${active==='Technology'?[classes.showActive]:null}`}>
+					<Button classes= {{root: classes.forbutton,label: classes.texttransform}} onClick={handleClick}>
+					<Typography classes = {{ root: classes.typography}}>
+					Technology
+
+					</Typography>
+					</Button>
+					</div>
+				</HtmlTooltip>
+				<HtmlTooltip arrow title='Travel'>
+					<div className={`${active==='Travel'?[classes.showActive]:null}`}>
+					<Button classes= {{root: classes.forbutton,label: classes.texttransform}} onClick={handleClick}>
+					<Typography classes = {{ root: classes.typography}}>
+					Travel
+
+					</Typography>
+					</Button>
+					</div>
+				</HtmlTooltip>
+				<HtmlTooltip arrow title='Interiors'>
+					<div className={`${active==='Interiors'?[classes.showActive]:null}`}>
+					<Button classes= {{root: classes.forbutton,label: classes.texttransform}} onClick={handleClick}>
+					<Typography classes = {{ root: classes.typography}}>
+					Interiors
+
+					</Typography>
+					</Button>
+					</div>
+				</HtmlTooltip>
+				<HtmlTooltip arrow title='design'>
+					<div className={`${active==='design'?[classes.showActive]:null}`}>
+					<Button classes= {{root: classes.forbutton,label: classes.texttransform}} onClick={handleClick}>
+					<Typography classes = {{ root: classes.typography}}>
+					design
+
 					</Typography>
 					</Button>
 					</div>
@@ -141,7 +211,9 @@ export const HomeSugg = () => {
 					<Link to='/login'>
 					 <span className = {classes.logIn}> log in </span>  </Link>
 				</Typography>
+
 				</Toolbar>
+
 				</Grid>
 				</Grid>
 			</Grid>

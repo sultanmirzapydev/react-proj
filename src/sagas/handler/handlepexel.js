@@ -1,12 +1,14 @@
 import {call, put,all, select} from 'redux-saga/effects';
 import {getPexel, gePexel2, getPexelPeople} from '../../axios/request/getpexel';
 import {setPexel, error, setPeople} from '../../redux/ducks/pexel';
+import data from '../../components/utils/data';
+import price from '../../components/utils/pricedata';
 
-const data = state => state.pexel.searchText
+const searchdata = state => state.pexel.searchText
 
 export function* handlePexel(action) {
 	try{
-		const searchText = yield select(data);
+		const searchText = yield select(searchdata);
 		//console.log(action.payload);
 
 		const response = yield call(getPexel, searchText );
@@ -14,11 +16,13 @@ export function* handlePexel(action) {
 		const random = () => {
 			return Math.floor((Math.random() * 64)+48);
 		};
-		const pics = response.photos.map((item) => 
+		const picss = response.photos.map((item,i) => 
 				{return {id:item.id,count:0, total_liked: random(),is_liked: false,
 
 					photographer_url: item.photographer_url,
-				 name:item.photographer.slice(0,15),pic:item.src['medium']}});
+				 name:item.photographer.slice(0,15),pic:item.src['medium'],}});
+		let pics = picss.map((item, i)=> Object.assign({}, item, data[i], price[i]))
+		console.log(pics)
 		
 		yield put(setPexel(pics));
 

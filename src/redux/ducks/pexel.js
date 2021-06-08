@@ -130,7 +130,7 @@ const pexelReducer = (state=intialState, action) => {
 		return {...state, searchText: action.payload, isInputValid: true}
 	}
 	if (action.type === SET_PEXEL) {
-		
+		console.log(action.payload)
 		return {...state, images: action.payload, isLoading: false }
 
 	};
@@ -174,7 +174,9 @@ const pexelReducer = (state=intialState, action) => {
 	if (action.type === DECREASE) {
 		let temp3 = state.images.map((item) => {
 			if (item.id === action.payload) {
-				return {...item, count: item.count - 1}
+				if (item.count>0) {return {...item,count:item.count-1}}
+				//else return {...item,count: 0}
+				
 			}
 			return item;
 		});

@@ -8,6 +8,7 @@ import {Loading} from '../utils/loading';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles,  withStyles, } from '@material-ui/core/styles';
 import {Alert} from '../utils/alert';
+//import data from '../utils/data';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -91,7 +92,8 @@ export const Home = () => {
 	const classes = useStyles();
 	const pics = useSelector(state => state.pexel);
 	const isLoading = pics.isLoading
-
+	//const file = pics.images.map((item,i)=> Object.assign({}, item, data[i]))
+	
 	const dispatch = useDispatch()
 	useEffect(() => {
 		dispatch(getPexel())

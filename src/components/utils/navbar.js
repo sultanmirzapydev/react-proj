@@ -34,6 +34,8 @@ import LinearProgress from '@material-ui/core/LinearProgress';
 import {inputForSearch, getPexel} from '../../redux/ducks/pexel';
 import Tooltip from '@material-ui/core/Tooltip';
 import TextField from '@material-ui/core/TextField';
+import { GiCancel } from "react-icons/gi";
+
 
 
 
@@ -52,6 +54,11 @@ const CustomTooltip = withStyles((theme) =>({
 export const Navbar = () => {
   const dispatch = useDispatch();
   const classes = useStyles();
+  const [mailId, setMailId] = useState('');
+  const [showFirstAlert, setShowFirstAlert] = useState(true)
+  const [isCorrectMail, setIsCorrectMail] = useState(undefined)
+  const [isSubClick, setIsSubClick] = useState(false);
+  const [isnewsletter, setIsnewsletter] = useState(false)
   const [progress, setProgress] = useState(0);
   const [active, setActive] = useState('');
 	const [input, setInput] = useState('');
@@ -59,8 +66,17 @@ export const Navbar = () => {
   const history = useHistory();
   const path    = history.location.pathname;
   const totalData = useSelector(state => state.pexel.totalCart);
+  const loadingData = useSelector(state=> state.pexel.isLoading);
 
-  
+
+
+
+useEffect(()=> {
+  if (!loadingData) {
+    setIsnewsletter(true);
+  }
+},[loadingData])
+
  useEffect(() => {
   const timer = setInterval(() =>{
      setProgress((val) => {
@@ -102,6 +118,33 @@ export const Navbar = () => {
     dispatch(inputForSearch(input));
     console.log(input)
     dispatch(getPexel(input));
+  };
+
+const handleEmailInput = (e) => {
+  e.preventDefault();
+  setMailId(e.target.value);
+};
+
+  const  validate = (email) =>  {
+      const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(String(email).toLowerCase());
+}
+  
+console.log(showFirstAlert);
+
+  const handleEmail = (e) => {
+  
+   console.log(mailId)
+   console.log(validate(mailId))
+   setIsSubClick(true);
+   setShowFirstAlert(false);
+   if (validate(mailId)) {
+    setIsCorrectMail(true);
+   }
+    else setIsCorrectMail(false);
+  };
+  const handleNews = (e) =>{
+    setIsnewsletter(false)
   };
   
 	return (
@@ -186,12 +229,28 @@ export const Navbar = () => {
         </div>
         
 		</AppBar>
-		
-   <div className={classes.newslettercontainer}>
-    <div className={classes.newsletter}> signup to our newsletter </div>
-    <TextField variant="outlined" classes={{root:classes.emailfield}}>
+		{isnewsletter ? 
+      <div className={classes.mainmail}>
+
+   <div className={clsx(classes.newslettercontainer,{[classes.shownewsletter]:isnewsletter})}>
+   <div className={clsx(classes.getupdates,{[classes.hideupdates]:!showFirstAlert})}> subscribe to get updates </div> 
+   { isSubClick ?
+
+   <div className={classes.alertnewsletter} >   
+     
+   {isCorrectMail? <div style={{ color:'green'}}> Thank your for subscribing </div> : <div> please enter correct mail id</div>} </div>
+   : null}
+    <div className={classes.newsletter}> signup to our newsletter : </div>
+    <TextField variant="outlined" label='your email' classes={{root:classes.emailfield}} onChange={handleEmailInput} >
     </TextField >
-    </div>
+    <Button classes={{root: classes.subbtn}} onClick={handleEmail}>
+    subscribe 
+    </Button>
+    <Button classes={{root:classes.newsbtn}} onClick={handleNews}>
+    <GiCancel className={classes.cancelbtn}/>
+    </Button>
+    
+    </div> </div> : null}
 
      <div className={clsx(classes.menucontainer,
       {[classes.showSlido]:show,

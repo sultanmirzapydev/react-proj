@@ -386,12 +386,14 @@ export const SingleImage = (item) => {
 			</Button>
 			
 			</Tooltip>
-			{item.count> 0 ?
+			
 			<Tooltip arrow title='remove' placement='right-end' classes={{tooltip: classes.tooltip, arrow: classes.arrow}}>
 			<Button classes={{root: classes.minusbtn}}   onClick={handleDecre}  >
 			<FiMinus className={classes.minus} />
 			</Button>
-			</Tooltip> : null } 
+			</Tooltip>
+			<div className={classes.puppies}> {item.puppies} </div>
+			<div className={classes.price} > $ {item.price} </div>
 			<CardMedia image={`${item.pic}`} classes={{root: classes.cardmedia}} />
 
 			<Toolbar classes={{root: classes.toolbar, gutters: classes.gutters,regular: classes.toolbarregular, }}>

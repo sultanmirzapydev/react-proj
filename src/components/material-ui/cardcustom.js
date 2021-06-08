@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
 		borderRadius: '.9rem',
 		margin: '0 auto',
 		width: '16rem',
-		transition:'all .5s ease',
+		transition:'all 1s ease',
 		boxShadow: '2px 2px 20px 6px rgba(0, 0, 0, 0.2)',
 		[theme.breakpoints.down(600)] : {
 			marginBottom: '1rem',
@@ -129,7 +129,7 @@ const useStyles = makeStyles((theme) => ({
 		left: '.5rem',
 
 		minWidth: '1rem',
-		border:'.6rem ',
+		//border:'.6rem ',
 		padding: ' 0rem' ,
 		
 		
@@ -141,11 +141,11 @@ const useStyles = makeStyles((theme) => ({
 		width: '2rem' ,
 		height: ' 2rem',
 		padding:' 0rem' ,
-		borderRadius: '.5rem',
+		borderRadius: '.5rem .5rem 0 0',
 		
 	},
 	plusbtnborder : {
-		borderRadius : '.5rem .5rem 0 0',
+		//borderRadius : '.5rem .5rem 0 0',
 	},
 	plusradius: {
 		borderRadius:'.5rem .5rem 0 0',
@@ -156,7 +156,7 @@ const useStyles = makeStyles((theme) => ({
 		left: '.51rem',
 		
 		background: '#EF5350',
-		borderRadius:'.5rem',
+		//borderRadius:'.5rem',
 		padding: ' 0rem',
 		minWidth: '2rem',
 	},
@@ -240,6 +240,22 @@ arrow:{
 },
 like : {
 	cursor:' pointer',
+},
+puppies : {
+	position:'absolute',
+	top: '10rem',
+	left: '.8rem',
+	fontWeight:'600',
+	color: '#C51162',
+	fontSize:'1.2rem',
+},
+price : {
+	position:'absolute',
+	top:' 11.3rem',
+	left:'.8rem',
+	fontWeight:'600',
+	color:'#FFD600',
+	fontSize:'1.2rem',
 }
 
 

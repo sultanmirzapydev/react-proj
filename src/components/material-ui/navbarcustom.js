@@ -404,28 +404,138 @@ showActive : {
 
   },
   newsletter : {
+    marginTop:'3.1rem',
    display:'flex',
-   // position:'absolute',
-    backgroundColor:'orange',
+   flexDirection:'row',
+   width:'50%',
+   //position:'absolute',
+    backgroundColor:'',
     justifyContent:'center',
-    textAlign:'center',
-    margin:'0 auto',
-    width:'20rem',
+    //textAlign:'center',
+    //margin:'0 auto',
+    //width:'auto',
+    padding:'.2rem .8rem .2rem .8rem',
+    [theme.breakpoints.down(1480)] : {
+      padding:'0rem',
+     // paddingLeft:'2rem',
+     marginLeft:'1%',
+
+    }
 
     
   },
-  newslettercontainer : {
-    width:'70%',
-    position:'relative',
-    justifyContent:'center',
+  mainmail : {
+    display:'flex',
+    position:'absolute',
+    width:'100%',
+    height:'9rem',
     margin:'0 auto',
+    justifyContent:'center',
+  },
+  newslettercontainer : {
+    marginTop:'0rem',
+    paddingTop:' 2rem ',
+    display:'flex',
+    flexDirection:'row',
+   //width:'auto',
+    height:'9rem',
+    position:'absolute',
+   margin:'0 auto',
+    backgroundColor:'#CFD8DC',
+    color:'#BF360C',
+    zIndex:'4',
+    boxShadow: '2px 4px 6px  2px rgba(0, 0, 0, 0.2)',
+    //textAlign:'center',
+    //transform:'translate(62% ,0px)',
+    borderRadius:'.7rem',
+    [theme.breakpoints.down(1480)]: {
+      //width:'auto',
+      //transform:'translate(35%,0%)',
+    },
+    [theme.breakpoints.down(640)] : {
+      display:'none',
+     
+    }
+  },
+  shownewsletter : {
+    top:'0rem',
+  },
+  hidenewsletter: {
+    top:'-8rem',
   },
   emailfield: {
+    top:'3rem',
+    left:'1%',
+    width:'20rem',
+    [theme.breakpoints.up(960)] : {
+      //left: '3%',
+      //width:'15rem',
+    },
+    '& label.Mui-focused' : {
+      color:'green',
+    },
+    '& label' : {
+      transform: 'translate(10px,10px) scale(1)',
+      color: 'green',
+    },
+     '&:hover fieldset': {
+        borderColor: 'green',
+      },
     '& div': {
       '& input' : {
         padding:'8px 4px',
       }
     }
+  },
+  newsbtn: {
+    padding:'0rem',
+    minWidth:'2rem',
+    height:'2rem',
+    borderRadius:'.6rem',
+    marginTop:'3rem',
+    marginLeft:'3%',
+    marginRight:'3%',
+    [theme.breakpoints.up(960)]: {
+      //marginLeft:'5%',
+      //marginRight:'2%',
+    }
+  },
+  cancelbtn: {
+    fontSize:'2rem',
+    marginLeft:'1%',
+    color:"#BF360C",
+    //marginTop:'3rem',
+
+  },
+  subbtn : {
+    backgroundColor:'#BF360C',
+    paddingLeft:'.5rem',
+    paddingRight:'.5rem',
+    marginTop:'2.97rem', 
+    marginLeft:'.65%',
+    padding:'0rem',
+    paddingTop:'.1rem 0 .1rem 0',
+    minWidth:'6rem',
+    height:'2.2rem',
+    [theme.breakpoints.up(960)] : {
+      //marginLeft:'3%',
+    },
+    '&:hover':{
+      backgroundColor:'#BF360C',
+    }
+  },
+  alertnewsletter : {
+    position:'absolute',
+    marginLeft:'35%',
+  },
+  getupdates:{
+    position:'absolute',
+    display:'flex',
+    marginLeft:"35%",
+    color:'green',
+  },
+  hideupdates: {
+    display:'none',
   }
 
  

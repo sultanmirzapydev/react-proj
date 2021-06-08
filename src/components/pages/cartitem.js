@@ -10,7 +10,7 @@ import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles((theme) => ({
 	cardRoot: {
-		marginTop:'2rem',
+		marginTop:'1.5rem',
 		display:'flex',
 		width:' 50rem',
 		margin:'0 auto',
@@ -45,10 +45,10 @@ export const CartItem = (item) => {
 			<CardContent className = {classes.cardcontent}>
 
 			<Typography>
-			{item.id}
+			{item.puppies}
 			</Typography>
 			<Typography >
-			{item.id }
+			
 
 			</Typography>
 
