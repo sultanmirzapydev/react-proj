@@ -4,7 +4,7 @@ import { createClient } from 'pexels';
 
 
 export const getPexel = (searchText) => {
-	console.log(searchText)
+	
 	let apiKey = '563492ad6f91700001000001b8165a380d154f0da468b9310070d883';
 	let client = createClient(apiKey);
 	let query  = searchText

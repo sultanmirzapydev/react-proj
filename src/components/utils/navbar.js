@@ -130,7 +130,7 @@ const handleEmailInput = (e) => {
         return re.test(String(email).toLowerCase());
 }
   
-console.log(showFirstAlert);
+
 
   const handleEmail = (e) => {
   

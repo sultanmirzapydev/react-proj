@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
 		display:'flex',
 		width:' 40%',
 		//height:'100%',
-		margin:'0 auto',
+		marginLeft:'15%',
 		background:'#CFD8DC',
 		borderRadius:'.7rem',
 		[theme.breakpoints.down(900)] : {
@@ -135,6 +135,7 @@ export const CartItem = (item) => {
 
 	return (<> 
 			<Grid container>
+
 			<Card className = {classes.cardRoot} >
 			<div className={classes.imgcontainer}>
 			<CardMedia className = {classes.img} title='cartimg'  image={`${item.pic}`} />
@@ -153,6 +154,7 @@ export const CartItem = (item) => {
 			<IoIosArrowDown className={classes.downarrow} onClick={handleDecrement}/>
 			</CardContent>
 			</Card>
+			
 			</Grid>
 		</>)
 }

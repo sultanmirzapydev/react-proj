@@ -25,7 +25,7 @@ export function* handlePexel(action) {
 					photographer_url: item.photographer_url,
 				 name:item.photographer.slice(0,15),pic:item.src['medium'],}});
 		let pics = picss.map((item, i)=> Object.assign({}, item, data[i], price[i]))
-		console.log(pics)
+		
 		
 		yield put(setPexel(pics));
 
