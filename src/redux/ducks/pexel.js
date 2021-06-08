@@ -130,7 +130,7 @@ const pexelReducer = (state=intialState, action) => {
 		return {...state, searchText: action.payload, isInputValid: true}
 	}
 	if (action.type === SET_PEXEL) {
-		console.log(action.payload)
+		
 		return {...state, images: action.payload, isLoading: false }
 
 	};

@@ -263,6 +263,7 @@ showmore : {
 	top:'11.75rem',
 	left:'66.9%',
 	background:'#F57F17',
+	borderRadius:'.3rem 0rem 0rem 0rem',
 	color:'white',
 	'&:hover':{
 		backgroundColor:'#EF6C00',

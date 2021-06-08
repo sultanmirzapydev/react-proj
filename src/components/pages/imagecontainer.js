@@ -97,7 +97,7 @@ export const Home = () => {
 	const dispatch = useDispatch()
 	useEffect(() => {
 		dispatch(getPexel())
-	},[dispatch])
+	},[])
 
 
 	return (

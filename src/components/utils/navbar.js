@@ -65,8 +65,10 @@ export const Navbar = () => {
 	const [show, setShow] = useState(false);
   const history = useHistory();
   const path    = history.location.pathname;
+  
   const totalData = useSelector(state => state.pexel.totalCart);
   const loadingData = useSelector(state=> state.pexel.isLoading);
+
 
 
 
@@ -102,21 +104,20 @@ useEffect(()=> {
   }
   const handleActive = (event) => {
     
-    console.log(event.currentTarget.textContent)
+    
     setActive(event.currentTarget.textContent);
     setProgress(0);
   };
   const handleSearchInput = (event) => {
     event.preventDefault();
     const input = event.target.value
-    console.log(input);
-    setInput(input);
+       setInput(input);
 
   };
   const handleSearch = (event) => {
     event.preventDefault();
     dispatch(inputForSearch(input));
-    console.log(input)
+   
     dispatch(getPexel(input));
   };
 
@@ -134,8 +135,6 @@ const handleEmailInput = (e) => {
 
   const handleEmail = (e) => {
   
-   console.log(mailId)
-   console.log(validate(mailId))
    setIsSubClick(true);
    setShowFirstAlert(false);
    if (validate(mailId)) {
@@ -215,7 +214,7 @@ const handleEmailInput = (e) => {
           </div>
          <div style={{position: 'relative'}}>
          <Link to='/cart' >
-          <ShoppingCartIcon className={classes.cartIcon}/>
+          <ShoppingCartIcon className={classes.cartIcon} onClick={handleActive}/>
           
            <Typography  classes={{root:classes.totalCart}}>
           {totalData}

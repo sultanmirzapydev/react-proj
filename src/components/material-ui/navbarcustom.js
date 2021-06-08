@@ -477,6 +477,7 @@ showActive : {
     '& label' : {
       transform: 'translate(10px,10px) scale(1)',
       color: 'green',
+      fontSize:'.9rem',
     },
      '&:hover fieldset': {
         borderColor: 'green',
