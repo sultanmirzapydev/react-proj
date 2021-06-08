@@ -216,6 +216,7 @@ menuItem: {
 	textAlign:'center',
 	marginBottom:'.2rem',
 	fontSize:'.8rem',
+	color:'black',
 	//padding: '.3rem 1.5rem .3rem 1.5rem',
 	cursor: 'pointer',
 	//borderBottom:'.1rem solid black',
@@ -246,7 +247,7 @@ puppies : {
 	top: '10rem',
 	left: '.8rem',
 	fontWeight:'600',
-	color: '#C51162',
+	color: '#FFD600',
 	fontSize:'1.2rem',
 },
 price : {
@@ -256,6 +257,17 @@ price : {
 	fontWeight:'600',
 	color:'#FFD600',
 	fontSize:'1.2rem',
+},
+showmore : {
+	position:'absolute',
+	top:'11.75rem',
+	left:'66.9%',
+	background:'#F57F17',
+	color:'white',
+	'&:hover':{
+		backgroundColor:'#EF6C00',
+	},
+	textTransform:'capitalize',
 }
 
 

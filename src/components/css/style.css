@@ -18,6 +18,12 @@ a{
 	text-decoration: none;
 	
 }
+div:active {
+	text-decoration: none;
+
+	color:black;
+
+}
 
 ::-webkit-scrollbar {
 display: none;

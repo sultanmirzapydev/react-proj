@@ -34,6 +34,7 @@ import Popover from '@material-ui/core/Popover';
 import Popup from 'reactjs-popup';
 import Tooltip from '@material-ui/core/Tooltip';
 import useStyles from '../material-ui/cardcustom';
+import {BrowserRouter as Router,Route,Link, useLocation } from 'react-router-dom';
 
 
 
@@ -370,9 +371,11 @@ export const SingleImage = (item) => {
      		 arrow={false}
 			 >
 		  <div className={classes.menu}>
-       		 <div className={classes.menuItem}>Buy</div>
-       		 <div className={clsx(classes.menuItem,{[classes.like]:true})}> Like</div>
-        	<div className={classes.menuItem}> Report</div>
+       		 <div className={classes.menuItem} onClick={handleIncre}>Buy</div>
+       		 <div className={clsx(classes.menuItem,{[classes.like]:true})}  onClick={handleLike}
+       		 > {liked?'unlike': 'Like'}</div>
+       		 <Link to='/cart'>
+        	<div className={classes.menuItem}> view cart</div> </Link>
       	 </div>
   			</Popup>
   			
@@ -394,6 +397,7 @@ export const SingleImage = (item) => {
 			</Tooltip>
 			<div className={classes.puppies}> {item.puppies} </div>
 			<div className={classes.price} > $ {item.price} </div>
+			<Button className={classes.showmore}> view more </Button>
 			<CardMedia image={`${item.pic}`} classes={{root: classes.cardmedia}} />
 
 			<Toolbar classes={{root: classes.toolbar, gutters: classes.gutters,regular: classes.toolbarregular, }}>

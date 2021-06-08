@@ -492,7 +492,7 @@ showActive : {
     minWidth:'2rem',
     height:'2rem',
     borderRadius:'.6rem',
-    marginTop:'3rem',
+    marginTop:'-1rem',
     marginLeft:'3%',
     marginRight:'3%',
     [theme.breakpoints.up(960)]: {
