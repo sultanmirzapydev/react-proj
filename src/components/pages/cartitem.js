@@ -13,33 +13,53 @@ import {useDispatch, useSelector} from 'react-redux';
 
 
 const useStyles = makeStyles((theme) => ({
+	maincon:{
+		width:'100%',
+		margin:'0 auto',
+
+	},
 	cardRoot: {
 		marginTop:'1.5rem',
 		display:'flex',
-		width:' 40%',
+		width:' 40rem',
 		//height:'100%',
-		marginLeft:'15%',
+		//marginLeft:'25%',
 		background:'#CFD8DC',
-		borderRadius:'.7rem',
-		[theme.breakpoints.down(900)] : {
-			width:'70%',
+		borderRadius:'.4rem',
+		overflow:'hidden',
+
+		[theme.breakpoints.up(1280)] : {
+			margin:'0 auto',
+			marginTop:'2rem',
 		},
-		[theme.breakpoints.down(600)] : {
-			width:'90%',
+		[theme.breakpoints.between(960,1280)] : {
+			margin:'0 auto',
+			marginTop:'2rem',
 		},
-		[theme.breakpoints.up(1400)] : {
-			width:'40%',
-		}
+		 [theme.breakpoints.down(960)] : {
+		 	width:'30rem',
+		 	marginTop:'1rem',
+		 	margin:'0 auto',
+		 	
+		 },
+		 [theme.breakpoints.down(510)] : {
+		 	width:'20rem',
+		 },
+		// [theme.breakpoints.up(1400)] : {
+		// 	width:'50%',
+		// }
 
 	},
 	imgcontainer : {
-		width:'40%',
+		width:'42%',
+		marginLeft:'0rem',
+		borderRadius:'.7rem',
 
 
 	},
 	cardcontent:{
 		width:'40%',
-		marginLeft:'2%',
+		marginLeft:'5%',
 		display:'flex',
 		flexDirection:'column',
 		//paddingBottom:'0rem',
@@ -70,6 +90,7 @@ const useStyles = makeStyles((theme) => ({
 		marginTop:'.7rem',
 		marginLeft:'1.7rem',
 		color:'#2E7D32',
+		
 	},
 	remove: {
 		cursor:'pointer',
@@ -87,7 +108,7 @@ const useStyles = makeStyles((theme) => ({
 		position:'relative',
 		marginTop:'1rem',
 		float:'left',
-		marginLeft:'8%',
+		marginLeft:'1%',
 		[theme.breakpoints.up(1600)] : {
 			marginLeft:'12%',
 		}
@@ -134,7 +155,7 @@ export const CartItem = (item) => {
 
 
 	return (<> 
-			<Grid container>
+			<Grid container classes={{root:classes.maincon}}>
 
 			<Card className = {classes.cardRoot} >
 			<div className={classes.imgcontainer}>
@@ -154,7 +175,7 @@ export const CartItem = (item) => {
 			<IoIosArrowDown className={classes.downarrow} onClick={handleDecrement}/>
 			</CardContent>
 			</Card>
-			
+
 			</Grid>
 		</>)
 }
