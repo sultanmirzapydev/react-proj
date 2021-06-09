@@ -155,7 +155,7 @@ const handleEmailInput = (e) => {
 		<Toolbar classes = {{ regular: classes.toolBar, gutters: classes.gutters}}>
     
    
-		  <IconButton onClick = {handleClick} >
+		  <IconButton onClick = {handleClick}  style={{padding:'0rem',marginLeft:'1%',}}>
 		  {show ? <CgClose className={classes.closeIcon}/> : 
       <MenuIcon classes = {{root: classes.menuIcon}}  /> }
       
@@ -281,10 +281,7 @@ const handleEmailInput = (e) => {
             paddingLeft:'.5rem',marginBottom:'.6rem'}}> Language: </div>
             <div className={classes.menutext}> English 
             <IoCheckmarkOutline className={classes.Icons}/></div>
-            <div className={classes.menutext}> Hindi 
-            <IoLanguageOutline className={classes.Icons}/> </div>
-            <div className={classes.menutext}> Telugu 
-            <IoLanguageOutline className={classes.Icons}/></div>
+            
           </div>
 
         </div> 
