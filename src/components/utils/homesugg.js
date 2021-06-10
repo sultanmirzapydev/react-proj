@@ -4,10 +4,10 @@ import Typography from '@material-ui/core/Typography';
 import useStyles from '../material-ui/homesuggcustom';
 import Toolbar from '@material-ui/core/Toolbar';
 import Button from '@material-ui/core/Button';
-import clsx from 'clsx';
+
 import {Link} from 'react-router-dom';
 import Tooltip from '@material-ui/core/Tooltip';
-import { withStyles, makeStyles } from '@material-ui/core/styles';
+import { withStyles} from '@material-ui/core/styles';
 import {inputForSearch, getPexel} from '../../redux/ducks/pexel';
 import {useDispatch} from 'react-redux';
 

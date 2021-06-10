@@ -4,7 +4,6 @@ import {useDispatch, useSelector} from 'react-redux';
 import {removeAlert, showAlert} from '../../redux/ducks/alertd';
 import {recoverItem,removeRecoverItem} from '../../redux/ducks/pexel';
 import { makeStyles, } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
 import {getTotal } from '../../redux/ducks/pexel';
 import clsx from 'clsx';
 
@@ -55,7 +54,7 @@ export const Alert = () => {
 	const whichLocation =  location.pathname
 	const currentLocation = whichLocation.substring(1);
 	const isHome = whichLocation === '/';
-	const removedId = alertData.isRemovedId;
+
 	
 
 
@@ -67,14 +66,14 @@ export const Alert = () => {
 
 	useEffect(()=>{
 		dispatch(removeRecoverItem());
-	},[whichLocation,])
+	},[whichLocation,dispatch])
 
 	useEffect(()=> {
 		const timer = setTimeout(() => {
 			dispatch(removeRecoverItem());
 		},4000)
 		return ()=> clearTimeout(timer)
-	},[])
+	},[dispatch])
 
 	
 	useEffect(()=> {
@@ -83,7 +82,7 @@ export const Alert = () => {
 			dispatch(removeAlert());
 		},4000)
 		return ()=> clearTimeout(timer)
-	},[checkremoveditem])
+	},[checkremoveditem,dispatch])
 
 	return (<>
 			{ checkremoveditem || isRcovered  ? <div className={clsx([classes.alertroot] ,

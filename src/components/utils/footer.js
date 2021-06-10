@@ -14,15 +14,7 @@ const useStyles = makeStyles((theme) => ({
 		borderTop:'.2rem solid #B0BEC5',
 		paddingBottom:'5rem',
 	},
-	// secondcontainer: {
-	// 	position:'relative',
-	// 	width:'70%',
-	// 	margin: '0 auto',
-	// 	background:'#CFD8DC',
-	// 	marginTop:'1rem',
-	// 	height:'100%',
-
-	// },
+	
 	topone : {
 		position:'relative',
 		width: 'auto',
@@ -40,12 +32,12 @@ const useStyles = makeStyles((theme) => ({
 		display: 'flex',
 		position:'relative',
 		marginTop:'.4rem',
-		//marginBottom:'.5rem',
+
 		width:'auto',
-		position:'relative',
+		
 		margin:'0 auto',
 		fontSize:'.9rem',
-		//paddingBottom: '.5rem',
+		
 	}
 
 }))

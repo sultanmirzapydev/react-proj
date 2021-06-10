@@ -1,32 +1,25 @@
 import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import { useHistory } from "react-router-dom";
-
-import { AiFillGithub } from "react-icons/ai";
-import {showAlert, removeAlert} from '../../redux/ducks/alertd';
-import {BrowserRouter as Router,Route,Link, useLocation } from 'react-router-dom';
-import { GoThreeBars } from "react-icons/go";
-import { makeStyles,withStyles, fade } from '@material-ui/core/styles';
+import {Link } from 'react-router-dom';
+import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import Button from '@material-ui/core/Button';
 import SearchIcon from '@material-ui/icons/Search';
 import InputBase from '@material-ui/core/InputBase';
-import Icon from '@material-ui/core/Icon';
-import Menu from '@material-ui/core/Menu';
-import MenuItem from '@material-ui/core/MenuItem';
+
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { BsInfoCircle } from "react-icons/bs";
 import { FiLogIn,FiTrendingUp } from "react-icons/fi";
 import {MdAssignmentInd } from "react-icons/md";
 import { IoMdContacts  } from "react-icons/io";
-import { IoLanguageOutline, IoCheckmarkOutline } from "react-icons/io5";
-import styled, { keyframes } from "styled-components";
+import { IoCheckmarkOutline } from "react-icons/io5";
+
 import HomeIcon from '@material-ui/icons/Home';
 import { CgClose } from "react-icons/cg";
-import { FiShoppingCart } from "react-icons/fi";
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import clsx from 'clsx';
 import useStyles from '../material-ui/navbarcustom';
@@ -104,7 +97,7 @@ useEffect(()=> {
   }
   const handleActive = (event) => {
     
-    
+    //event.preventDefault();
     setActive(event.currentTarget.textContent);
     setProgress(0);
   };
@@ -213,7 +206,7 @@ const handleEmailInput = (e) => {
           
           </div>
          <div style={{position: 'relative'}}>
-         <Link to='/cart' >
+         <Link to='/cart'>
           <ShoppingCartIcon className={classes.cartIcon} onClick={handleActive}/>
           
            <Typography  classes={{root:classes.totalCart}}>

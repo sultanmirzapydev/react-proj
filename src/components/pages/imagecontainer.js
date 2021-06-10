@@ -1,17 +1,18 @@
 import React from 'react';
-import {useEffect, useState} from 'react';
+import {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {getPexel, inputForSearch} from '../../redux/ducks/pexel';
+import {getPexel} from '../../redux/ducks/pexel';
 import {SingleImage} from './singleimage';
 import {HomeSugg} from '../utils/homesugg';
 import {Loading} from '../utils/loading';
 import Grid from '@material-ui/core/Grid';
-import { makeStyles,  withStyles, } from '@material-ui/core/styles';
+import { makeStyles} from '@material-ui/core/styles';
 import {Alert} from '../utils/alert';
+import {getTotal} from '../../redux/ducks/pexel';;
 //import data from '../utils/data';
 
 
-const useStyles = makeStyles((theme) => ({
+const useStyles =  makeStyles((theme) => ({
 	firstcontainer : {
 		background: '#ECEFF1',
 		//gap: '1rem',
@@ -91,13 +92,17 @@ const useStyles = makeStyles((theme) => ({
 export const Home = () => {
 	const classes = useStyles();
 	const pics = useSelector(state => state.pexel);
-	const isLoading = pics.isLoading
+	const isLoading = pics.isLoading;
 	//const file = pics.images.map((item,i)=> Object.assign({}, item, data[i]))
 	
+	
+
 	const dispatch = useDispatch()
 	useEffect(() => {
 		dispatch(getPexel())
-	},[])
+		dispatch(getTotal())
+		console.log('image rendered')
+	},[dispatch])
 
 
 	return (
@@ -120,4 +125,4 @@ export const Home = () => {
 		</Grid> }
 		</>
 	
-)};
+)}

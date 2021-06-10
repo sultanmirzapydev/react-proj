@@ -329,35 +329,35 @@ export const About = () => {
 				<Grid item container classes={{root:classes.iconscontainer}}>
 				<div >
 				<FaReact className={classes.reacticon}/>
-				<a  href='https://reactjs.org/' className={classes.reacttext}> React </a>
+				<div  href='https://reactjs.org/' className={classes.reacttext}> React </div>
 				</div>
 				<div>
 				<FaReact className={classes.redux} />
-				<a href='#' className={classes.reduxtext}> Redux </a>
+				<div  className={classes.reduxtext}> Redux </div>
 				</div>
 				<Grid item className={classes.djangocontainer}>
-				<img src={`${django}`} className={classes.django} />
-				<a className={classes.djangotext}> Django </a>
+				<img alt='django ' src={`${django}`} className={classes.django} />
+				<div className={classes.djangotext}> Django </div>
 				</Grid>
 				<ImHtmlFive className={classes.html}/>
-				<a className={classes.htmltext}> Html5 </a>
+				<div className={classes.htmltext}> Html5 </div>
 				<IoLogoCss3 className={classes.css} />
-				<a className={classes.csstext}> Css3 </a>
+				<div className={classes.csstext}> Css3 </div>
 				<Grid item className={classes.axioscontainer}>
-				<img src={axios} className={classes.axios}/>
-				<a className={classes.axiostext}> Axios </a>
+				<img alt='axios' src={axios} className={classes.axios}/>
+				<div className={classes.axiostext}> Axios </div>
 				</Grid>
 				<div className={classes.pythoncontainer}>
-				<img src={python} className={classes.python}/>
-				<a className={classes.pythontext}> Python </a>
+				<img alt='python' src={python} className={classes.python}/>
+				<div className={classes.pythontext}> Python </div>
 				</div>
 				<div className={classes.drfcontainer} >
-				<img src={drf} className={classes.drf}/>
-				<a className={classes.drftext}> DRF </a>
+				<img alt='drf' src={drf} className={classes.drf}/>
+				<div className={classes.drftext}> DRF </div>
 				</div>
 				<div  className={classes.materialuicontainer}>
-				<img src={materialui} className={classes.materialui} />
-				<a className={classes.materialuitext}> Material-UI </a>
+				<img alt='materialui' src={materialui} className={classes.materialui} />
+				<div className={classes.materialuitext}> Material-UI </div>
 				</div>
 				</Grid>
 			</Grid>

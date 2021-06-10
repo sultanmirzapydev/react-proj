@@ -1,12 +1,9 @@
-import React, {useState,useEffect} from 'react';
-import {useDispatch, useSelector} from 'react-redux';
-import {inputUsername, inputPassword, getToken} from '../../redux/ducks/users';
-import {BrowserRouter as Router,Switch,Route,Link,useHistory} from "react-router-dom";
+import React from 'react';
+//import {inputUsername, inputPassword, getToken} from '../../redux/ducks/users';
 import {Alert} from '../utils/alert';
-import { makeStyles,  withStyles, } from '@material-ui/core/styles';
+import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
-import clsx from 'clsx';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import useStyles from '../material-ui/logincustom';

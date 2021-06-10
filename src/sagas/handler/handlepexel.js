@@ -1,5 +1,5 @@
 import {call, put,all, select} from 'redux-saga/effects';
-import {getPexel, gePexel2, getPexelPeople} from '../../axios/request/getpexel';
+import {getPexel,  getPexelPeople} from '../../axios/request/getpexel';
 import {setPexel, error, setPeople} from '../../redux/ducks/pexel';
 import data from '../../components/utils/data';
 import price from '../../components/utils/pricedata';

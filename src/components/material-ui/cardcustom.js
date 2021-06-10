@@ -275,10 +275,7 @@ showmore : {
 	
 }));
 
-const myPopupArrow = {
-		color:' red',
-		background:'red',
-	};
+
 
 
 export default useStyles;

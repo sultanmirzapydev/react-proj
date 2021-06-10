@@ -1,7 +1,6 @@
 export const GET_PEXEL = 'GET_PEXEL';
 export const SET_PEXEL = 'SET_PEXEL';
 export const INPUT_FOR_SEARCH = 'INPUT_FOR_SEARCH';
-export const SET_LIKED  = 'SET_LIKED';
 export const INCREASE = 'INCREASE';
 export const DECREASE = 'DECREASE';
 export const GET_TOTAL = 'GET_TOTAL';
@@ -67,10 +66,7 @@ export const getPexel = (data) => ({
 	type: GET_PEXEL,
 	payload: data
 });
-export const setLiked = (data) => ({
-	type: SET_LIKED,
-	payload: data
-})
+
 
 export const setPexel = (data) => ({
 	type: SET_PEXEL,
@@ -102,14 +98,14 @@ const intialState = {
 const pexelReducer = (state=intialState, action) => {
 
 	if (action.type === SHOW_LIKE) {
-		console.log(action);
+		
 		if (action.payload['liked'] === false) {
 			let tempfile = state.images.map((item)=> {
 				if (item.id === action.payload['id']) {
 					return{...item, total_liked:item.total_liked + 1} }
 				return item;
 			});
-			console.log(tempfile);
+			
 			return {...state,images: tempfile}
 		}
 		else if(action.payload['liked']=== true) {
@@ -141,16 +137,6 @@ const pexelReducer = (state=intialState, action) => {
 		return {...state, images: tempf}
 	};
 
-	if (action.type === SET_LIKED) {
-		let temp = state.images.map((item) =>
-			{if (item.id === action.payload.qs2)
-				{ return {...item, is_liked: action.payload.qs};
-			}
-			
-			return item;
-		});
-		return { ...state, images: temp}
-	};
 	if (action.type === INCREASE) {
 
 		let temp2 = state.images.map((item) => 

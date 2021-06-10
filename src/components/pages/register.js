@@ -1,15 +1,12 @@
 import React from 'react';
 import {Alert} from '../utils/alert';
 import Grid from '@material-ui/core/Grid';
-import { makeStyles, withStyles } from '@material-ui/core/styles';
-import Container from '@material-ui/core/Container';
-import CssBaseline from '@material-ui/core/CssBaseline';
+import {  withStyles } from '@material-ui/core/styles';
 import CardMedia from '@material-ui/core/CardMedia';
 import Registerimage from '../../images/registeravatarmd.jpg';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-import clsx from 'clsx';
-import LockIcon from '@material-ui/icons/Lock';
+
 import useStyles from '../material-ui/registercustom';
 import {Link} from 'react-router-dom';
 
