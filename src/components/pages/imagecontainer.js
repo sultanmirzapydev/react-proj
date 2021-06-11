@@ -98,6 +98,7 @@ export const CompletedTodosCounter = () => {
 
 export const Home = () => {
 	const classes = useStyles();
+	console.log('rendered imagecontainer')
 	
 	
 	const pics = useSelector(state => state.pexel);
@@ -110,14 +111,14 @@ export const Home = () => {
 	useEffect(() => {
 		dispatch(getPexel())
 		dispatch(getTotal())
-		
+		console.log('dispatched getPexel')
 	},[dispatch])
 
 
 	return (
 		<>{isLoading ? <Loading/> :
 		<Grid container classes={{root: classes.firstcontainer}}>
-		<CompletedTodosCounter/>
+		
 		<Alert/>
 		<Grid item container classes={{root: classes.secondcontainer}}>
 		<HomeSugg/>
