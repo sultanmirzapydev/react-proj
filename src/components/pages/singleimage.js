@@ -28,7 +28,7 @@ import {Link } from 'react-router-dom';
 
 
 
-export const SingleImage = (item) => {
+ const SingleImage = (item) => {
 
 	
 	const classes = useStyles();
@@ -40,7 +40,7 @@ export const SingleImage = (item) => {
 
 	const handleDelete = (event) => {
 		
-		 event.preventDefault();
+		event.preventDefault();
 		
 		dispatch(getRemove(item.id));
 		dispatch(showAlert(item.id));
@@ -174,3 +174,4 @@ export const SingleImage = (item) => {
 
 
 
+export default memo(SingleImage);

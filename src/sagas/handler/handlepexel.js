@@ -14,7 +14,7 @@ export function* handlePexel(action) {
 		const response = yield call(getPexel, searchText );
 		
 		const random = () => {
-			return Math.floor((Math.random() * 64)+48);
+			return Math.floor((Math.random() * 64)+30);
 		};
 		const offer = () => {
 			return Math.floor((Math.random()*20) + 30);
@@ -27,7 +27,7 @@ export function* handlePexel(action) {
 		let pics = picss.map((item, i)=> Object.assign({}, item, data[i], price[i]))
 		
 		
-		yield put(setPexel(pics));
+		yield put(setPexel(pics));	
 
 		const responsePeople = yield call(getPexelPeople);
 		

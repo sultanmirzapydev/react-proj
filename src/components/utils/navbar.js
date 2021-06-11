@@ -47,7 +47,7 @@ const CustomTooltip = withStyles((theme) =>({
 
 
 export const Navbar = () => {
-  console.log('nav render')
+
   const dispatch = useDispatch();
   const classes = useStyles();
   const [mailId, setMailId] = useState('');

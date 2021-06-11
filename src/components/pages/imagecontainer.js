@@ -1,9 +1,9 @@
 import React,{memo} from 'react';
 import {useEffect} from 'react';
-
+import { createSelector } from 'reselect'
 import {useDispatch, useSelector} from 'react-redux';
 import {getPexel} from '../../redux/ducks/pexel';
-import {SingleImage} from './singleimage';
+import SingleImage from './singleimage';
 import {HomeSugg} from '../utils/homesugg';
 import {Loading} from '../utils/loading';
 import Grid from '@material-ui/core/Grid';
@@ -88,15 +88,21 @@ const useStyles =  makeStyles((theme) => ({
 }))
 
 
+const sell = createSelector((state) => state.pexel.images, (images) => images.map((item)=>[item.id,item.pic]))
 
-
+export const CompletedTodosCounter = () => {
+  const numCompletedTodos = useSelector(sell)
+  //console.log(numCompletedTodos.map((item)=> item[0]))
+  return <div>{numCompletedTodos}</div>
+};
 
 export const Home = () => {
 	const classes = useStyles();
-	console.log('global image con')
+	
+	
 	const pics = useSelector(state => state.pexel);
 	const isLoading = pics.isLoading;
-	//const file = pics.images.map((item,i)=> Object.assign({}, item, data[i]))
+	///const file = pics.images.map((item,i)=> Object.assign({}, item, data[i]))
 	
 	
 
@@ -104,13 +110,14 @@ export const Home = () => {
 	useEffect(() => {
 		dispatch(getPexel())
 		dispatch(getTotal())
-		console.log('image rendered')
+		
 	},[dispatch])
 
 
 	return (
 		<>{isLoading ? <Loading/> :
 		<Grid container classes={{root: classes.firstcontainer}}>
+		<CompletedTodosCounter/>
 		<Alert/>
 		<Grid item container classes={{root: classes.secondcontainer}}>
 		<HomeSugg/>
