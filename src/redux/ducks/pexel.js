@@ -83,6 +83,7 @@ export const getIncre = (data) => ({
 
 const intialState = {
 	images:[],
+	disableInitialGetPexel : true,
 	searchText: 'puppies',
 	totalCart : 0,
 	cart  : [],
@@ -127,7 +128,7 @@ const pexelReducer = (state=intialState, action) => {
 	}
 	if (action.type === SET_PEXEL) {
 		
-		return {...state, images: action.payload, isLoading: false }
+		return {...state, images: action.payload, isLoading: false, disableInitialGetPexel: false }
 
 	};
 	if (action.type === SET_PEOPLE) {

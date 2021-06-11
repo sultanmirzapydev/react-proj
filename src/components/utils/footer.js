@@ -27,6 +27,14 @@ const useStyles = makeStyles((theme) => ({
 		position:'relative',
 		margin:'.2rem 2rem .2rem 2rem',
 		fontSize: '.9rem',
+		[theme.breakpoints.down(714)] : {
+			margin:'.2rem 1rem .2rem 1rem',
+			fontSize:'.7rem',
+		},
+		[theme.breakpoints.down(520)] : {
+			margin:'.2rem .5rem .2rem .5rem',
+			fontSize:'.7rem',
+		}
 	},
 	bottomone: {
 		display: 'flex',
@@ -37,6 +45,9 @@ const useStyles = makeStyles((theme) => ({
 		
 		margin:'0 auto',
 		fontSize:'.9rem',
+		[theme.breakpoints.down(714)] : {
+			fontSize:'.7rem',
+		}
 		
 	}
 

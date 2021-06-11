@@ -30,7 +30,8 @@ import {Link } from 'react-router-dom';
 
  const SingleImage = (item) => {
 
-	console.log('rendered SingleImage')
+	
+	
 	const classes = useStyles();
 	const [liked, setLiked] = useState(false);
 	const [truce, setTruce] = useState(true);
@@ -55,7 +56,7 @@ import {Link } from 'react-router-dom';
 	};
 	const handleIncre = (event) => {
 		
-		 event.preventDefault();
+		 //event.preventDefault();
 		 dispatch(getIncre(item.id))
 		 dispatch(getTotal());
 	};

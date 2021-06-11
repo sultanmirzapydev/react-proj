@@ -98,20 +98,24 @@ export const CompletedTodosCounter = () => {
 
 export const Home = () => {
 	const classes = useStyles();
-	console.log('rendered imagecontainer')
 	
 	
-	const pics = useSelector(state => state.pexel);
-	const isLoading = pics.isLoading;
+	
+	const pics = useSelector(state => state.pexel.images);
+	const isLoading = useSelector(state => state.pexel.isLoading)
+	const disable = useSelector(state=> state.pexel.disableInitialGetPexel);
+	
 	///const file = pics.images.map((item,i)=> Object.assign({}, item, data[i]))
 	
 	
 
 	const dispatch = useDispatch()
 	useEffect(() => {
+		if (disable) {
 		dispatch(getPexel())
 		dispatch(getTotal())
 		console.log('dispatched getPexel')
+	 }
 	},[dispatch])
 
 
@@ -126,7 +130,7 @@ export const Home = () => {
 				<Grid item container classes={{root: classes.thirdcontainer}}>
 		 <Grid item container classes={{root: classes.fourthcontainer}} >
 		 
-		{ pics.images.map((singlePic, index) => {
+		{ pics.map((singlePic, index) => {
 			return <SingleImage  key={index} {...singlePic} />
 		})
 		}

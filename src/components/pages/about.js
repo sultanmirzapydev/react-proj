@@ -31,16 +31,28 @@ const useStyles= makeStyles((theme) =>({
 		borderRadius:'1rem',
 		boxShadow:'0px 6px 5px -3px #616161',
 		marginBottom: '4.9rem',
-		//0 3px 5px -3px
+		[theme.breakpoints.down(780)]: {
+			width:'94%',
+		},
+		[theme.breakpoints.down(620)] : {
+			height:'35rem',
+		}
+		
 	},
 	thirdcontainer : {
-
+			[theme.breakpoints.down(620)] : {
+			height:'2rem',
+		}
 	},
 	title: {
 		position:'relative',
 		top: '3rem',
 		display:'inline-block',
 		margin:'0 auto',
+		[theme.breakpoints.down(620)] : {
+			top:'.7rem',
+			//height:'1rem',
+		}
 	},
 	iconscontainer : {
 		marginTop: '2rem',
@@ -50,7 +62,15 @@ const useStyles= makeStyles((theme) =>({
 		background:'#CFD8DC',
 		margin:' 0 auto',
 		borderRadius:'.8rem',
-		
+		[theme.breakpoints.down(1010)] : {
+			width:'90%',
+		},
+		[theme.breakpoints.down(780)] : {
+			width:'96%',
+		},
+		[theme.breakpoints.down(620)] : {
+			height:'28rem',
+		}
 	},
 	reacticon : {
 		position:'absolute',
@@ -87,6 +107,12 @@ const useStyles= makeStyles((theme) =>({
 		top: '2rem',
 		left: '25%',
 		fontSize:'4rem',
+		[theme.breakpoints.down(900)] : {
+			left:'21%',
+		},
+		[theme.breakpoints.down(620)] : {
+			left:'32%',
+		}
 	},
 	reduxtext : {
 		position:'absolute',
@@ -98,6 +124,12 @@ const useStyles= makeStyles((theme) =>({
 		border: '.2rem solid #7E57C2',
 		padding: '.1rem .4rem .3rem .4rem',
 		alignItem:'center',
+		[theme.breakpoints.down(900)] : {
+			left:'21%',	
+		},
+		[theme.breakpoints.down(620)] : {
+			left:'32%',
+		},
 		'&:hover': {
 			background:'#D1C4E9',
 		}
@@ -110,6 +142,9 @@ const useStyles= makeStyles((theme) =>({
 		height:'100%',
 		//borderRadius:'1.2rem',
 		objectFit:'contain',
+		[theme.breakpoints.down(620)] : {
+		 //top:'10rem',	
+		}
 		
 
 	},
@@ -120,6 +155,18 @@ const useStyles= makeStyles((theme) =>({
 		
 		width:'9rem',
 		height:'3rem',	
+		[theme.breakpoints.down(900)] : {
+			left:'18%'
+		},
+		[theme.breakpoints.down(620)] : {
+			top:'21rem',
+		},
+		[theme.breakpoints.down(420)] : {
+			left:'23%',
+		},
+		[theme.breakpoints.down(360)] : {
+			left:'16%',
+		}
 	},
 	djangotext: {
 			position:'absolute',
@@ -142,6 +189,12 @@ const useStyles= makeStyles((theme) =>({
 		fontSize:'3.6rem',
 		top:'2.5rem',
 		left:'54%',
+		[theme.breakpoints.down(620)] : {
+			left:'80%',
+		},
+		[theme.breakpoints.down(360)] : {
+			left:'78%',
+		}
 	},
 	htmltext: {
 		position:'absolute',
@@ -153,6 +206,12 @@ const useStyles= makeStyles((theme) =>({
 		border: '.2rem solid #E65100',
 		padding: '.1rem .4rem .3rem .4rem',
 		alignItem:'center',
+		[theme.breakpoints.down(620)] : {
+			left:'80%',
+		},
+		[theme.breakpoints.down(360)] : {
+			left:'77%',
+		},
 		'&:hover': {
 			background:'#D1C4E9',
 			color:'black',
@@ -164,6 +223,9 @@ const useStyles= makeStyles((theme) =>({
 		left:'39%',
 		color:'blue',
 		fontSize:'4rem',
+		[theme.breakpoints.down(620)] : {
+			left:'57%',
+		},
 	},
 	csstext : {
 		position:'absolute',
@@ -175,6 +237,9 @@ const useStyles= makeStyles((theme) =>({
 		border: '.2rem solid blue',
 		padding: '.1rem .4rem .3rem .4rem',
 		alignItem:'center',
+		[theme.breakpoints.down(620)] : {
+			left:'58%',
+		},
 		'&:hover': {
 			background:'#D1C4E9',
 			color:'black',
@@ -195,6 +260,24 @@ const useStyles= makeStyles((theme) =>({
 		height:'8rem',
 		top: '9rem', 
 		left: '44%',
+		[theme.breakpoints.down(710)] : {
+			left:'40%',
+		},
+		[theme.breakpoints.between(710,920)] : {
+			left:'42%',
+		},
+		[theme.breakpoints.down(620)] : {
+			left:'29%',
+		},
+		[theme.breakpoints.down(480)] : {
+			left:'23%',
+		},
+		[theme.breakpoints.down(420)] : {
+			left:'9%',
+		},
+		[theme.breakpoints.down(360)] : {
+			left:'2%',
+		}
 		
 	},
 	axiostext : {
@@ -246,12 +329,25 @@ const useStyles= makeStyles((theme) =>({
 		width:'8rem',
 		height: '6rem',
 		borderRadius:'.5rem',
+		[theme.breakpoints.down(620)] : {
+			left:"68%"
+		},
+		[theme.breakpoints.down(480)] : {
+			left:'65%',
+		},
+		[theme.breakpoints.down(420)] : {
+			left:'57%',
+		},
+		[theme.breakpoints.down(360)] : {
+			left:'55%',
+		}
 	},
 	python: {
 		position:'absolute',
 		width:'100%',
 		height: '100%',
 		objectFit:'contain',
+
 
 	},
 	pythoncontainer: {
@@ -260,6 +356,15 @@ const useStyles= makeStyles((theme) =>({
 		left: '8.5%',
 		width:'5rem',
 		height:'4rem',
+		[theme.breakpoints.down(900)] : {
+			left:'4%',
+		},
+		[theme.breakpoints.down(420)] : {
+			top:'21rem',
+		},
+		[theme.breakpoints.down(360)] : {
+			left:'-1%',
+		}
 	},
 	pythontext: {
 			position:'absolute',
@@ -292,6 +397,18 @@ const useStyles= makeStyles((theme) =>({
 		top: '1.4rem',
 		width:'8rem',
 		height:'6rem',
+		[theme.breakpoints.down(620)] : {
+		top:'19.7rem',	
+		left:'57%',
+		},
+		[theme.breakpoints.down(420)] : {
+			left:'60%',
+		
+
+		},
+		[theme.breakpoints.down(360)] : {
+			left:'57%',
+		}
 	},
 	materialuitext: {
 		position:'absolute',
