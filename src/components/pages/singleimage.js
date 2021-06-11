@@ -28,7 +28,7 @@ import {Link } from 'react-router-dom';
 
 
 
-export const SingleImage = memo(({item}) => {
+export const SingleImage = (item) => {
 
 	
 	const classes = useStyles();

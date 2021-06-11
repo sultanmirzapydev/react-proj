@@ -132,7 +132,7 @@ const handleEmailInput = (e) => {
 
 
   const handleEmail = (e) => {
-  
+  e.preventDefault();
    setIsSubClick(true);
    setShowFirstAlert(false);
    if (validate(mailId)) {
@@ -141,6 +141,7 @@ const handleEmailInput = (e) => {
     else setIsCorrectMail(false);
   };
   const handleNews = (e) =>{
+    e.preventDefault();
     setIsnewsletter(false)
   };
   

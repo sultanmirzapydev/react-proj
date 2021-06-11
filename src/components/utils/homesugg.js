@@ -36,7 +36,7 @@ export const HomeSugg = () => {
 	
   
 	const handleClick = (e) => {
-		console.log(e.currentTarget.textContent);
+		
 		setActive(e.currentTarget.textContent);
 		dispatch(inputForSearch(e.currentTarget.textContent));
 		dispatch(getPexel());

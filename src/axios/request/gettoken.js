@@ -5,7 +5,7 @@ import axiosinstance from '../axios';
 
 export const GetToken = (tokenData) => {
 	console.log('gettoken', tokenData)
-	console.log(tokenData['username'])
+	
 	
 	return axiosinstance.post('token/', {
 		username: tokenData['username'],

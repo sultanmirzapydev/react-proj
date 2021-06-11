@@ -100,12 +100,12 @@ export const Home = () => {
 	
 	
 
-	// const dispatch = useDispatch()
-	// useEffect(() => {
-	// 	dispatch(getPexel())
-	// 	dispatch(getTotal())
-	// 	console.log('image rendered')
-	// },[dispatch])
+	const dispatch = useDispatch()
+	useEffect(() => {
+		dispatch(getPexel())
+		dispatch(getTotal())
+		console.log('image rendered')
+	},[dispatch])
 
 
 	return (

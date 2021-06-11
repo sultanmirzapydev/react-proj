@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
 			width: '70%',
 		},
 		[theme.breakpoints.down(500)] : {
-			width: '70%',
+			width: '80%',
 		}
 	},
 	tooldiv : {

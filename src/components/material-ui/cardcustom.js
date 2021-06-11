@@ -7,7 +7,7 @@ const useStyles = makeStyles((theme) => ({
 	flexgrow: {
     flexGrow: 1,
     [theme.breakpoints.down(420)] : {
-      flexGrow: .4,
+      flexGrow: 1,
     },
 },
 	firstcontainer: {
