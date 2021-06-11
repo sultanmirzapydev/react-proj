@@ -31,7 +31,7 @@ import {Link } from 'react-router-dom';
  const SingleImage = (item) => {
 
 	
-	
+
 	const classes = useStyles();
 	const [liked, setLiked] = useState(false);
 	const [truce, setTruce] = useState(true);
@@ -82,7 +82,7 @@ import {Link } from 'react-router-dom';
 		
 		const timer = setTimeout(()=> {
 				setTruce(false);
-		},1000);
+		},400);
 		return () => clearTimeout(timer);
 	},[]);
 	

@@ -114,7 +114,7 @@ export const Home = () => {
 		if (disable) {
 		dispatch(getPexel())
 		dispatch(getTotal())
-		console.log('dispatched getPexel')
+		
 	 }
 	},[dispatch])
 
