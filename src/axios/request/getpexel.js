@@ -9,7 +9,7 @@ export const getPexel = (searchText) => {
 	console.log('render')
 	let client = createClient(apiKey);
 	let query  = searchText
- 	return  client.photos.search({query, per_page:36})
+ 	return  client.photos.search({query, per_page:24})
 	// .then(photos =>  {return photos;})
 	.catch((error)=>{
 		console.log(error.message);

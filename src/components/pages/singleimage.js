@@ -1,6 +1,6 @@
-import React, {useState, useEffect} from 'react';
+import React, {memo,useState, useEffect} from 'react';
 import {getIncre,getTotal, getDecre,getRemove,showLike,removeRecoverAlert} from '../../redux/ducks/pexel';
-import {useDispatch} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import {showAlert, removeAlert} from '../../redux/ducks/alertd';
 import Card from '@material-ui/core/Card';
 import CardMedia from '@material-ui/core/CardMedia';
@@ -28,8 +28,9 @@ import {Link } from 'react-router-dom';
 
 
 
-export const SingleImage = (item) => {
-	console.log('single rendered')
+export const SingleImage = memo(({item}) => {
+
+	
 	const classes = useStyles();
 	const [liked, setLiked] = useState(false);
 	const [truce, setTruce] = useState(true);
@@ -38,6 +39,7 @@ export const SingleImage = (item) => {
 	
 
 	const handleDelete = (event) => {
+		
 		 event.preventDefault();
 		
 		dispatch(getRemove(item.id));
@@ -52,12 +54,13 @@ export const SingleImage = (item) => {
 		 dispatch(getTotal());
 	};
 	const handleIncre = (event) => {
+		
 		 event.preventDefault();
 		 dispatch(getIncre(item.id))
 		 dispatch(getTotal());
 	};
 	const handleLike = (event) => {
-
+	
 		setLiked(!liked);
 		
 		let id = item.id;
@@ -68,6 +71,7 @@ export const SingleImage = (item) => {
 	
 	useEffect(() => {
 		const time = setTimeout(()=> {
+
 			dispatch(removeAlert());
 		},4000);
 		return () => clearTimeout(time);

@@ -1,4 +1,6 @@
 import React, {useEffect, useState} from 'react';
+import {getTotal} from '../../redux/ducks/pexel';
+
 import {useDispatch, useSelector} from 'react-redux';
 import { useHistory } from "react-router-dom";
 import {Link } from 'react-router-dom';
@@ -17,7 +19,6 @@ import { FiLogIn,FiTrendingUp } from "react-icons/fi";
 import {MdAssignmentInd } from "react-icons/md";
 import { IoMdContacts  } from "react-icons/io";
 import { IoCheckmarkOutline } from "react-icons/io5";
-
 import HomeIcon from '@material-ui/icons/Home';
 import { CgClose } from "react-icons/cg";
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
@@ -28,6 +29,7 @@ import {inputForSearch, getPexel} from '../../redux/ducks/pexel';
 import Tooltip from '@material-ui/core/Tooltip';
 import TextField from '@material-ui/core/TextField';
 import { GiCancel } from "react-icons/gi";
+
 
 
 
@@ -45,6 +47,7 @@ const CustomTooltip = withStyles((theme) =>({
 
 
 export const Navbar = () => {
+  console.log('nav render')
   const dispatch = useDispatch();
   const classes = useStyles();
   const [mailId, setMailId] = useState('');
@@ -61,10 +64,6 @@ export const Navbar = () => {
   
   const totalData = useSelector(state => state.pexel.totalCart);
   const loadingData = useSelector(state=> state.pexel.isLoading);
-
-
-
-
 
 useEffect(()=> {
   if (!loadingData) {
@@ -90,6 +89,9 @@ useEffect(()=> {
  
  },[active, path]);
 
+ useEffect(() => {
+  dispatch(getTotal())
+ })
     
  const handleClick = (event) => {
     event.preventDefault();
@@ -100,6 +102,8 @@ useEffect(()=> {
     //event.preventDefault();
     setActive(event.currentTarget.textContent);
     setProgress(0);
+    
+    dispatch(getTotal())
   };
   const handleSearchInput = (event) => {
     event.preventDefault();
@@ -109,6 +113,7 @@ useEffect(()=> {
   };
   const handleSearch = (event) => {
     event.preventDefault();
+    
     dispatch(inputForSearch(input));
    
     dispatch(getPexel(input));

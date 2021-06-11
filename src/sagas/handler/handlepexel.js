@@ -12,7 +12,7 @@ export function* handlePexel(action) {
 		//console.log(action.payload);
 
 		const response = yield call(getPexel, searchText );
-		
+		console.log(response)
 		const random = () => {
 			return Math.floor((Math.random() * 64)+48);
 		};

@@ -1,5 +1,6 @@
-import React from 'react';
+import React,{memo} from 'react';
 import {useEffect} from 'react';
+
 import {useDispatch, useSelector} from 'react-redux';
 import {getPexel} from '../../redux/ducks/pexel';
 import {SingleImage} from './singleimage';
@@ -10,6 +11,7 @@ import { makeStyles} from '@material-ui/core/styles';
 import {Alert} from '../utils/alert';
 import {getTotal} from '../../redux/ducks/pexel';;
 //import data from '../utils/data';
+
 
 
 const useStyles =  makeStyles((theme) => ({
@@ -91,18 +93,19 @@ const useStyles =  makeStyles((theme) => ({
 
 export const Home = () => {
 	const classes = useStyles();
+	console.log('global image con')
 	const pics = useSelector(state => state.pexel);
 	const isLoading = pics.isLoading;
 	//const file = pics.images.map((item,i)=> Object.assign({}, item, data[i]))
 	
 	
 
-	const dispatch = useDispatch()
-	useEffect(() => {
-		dispatch(getPexel())
-		dispatch(getTotal())
-		console.log('image rendered')
-	},[dispatch])
+	// const dispatch = useDispatch()
+	// useEffect(() => {
+	// 	dispatch(getPexel())
+	// 	dispatch(getTotal())
+	// 	console.log('image rendered')
+	// },[dispatch])
 
 
 	return (
@@ -112,7 +115,7 @@ export const Home = () => {
 		<Grid item container classes={{root: classes.secondcontainer}}>
 		<HomeSugg/>
 		</Grid>
-		<Grid item container classes={{root: classes.thirdcontainer}}>
+				<Grid item container classes={{root: classes.thirdcontainer}}>
 		 <Grid item container classes={{root: classes.fourthcontainer}} >
 		 
 		{ pics.images.map((singlePic, index) => {
