@@ -335,7 +335,7 @@ menucontainer: {
     borderRadius: '0 0 .7rem 0',
     boxShadow: '2px 4px 6px  2px rgba(0, 0, 0, 0.2)',
    // left: '-18rem',
-    transition: 'all .6s ease',
+    transition: 'all .2s ease',
   },
   showSlido : {
     

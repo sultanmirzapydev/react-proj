@@ -156,7 +156,7 @@ const useStyles = makeStyles((theme) => ({
 		left: '.51rem',
 		
 		background: '#EF5350',
-		//borderRadius:'.5rem',
+		borderRadius:'.5rem',
 		padding: ' 0rem',
 		minWidth: '2rem',
 	},

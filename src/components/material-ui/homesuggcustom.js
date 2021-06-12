@@ -15,14 +15,16 @@ const useStyles = makeStyles((theme) => ({
 	class1 : {
 		width : '100%',
 		zIndex:'1',
-		[theme.breakpoints.down(500)] : {
-			//width: ' auto',
+		[theme.breakpoints.down(600)] : {
+			//width: '50%',
+			height:'6rem',
 		}
 	},
 	class2: {
 		width: '100%',
-		[theme.breakpoints.down(500)] : {
+		[theme.breakpoints.down(600)] : {
 			//width: '50%',
+			height:'6rem',
 		}
 	},
 	toolBar : {

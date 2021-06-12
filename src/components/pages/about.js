@@ -164,8 +164,8 @@ const useStyles= makeStyles((theme) =>({
 		[theme.breakpoints.down(420)] : {
 			left:'23%',
 		},
-		[theme.breakpoints.down(360)] : {
-			left:'16%',
+		[theme.breakpoints.down(390)] : {
+			left:'17.8%',
 		}
 	},
 	djangotext: {
@@ -192,7 +192,7 @@ const useStyles= makeStyles((theme) =>({
 		[theme.breakpoints.down(620)] : {
 			left:'80%',
 		},
-		[theme.breakpoints.down(360)] : {
+		[theme.breakpoints.down(390)] : {
 			left:'78%',
 		}
 	},
@@ -209,7 +209,7 @@ const useStyles= makeStyles((theme) =>({
 		[theme.breakpoints.down(620)] : {
 			left:'80%',
 		},
-		[theme.breakpoints.down(360)] : {
+		[theme.breakpoints.down(390)] : {
 			left:'77%',
 		},
 		'&:hover': {
@@ -275,7 +275,7 @@ const useStyles= makeStyles((theme) =>({
 		[theme.breakpoints.down(420)] : {
 			left:'9%',
 		},
-		[theme.breakpoints.down(360)] : {
+		[theme.breakpoints.down(390)] : {
 			left:'2%',
 		}
 		
@@ -338,7 +338,7 @@ const useStyles= makeStyles((theme) =>({
 		[theme.breakpoints.down(420)] : {
 			left:'57%',
 		},
-		[theme.breakpoints.down(360)] : {
+		[theme.breakpoints.down(390)] : {
 			left:'55%',
 		}
 	},
@@ -362,8 +362,8 @@ const useStyles= makeStyles((theme) =>({
 		[theme.breakpoints.down(420)] : {
 			top:'21rem',
 		},
-		[theme.breakpoints.down(360)] : {
-			left:'-1%',
+		[theme.breakpoints.down(390)] : {
+			left:'.4%',
 		}
 	},
 	pythontext: {
@@ -406,8 +406,8 @@ const useStyles= makeStyles((theme) =>({
 		
 
 		},
-		[theme.breakpoints.down(360)] : {
-			left:'57%',
+		[theme.breakpoints.down(390)] : {
+			left:'58%',
 		}
 	},
 	materialuitext: {
