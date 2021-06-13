@@ -16,6 +16,7 @@ const CssTextField = withStyles({
 	root: {
 		'& label.Mui-focused' : {
 			color: 'green',
+			//fontSize:'.8rem',
 		},
 		'& .MuiInput-underline:after': {
 			borderBottomColor: 'black',
@@ -23,6 +24,7 @@ const CssTextField = withStyles({
 		'& .MuiOutlinedInput-root':{
 			'& fieldset': {
 				borderColor: 'green',
+				//fontSize:'.8rem',
 			},
 			'&:hover fieldset': {
 				borderColor: '#76FF03',
@@ -54,7 +56,7 @@ export const Register = () => {
 			 <CardMedia classes = {{root: classes.cardmediaroot}} image = {Registerimage} />
 			 </Grid>
 			 <Grid item  container  direction='column' classes = {{root: classes.registerform}}>
-			 <div style={{ margin:'0 auto',fontSize:'1.3em'}}> Already a member? 
+			 <div style={{ margin:'0 auto',fontSize:'.9em'}}> Already a member? 
 			 <Link to='/login'>
 			 <span style={{ color: '#1B5E20', cursor:'pointer'}}> log in </span>
 			 </Link>

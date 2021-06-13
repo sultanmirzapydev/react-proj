@@ -8,7 +8,7 @@ const useStyles = makeStyles((theme) => ({
 		position:'relative',
 		width: '100%',
 		height: '4rem',
-		top:'2rem',
+		top:'7rem',
 		background:'#CFD8DC',
 		flexDirection:'row',
 		borderTop:'.2rem solid #B0BEC5',

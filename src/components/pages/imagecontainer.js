@@ -88,16 +88,18 @@ const useStyles =  makeStyles((theme) => ({
 }))
 
 
-const sell = createSelector((state) => state.pexel.images, (images) => images.map((item)=>[item.id,item.pic]))
+// const sell = createSelector((state) => state.pexel.images, (images) => images.map((item)=>[item.id,item.pic]))
 
-export const CompletedTodosCounter = () => {
-  const numCompletedTodos = useSelector(sell)
-  //console.log(numCompletedTodos.map((item)=> item[0]))
-  return <div>{numCompletedTodos}</div>
-};
+// export const CompletedTodosCounter = () => {
+//   const numCompletedTodos = useSelector(sell)
+//   //console.log(numCompletedTodos.map((item)=> item[0]))
+//   console.log(numCompletedTodos)
+//   return <div>{numCompletedTodos}</div>
+// };
 
 export const Home = () => {
 	const classes = useStyles();
+
 	
 	
 	

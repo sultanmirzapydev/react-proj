@@ -34,7 +34,7 @@ import {Link } from 'react-router-dom';
 
 	const classes = useStyles();
 	const [liked, setLiked] = useState(false);
-	const [truce, setTruce] = useState(true);
+	//const [truce, setTruce] = useState(true);
 	const dispatch = useDispatch();
 	   
 	
@@ -78,23 +78,14 @@ import {Link } from 'react-router-dom';
 		return () => clearTimeout(time);
 	},[dispatch])
 
-	useEffect(()=> {
-		
-		const timer = setTimeout(()=> {
-				setTruce(false);
-		},400);
-		return () => clearTimeout(timer);
-	},[]);
+
 	
 	
 
 	return (<>
 		<Grid container classes={{root: classes.grid}}>
 			<Card classes={{root: classes.firstcontainer}}>
-			<Grid container className={clsx(classes.slide,{[classes.slideshow]: truce, [classes.hideslido]: !truce})}>
-			<div className={classes.bouncingball}> 
-			</div>
-			</Grid>
+			
 			<div className={classes.datacountcontainer}>
 			<div className={ classes.datacount}> {item.count} </div>
 			
@@ -147,7 +138,9 @@ import {Link } from 'react-router-dom';
 			</Tooltip>
 			<div className={classes.puppies}> {item.puppies} </div>
 			<div className={classes.price} > $ {item.price} </div>
+			<Link to={`${item.id}`}>
 			<Button className={classes.showmore}> view more </Button>
+			</Link>
 			<CardMedia image={`${item.pic}`} classes={{root: classes.cardmedia}} />
 
 			<Toolbar classes={{root: classes.toolbar, gutters: classes.gutters,regular: classes.toolbarregular, }}>

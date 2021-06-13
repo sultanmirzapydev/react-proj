@@ -6,11 +6,13 @@ const useStyles = makeStyles((theme) => ({
 	subcart: {
 		marginTop:'.2rem',
 		height:'auto',
+		marginBottom:'18rem',
 	},
 
 	cartitemcontainer:{
 		//width:'70%',
 		//position:'absolute',
+		//marginBottom:'18rem',
 		[theme.breakpoints.up(1280)] : {
 			width:'60%',
 		},

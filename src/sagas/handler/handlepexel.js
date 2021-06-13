@@ -3,6 +3,8 @@ import {getPexel,  getPexelPeople} from '../../axios/request/getpexel';
 import {setPexel, error, setPeople} from '../../redux/ducks/pexel';
 import data from '../../components/utils/data';
 import price from '../../components/utils/pricedata';
+import {getTotal} from '../../redux/ducks/pexel';
+
 
 const searchdata = state => state.pexel.searchText
 
@@ -28,6 +30,7 @@ export function* handlePexel(action) {
 		
 		
 		yield put(setPexel(pics));	
+		yield put(getTotal());
 
 		const responsePeople = yield call(getPexelPeople);
 		

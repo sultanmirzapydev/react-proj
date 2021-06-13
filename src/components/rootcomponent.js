@@ -8,9 +8,10 @@ import {About} from './pages/about';
 import {Notfound} from './utils/notfound';
 import {Footer} from './utils/footer';
 import {Cart} from './pages/cart';
+import {ImageDetails} from './pages/imagedetails';
 import {CheckOut} from './pages/checkout';
 import {BrowserRouter as Router,Switch,Route,Link, useHistory} from "react-router-dom";
-
+import SingleImage from './pages/singleimage';
 
 export const RootComponent = () => {
 	const history = useHistory()
@@ -23,6 +24,8 @@ export const RootComponent = () => {
 		<Route exact path='/' component = {Home} />
 		<Route path='/cart' component = {Cart} />
 		<Route path='/checkout' component = {CheckOut}/>
+		<Route path='/:id' > <ImageDetails/>  </Route > 
+
 		<Route path ='/about' component ={About}/>
 		<Route path ='/login' component = {Login} />
 		<Route path = '/register' component = {Register}/>

@@ -30,7 +30,7 @@ const useStyles= makeStyles((theme) =>({
 		margin: '0 auto',
 		borderRadius:'1rem',
 		boxShadow:'0px 6px 5px -3px #616161',
-		marginBottom: '4.9rem',
+		marginBottom: '6rem',
 		[theme.breakpoints.down(780)]: {
 			width:'94%',
 		},
@@ -52,7 +52,11 @@ const useStyles= makeStyles((theme) =>({
 		[theme.breakpoints.down(620)] : {
 			top:'.7rem',
 			//height:'1rem',
-		}
+		},
+		[theme.breakpoints.down(515)] : {
+			margin:'0 auto',
+			width:'85%',
+		},
 	},
 	iconscontainer : {
 		marginTop: '2rem',

@@ -115,8 +115,11 @@ useEffect(()=> {
     event.preventDefault();
     
     dispatch(inputForSearch(input));
-   
+    
     dispatch(getPexel(input));
+     setActive(event.currentTarget.textContent);
+    setProgress(0);
+    history.push('/')
   };
 
 const handleEmailInput = (e) => {
@@ -259,7 +262,7 @@ const handleEmailInput = (e) => {
           <Link to='/'>
 
         <div className={classes.menutext}> Home 
-        <HomeIcon className={classes.Icons}/> </div>  </Link>
+        <HomeIcon className={classes.Icons} style={{marginRight:'1.6rem'}}/> </div>  </Link>
         <Link to='/about'>
         <div className={classes.menutext}> About 
         <BsInfoCircle className={classes.Icons}/></div> </Link>

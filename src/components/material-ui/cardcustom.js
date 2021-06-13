@@ -153,7 +153,7 @@ const useStyles = makeStyles((theme) => ({
 	minusbtn : {
 		position: 'absolute',
 		top: '6.8rem',
-		left: '.51rem',
+		left: '.50rem',
 		
 		background: '#EF5350',
 		borderRadius:'.5rem',
@@ -210,6 +210,9 @@ menu : {
 	top: '1.8rem',
 	right: '2.5rem',
 	borderRadius:'.5rem',
+	[theme.breakpoints.down(500)]: {
+		top:'1.81rem',
+	}
 },
 menuItem: {
 	
