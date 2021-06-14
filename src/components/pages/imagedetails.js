@@ -15,6 +15,7 @@ const useStyles = makeStyles((theme) => ({
 		marginTop:'5rem',
 		width:'50%',
 		height:'50%',
+		borderRadius:'.4rem',
 		margin:'0 auto',
 		background:'#BBDEFB',
 	}

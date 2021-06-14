@@ -211,7 +211,7 @@ menu : {
 	right: '2.5rem',
 	borderRadius:'.5rem',
 	[theme.breakpoints.down(500)]: {
-		top:'1.76rem',
+		top:'1.7rem',
 	}
 },
 menuItem: {
