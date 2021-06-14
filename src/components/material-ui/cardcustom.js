@@ -207,12 +207,12 @@ hideslido : {
 menu : {
 	background:'#BDBDBD',
 	position:'relative',
-	top: '1.54rem',
-	right: '2.55rem',
+	top: '1.8rem',
+	right: '2.5rem',
 	borderRadius:'.5rem',
-	[theme.breakpoints.down(500)]: {
-		top:'1.81rem',
-	}
+	// [theme.breakpoints.down(500)]: {
+	// 	//top:'1.81rem',
+	// }
 },
 menuItem: {
 	
