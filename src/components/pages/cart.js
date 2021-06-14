@@ -35,7 +35,7 @@ useEffect(() => {
 
 
 	return (<>{ isEmpty ? <div className={classes.emptycart}> 
-		<div className={classes.emptycontainer}> your cart is empty </div> </div> :
+		<div className={classes.emptycontainer}><div className={classes.emptyText}> your cart is empty </div></div> </div> :
 		<Grid container item classes={{root:classes.subcart}}>
 		
 		

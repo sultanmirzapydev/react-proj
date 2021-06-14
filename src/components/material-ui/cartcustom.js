@@ -84,7 +84,8 @@ const useStyles = makeStyles((theme) => ({
 	},
 	emptycontainer:{
 		width:'30rem',
-		padding:'8rem',
+		//padding:'8rem',
+		height:'14rem',
 		display:'flex',
 		background:'#FF7043',
 		margin:'0 auto',
@@ -94,8 +95,14 @@ const useStyles = makeStyles((theme) => ({
 		fontSize:'1.4rem',
 		color:'#424242',
 		borderRadius:'.3rem',
-		marginBottom:'10rem',
+		marginBottom:'14rem',
+		[theme.breakpoints.down(500)]: {
+			width:'89%',
+		}
 	},
+	emptyText: {
+		marginTop:'5rem',
+	}
 	
 
 }));
