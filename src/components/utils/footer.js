@@ -8,7 +8,7 @@ const useStyles = makeStyles((theme) => ({
 		position:'relative',
 		width: '100%',
 		height: '4rem',
-		top:'7rem',
+		//top:'7rem',
 		background:'#CFD8DC',
 		flexDirection:'row',
 		borderTop:'.2rem solid #B0BEC5',
@@ -58,6 +58,7 @@ export const Footer = () => {
 	
 	return (
 		<>
+		<div style={{paddingTop:'8rem'}}>
 		<Grid container classes={{root: classes.firstcontiner}} >
 		
 		<Grid item container classes={{root: classes.topone}}>
@@ -87,6 +88,7 @@ export const Footer = () => {
 		</Grid>
 		</Grid>
 		</Grid>
+		</div>
 		</>
 		)
 };

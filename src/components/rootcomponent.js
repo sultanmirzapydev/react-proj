@@ -24,7 +24,7 @@ export const RootComponent = () => {
 		<Route exact path='/' component = {Home} />
 		<Route path='/cart' component = {Cart} />
 		<Route path='/checkout' component = {CheckOut}/>
-		<Route path='/:id' > <ImageDetails/>  </Route > 
+		<Route  path='/images/:id' > <ImageDetails/>  </Route > 
 
 		<Route path ='/about' component ={About}/>
 		<Route path ='/login' component = {Login} />
