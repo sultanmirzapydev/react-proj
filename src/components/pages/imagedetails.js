@@ -170,18 +170,22 @@ const useStyles = makeStyles((theme) => ({
 	slide2:{
 		position:'relative',
 		//marginTop:'5rem',
-		width:'53%',
+		
 		height:'16rem',
 		margin:'0 auto',
 		padding:'0rem',
+		width:'74.6%',
 		borderRadius:'.7rem',
 		'&:last-child':{
 		paddingBottom:'0rem',
-		[theme.breakpoints.down(960)] : {
-		 // width:'20rem',
-		 //display:"none"
-		},
+		
 	},
+	[theme.breakpoints.down(700)] : {
+			width:'79%',
+		},
+	[theme.breakpoints.down(500)] : {
+			width:'89%',
+		}
 	},
 	iconbtn:{
 		cursor:'pointer',
@@ -258,6 +262,11 @@ const useStyles = makeStyles((theme) => ({
 		[theme.breakpoints.up(960)] : {
 		 // width:'20rem',
 		 display:"none"
+		},
+		[theme.breakpoints.down(958)] : {
+			//marginLeft:'8%',
+		  width:"100%",	
+		  margin:'0 auto',
 		},
 		
 
@@ -392,6 +401,7 @@ export const ImageDetails = () => {
 
 
 		</Grid>
+		
 		<CardContent classes={{root:classes.slide2}}> 
 		 
 		{ showSlide ?  <IconButton classes={{root:classes.iconbtn2}} onClick={handleSlide}>
@@ -411,6 +421,6 @@ export const ImageDetails = () => {
 		</Grid>
 		</Grid>
 		</CardContent>
-
+		
 		</>);
 }
