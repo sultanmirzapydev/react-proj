@@ -37,6 +37,18 @@ const useStyles = makeStyles((theme) => ({
 		[theme.breakpoints.down(960)] : {
 			//marginLeft:'8%',
 			margin:'0 auto',
+			width:'75%',
+		},
+		[theme.breakpoints.down(700)] : {
+			//marginLeft:'8%',
+			margin:'0 auto',
+			width:'80%',
+		},
+			[theme.breakpoints.down(500)] : {
+			//marginLeft:'8%',
+			margin:'0 auto',
+			width:'90%',
+			//marginTop:'5rem',
 		},
 
 	},
@@ -51,6 +63,18 @@ const useStyles = makeStyles((theme) => ({
 		background:'#DCEDC8',
 		overflow:'hidden',
 		zIndex:1,
+		[theme.breakpoints.down(960)] : {
+			//marginLeft:'8%',
+			margin:'0 auto',
+			width:'100%',
+			marginTop:'5rem',
+		},
+		[theme.breakpoints.down(700)] : {
+			//marginLeft:'8%',
+			margin:'0 auto',
+			width:'100%',
+			marginTop:'5rem',
+		},
 
 		
 		
@@ -64,6 +88,14 @@ const useStyles = makeStyles((theme) => ({
 		[theme.breakpoints.up(1280)] : {
 		  width:'57%',
 		},
+		[theme.breakpoints.down(700)] : {
+			//marginLeft:'8%',
+			width:'60%',
+		},
+			[theme.breakpoints.down(420)] : {
+			//marginLeft:'8%',
+			width:'50%',
+		},
 
 		
 	},
@@ -74,6 +106,18 @@ const useStyles = makeStyles((theme) => ({
 		borderRadius:'.3rem',
 		[theme.breakpoints.up(1280)] : {
 			width:'80%',
+		},
+		[theme.breakpoints.down(700)] : {
+			//marginLeft:'8%',
+			width:'80%',
+		},
+			[theme.breakpoints.down(500)] : {
+			//marginLeft:'8%',
+			width:'70%',
+		},
+		[theme.breakpoints.down(420)] : {
+			//marginLeft:'8%',
+			width:'90%',
 		},
 	},
 	cardcontent:{
@@ -178,7 +222,7 @@ const useStyles = makeStyles((theme) => ({
 	icon2:{
 		fontSize:'3rem',
 		color:'#FF6D00',
-		left:'-.5rem',
+		left:'-1rem',
 		[theme.breakpoints.up(960)] : {
 		 // width:'20rem',
 		 display:"none"
