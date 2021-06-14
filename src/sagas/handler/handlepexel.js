@@ -21,12 +21,12 @@ export function* handlePexel(action) {
 		const offer = () => {
 			return Math.floor((Math.random()*20) + 30);
 		}
-		const picss = response.photos.map((item,i) => 
+		const pics = response.photos.map((item,i) => 
 				{return {id:item.id,count:0, total_liked: random(),is_liked: false, offers: offer(),
 
 					photographer_url: item.photographer_url,
 				 name:item.photographer.slice(0,15),pic:item.src['medium'],}});
-		let pics = picss.map((item, i)=> Object.assign({}, item, data[i], price[i]))
+		//let pics = picss.map((item, i)=> Object.assign({}, item, data[i], price[i]))
 		
 		
 		yield put(setPexel(pics));	

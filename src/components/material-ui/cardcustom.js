@@ -210,9 +210,9 @@ menu : {
 	top: '1.8rem',
 	right: '2.5rem',
 	borderRadius:'.5rem',
-	// [theme.breakpoints.down(500)]: {
-	// 	//top:'1.81rem',
-	// }
+	[theme.breakpoints.down(500)]: {
+		top:'1.76rem',
+	}
 },
 menuItem: {
 	
