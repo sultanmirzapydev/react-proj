@@ -136,8 +136,7 @@ import {Link } from 'react-router-dom';
 			<FiMinus className={classes.minus} />
 			</Button>
 			</Tooltip>
-			<div className={classes.puppies}> {item.puppies} </div>
-			<div className={classes.price} > $ {item.price} </div>
+		
 			<Link to={`/images/${item.id}`}>
 			<Button className={classes.showmore}> view more </Button>
 			</Link>
