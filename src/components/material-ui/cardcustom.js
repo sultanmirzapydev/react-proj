@@ -44,13 +44,14 @@ const useStyles = makeStyles((theme) => ({
 
 	},
 	toolbar : {
+		backgroundColor:'#DCEDC8',
 		
 		//justifyContent: 'center',
 	},
 
 	toolbarregular : {
 		minHeight: '3.5rem ',
-		borderRadius: '0 0 2rem 2rem',
+		//borderRadius: '0 0 2rem 2rem',
 
 	},
 	gutters : {
@@ -264,10 +265,13 @@ price : {
 showmore : {
 	position:'absolute',
 	top:'11.75rem',
+	//fontSize:'1rem',
+	fontWeight:'600',
 	left:'66.9%',
+	//height:'3rem',
 	background:'#F57F17',
 	borderRadius:'.3rem 0rem 0rem 0rem',
-	color:'white',
+	color:'#263238',
 	'&:hover':{
 		backgroundColor:'#EF6C00',
 	},

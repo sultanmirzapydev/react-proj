@@ -41,7 +41,7 @@ export const CartItem = (item) => {
 
 			<Card className = {classes.cardroot} >
 			<div className={classes.imgcontainer}>
-			<CardMedia className = {classes.img} title='cartimg'  image={`${item.pic}`} />
+			<CardMedia className = {classes.img}   image={`${item.pic}`} />
 			</div>
 			<CardContent classes = {{root:classes.cardcontent}}>
 

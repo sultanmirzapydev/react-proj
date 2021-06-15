@@ -17,7 +17,7 @@ export const GET_TOTAL_OFFER = 'GET_TOTAL_OFFER';
 
 export const getTotalOffer = (data) => ({
 	type: GET_TOTAL_OFFER,
-	
+
 })
 
 export const cartRemoveItem = (data) => ({
@@ -214,6 +214,18 @@ const pexelReducer = (state=intialState, action) => {
 			return item
 		})
 		return {...state, images:tempFile }
+	};
+	if (action.type === GET_TOTAL_OFFER) {
+		let {price, offers} = state.images.reduce((carttotal, item) => {
+			let {offers, p, count} = item;
+			let motprice = p.price * count;
+			let finaloffer = motprice * offers/100;
+			carttotal.price += motprice;
+			carttotal.offers += finaloffer;
+			return carttotal;
+		},{price:0, offers:0})
+
+		return {...state, totalPrice:price, totalOffer:offers}
 	}
 
 	return state;

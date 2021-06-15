@@ -14,9 +14,10 @@ const useStyles = makeStyles((theme) => ({
 	},
 	cardroot: {
 		marginTop:'1.5rem',
-		
+
 		display:'flex',
 		width:' 40rem',
+		height:'12rem',
 		//height:'100%',
 		//marginLeft:'25%',
 		background:'#CFD8DC',
@@ -57,6 +58,7 @@ const useStyles = makeStyles((theme) => ({
 	cardcontent:{
 		width:'40%',
 		marginLeft:'5%',
+		marginTop:'1rem',
 		display:'flex',
 		flexDirection:'column',
 		//paddingBottom:'0rem',
@@ -107,7 +109,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 	logiccontainer: {
 		position:'relative',
-		marginTop:'1rem',
+		marginTop:'2rem',
 		float:'left',
 		marginLeft:'1%',
 		[theme.breakpoints.up(1600)] : {

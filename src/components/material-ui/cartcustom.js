@@ -48,7 +48,7 @@ const useStyles = makeStyles((theme) => ({
 	checkout:{
 		position:'sticky',
 		width:'auto',
-		height:'13rem',
+		height:'13.6rem',
 		background:'#FF7043',
 		color:'#424242',
 		
