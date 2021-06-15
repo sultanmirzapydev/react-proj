@@ -47,7 +47,7 @@ const useStyles = makeStyles((theme)=> ({
 		[theme.breakpoints.down(700)] : {
 			fontSize: '2rem',
 			top:'14rem',
-			left: '25%',
+			left: '10%',
 		}
 	}
 }))
