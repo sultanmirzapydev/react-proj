@@ -76,7 +76,7 @@ import {Link } from 'react-router-dom';
 			dispatch(removeAlert());
 		},4000);
 		return () => clearTimeout(time);
-	},[dispatch])
+	},[dispatch, handleDelete])
 
 
 	

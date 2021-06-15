@@ -22,6 +22,7 @@ const useStyles = makeStyles((theme)=> ({
 
 		[theme.breakpoints.down(700)] : {
 			height:'26rem',
+			width:'95%',
 		}
 	},
 	loading : {
