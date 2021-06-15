@@ -316,6 +316,43 @@ const useStyles = makeStyles((theme) => ({
 		 // width:'20rem',
 		 display:"none"
 		},
+		[theme.breakpoints.down(400)] : {
+			marginTop:'1.3rem',
+		}
+	},
+	alert:{
+		//justifyContent:'center',
+		display:'inline-block',
+		margin:'0 auto',
+		width:'16rem',
+		textAlign:'center',
+		height:'3rem',
+		display:'flex',
+		background:'#B2EBF2',
+		alignItems:'center',
+		display:'flex',
+		justifyContent:'center',
+		borderRadius:'.3rem',
+		borderLeft:'.4rem solid #E91E63',
+	},
+	alertContainer:{
+		width:'100%',
+		position:'absolute',
+		marginTop:'1rem',
+		
+
+	},
+	alertsub:{
+		position:'relative',
+		width:'10rem',
+		margin:'0 auto',
+		
+		[theme.breakpoints.up(960)] : {
+			width:'53%',
+			marginLeft:'10%',
+			display:'flex',
+			justifyContent:'center',
+		}
 	}
 }))
 
@@ -353,6 +390,8 @@ export const ImageDetails = () => {
 
 	return (<>
 		<Grid container  classes={{root: classes.mainContainer}}>
+		<div className={classes.alertContainer}> <div className={classes.alertsub}>
+		<div className={classes.alert}> item added to the cart </div> </div> </div>
 		<Grid container classes={{root:classes.secondContainer}}>
 		<Grid item container classes={{root: classes.subContainer}}>
 
