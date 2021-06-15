@@ -7,7 +7,7 @@ import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import { IoIosArrowUp,IoIosArrowDown } from "react-icons/io";
-import {getDecre,getIncre, getTotal} from '../../redux/ducks/pexel';
+import {getDecre,getIncre, getTotal,cartRemoveItem} from '../../redux/ducks/pexel';
 import {useDispatch, useSelector} from 'react-redux';
 import useStyles from '../material-ui/cartitemcustom';
 
@@ -18,14 +18,16 @@ export const CartItem = (item) => {
 	const dispatch = useDispatch();
 
 	const handleRemove = (e) => {
-		e.preventDefault();
-
+		//e.preventDefault();
+		console.log('handleRemove')
+		dispatch(cartRemoveItem(item.id));
+		dispatch(getTotal());
 
 	};
 	const handleIncrement = (e) => {
 		e.preventDefault();
 		dispatch(getIncre(item.id));
-		dispatch(getTotal());
+		dispatch(getTotal(item.id));
 	};
 	const handleDecrement = (e) => {
 		e.preventDefault();
@@ -43,8 +45,8 @@ export const CartItem = (item) => {
 			</div>
 			<CardContent classes = {{root:classes.cardcontent}}>
 
-			<div className={classes.puppies}> {item.puppies} </div>
-			<div className={classes.price}> $   {item.price} </div>
+			<div className={classes.puppies}> {item.pname.puppies} </div>
+			<div className={classes.price}> $   {item.p.price} </div>
 			<div className={classes.offers}> {item.offers}% off </div>
 			<Button classes={{root: classes.remove}} onClick={handleRemove}> remove </Button>
 

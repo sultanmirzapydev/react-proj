@@ -12,7 +12,18 @@ export const SHOW_LIKE = 'SHOW_LIKE';
 export const CLEAR_REMOVED_ITEM = 'CLEAR_REMOVED_ITEM';
 export const REMOVE_RECOVER_ITEM = 'REMOVE_RECOVER_ITEM';
 export const REMOVE_RECOVER_ALERT = 'REMOVE_RECOVER_ALERT';
+export const CART_REMOVER_ITEM = 'CART_REMOVER_ITEM';
+export const GET_TOTAL_OFFER = 'GET_TOTAL_OFFER';
 
+export const getTotalOffer = (data) => ({
+	type: GET_TOTAL_OFFER,
+	
+})
+
+export const cartRemoveItem = (data) => ({
+	type: CART_REMOVER_ITEM,
+	payload:data
+})
 
 export const removeRecoverAlert = (data) => ({
 	type: REMOVE_RECOVER_ALERT,
@@ -86,6 +97,8 @@ const intialState = {
 	disableInitialGetPexel : true,
 	searchText: 'puppies',
 	totalCart : 0,
+	totalPrice: 0,
+	totalOffer:0,
 	cart  : [],
 	isInputValid: false,
 	isLoading : true,
@@ -151,13 +164,14 @@ const pexelReducer = (state=intialState, action) => {
 	};
 	if (action.type === GET_TOTAL) {
 		const sum = state.images.reduce((total, element) =>{
-			const {count} = element; 
+			const {count, } = element; 
 			return total + count;
 		}, 0);
 		
 
 		return {...state, totalCart: sum}
 	};
+
 	if (action.type === DECREASE) {
 		let temp3 = state.images.map((item) => {
 			if (item.id === action.payload) {
@@ -193,6 +207,13 @@ const pexelReducer = (state=intialState, action) => {
 	}
 	if (action.type === REMOVE_RECOVER_ALERT) {
 		return {...state, isRcovered:false}
+	}
+	if (action.type === CART_REMOVER_ITEM) {
+		let tempFile = state.images.map((item) => {if (action.payload === item.id)
+			{ return {...item, count:0} }
+			return item
+		})
+		return {...state, images:tempFile }
 	}
 
 	return state;

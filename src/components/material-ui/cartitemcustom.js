@@ -14,6 +14,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 	cardroot: {
 		marginTop:'1.5rem',
+		
 		display:'flex',
 		width:' 40rem',
 		//height:'100%',
@@ -61,7 +62,11 @@ const useStyles = makeStyles((theme) => ({
 		//paddingBottom:'0rem',
 		'&:last-child':{
 			paddingBottom:'0rem',
-		}
+		},
+		// [theme.breakpoints.up(960)] : {
+		// 	alignItems : 'center',
+		// 	height:'100%',
+		// }
 	},
 	img: {
 		height: '100%',

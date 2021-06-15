@@ -16,21 +16,20 @@ import {setCart} from '../../redux/ducks/cart';
 export const Cart = () => {
 	const dispatch = useDispatch();
 	const classes = useStyles();
-	const [isEmpty, setIsEmpty] = useState(true);
+	const [isEmpty, setIsEmpty] = useState(false);
 	const cart = useSelector(state=> state.pexel.images);
-	const cartItems = useSelector(state=> state.cart.items)
+	const cartTotal = useSelector(state=> state.pexel.totalCart);
 	const cartData = cart.filter((item)=> item.count>0);
-	
+	console.log(isEmpty);
+	useEffect(() => {
+		console.log('sg')
+		if (cartData<=0) {
+			setIsEmpty(true)
+		}
+	},[cartData])
 	
 
-useEffect(() => {
-	if (cartData.length>0) {
-		
-		setIsEmpty(false);
-		dispatch(setCart(cartData));
-}
 
-},[]);
 
 
 
@@ -40,14 +39,14 @@ useEffect(() => {
 		
 		
 		<Grid item container classes={{root:classes.cartitemcontainer}}>
-		{cartItems.map((item, index) => {return <CartItem key={index} {...item} /> })}
+		{cartData.map((item, index) => {return <CartItem key={index} {...item} /> })}
 
 		</Grid>
 		<Grid  item container classes={{root:classes.checkoutcontainer}}>
 		<CardContent classes={{root:classes.checkout}}>
 			<div className={classes.checkoutcontent}>
 			<div style={{display:'flex'}}>
-			 total item <span style={{flexGrow:'1',}}>  </span>53
+			 total item <span style={{flexGrow:'1',}}>  </span>{cartTotal}
 			</div>
 			<div style={{display:'flex', marginTop:'2rem'}}>
 			 total <span style={{flexGrow:'1',}}>  </span>$5353
