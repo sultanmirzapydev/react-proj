@@ -323,24 +323,30 @@ const useStyles = makeStyles((theme) => ({
 	alert:{
 		//justifyContent:'center',
 		display:'inline-block',
+		fontSize:'1.1rem',
+		//fontWeight:'500',
 		margin:'0 auto',
 		width:'16rem',
 		textAlign:'center',
-		height:'3rem',
+		height:'2.5rem',
 		display:'flex',
-		background:'#B2EBF2',
+		background:'#B3E5FC',
 		alignItems:'center',
 		display:'flex',
 		justifyContent:'center',
 		borderRadius:'.3rem',
 		borderLeft:'.4rem solid #E91E63',
 	},
+
 	alertContainer:{
 		width:'100%',
 		position:'absolute',
 		marginTop:'1rem',
-		
+		transition:'all .4s ease',
 
+	},
+	hideAlertContainer:{
+		marginTop:'-4rem',
 	},
 	alertsub:{
 		position:'relative',
@@ -352,12 +358,16 @@ const useStyles = makeStyles((theme) => ({
 			marginLeft:'10%',
 			display:'flex',
 			justifyContent:'center',
+		},
+		[theme.breakpoints.down(960)] : {
+			width:'75%',
 		}
 	}
 }))
 
 export const ImageDetails = () => {
 	const [isAdd, setIsAdd] = useState(true)
+	const [isAlert, setIsAlert] = useState(false)
 	const [showSlide, setShowSlide] = useState(false)
 	const dispatch = useDispatch();
 	let {id} = useParams();
@@ -373,11 +383,13 @@ export const ImageDetails = () => {
 	// const [a] = [item.map((i)=>i)]
 	// console.log(a.id,'a')
 	
+
 	const handleAdd = (e) => {
 		e.preventDefault();
 		dispatch(getIncre(item.id));
 		dispatch(getTotal());
 		setIsAdd(false);
+		setIsAlert(true)
 	};
 	const handleSlide = (e) => {
 		e.preventDefault();
@@ -385,12 +397,19 @@ export const ImageDetails = () => {
 		setShowSlide(!showSlide);
 	}
 
-
+	console.log(isAlert,'global')
+	useEffect(() => {
+		const time = setTimeout(()=> {
+			console.log(isAlert)
+			setIsAlert(false);
+		},2500);
+		return () => clearTimeout(time);
+	},[handleAdd])
 	
 
 	return (<>
 		<Grid container  classes={{root: classes.mainContainer}}>
-		<div className={classes.alertContainer}> <div className={classes.alertsub}>
+		<div className={clsx(classes.alertContainer,{[classes.hideAlertContainer]: !isAlert})}> <div className={classes.alertsub}>
 		<div className={classes.alert}> item added to the cart </div> </div> </div>
 		<Grid container classes={{root:classes.secondContainer}}>
 		<Grid item container classes={{root: classes.subContainer}}>

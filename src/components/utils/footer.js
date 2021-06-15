@@ -24,6 +24,7 @@ const useStyles = makeStyles((theme) => ({
 		paddingBottom:'.4rem',
 	},
 	text: {
+		cursor:'pointer',
 		position:'relative',
 		margin:'.2rem 2rem .2rem 2rem',
 		fontSize: '.9rem',
