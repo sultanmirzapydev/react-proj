@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 //import {inputUsername, inputPassword, getToken} from '../../redux/ducks/users';
 import {Alert} from '../utils/alert';
 import { withStyles } from '@material-ui/core/styles';
@@ -7,6 +7,8 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import useStyles from '../material-ui/logincustom';
+import googleTrends from 'google-trends-api';
+import HttpsProxyAgent  from 'https-proxy-agent';
 
 const CssTextField = withStyles({
 	root: {

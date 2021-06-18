@@ -264,16 +264,16 @@ price : {
 },
 showmore : {
 	position:'absolute',
-	top:'11.75rem',
+	top:'11.73rem',
 	//fontSize:'1rem',
 	fontWeight:'600',
 	left:'66.9%',
 	//height:'3rem',
-	background:'#F57F17',
+	background:'#CDDC39',
 	borderRadius:'.3rem 0rem 0rem 0rem',
-	color:'#263238',
+	color:'#37474F',
 	'&:hover':{
-		backgroundColor:'#EF6C00',
+		backgroundColor:'#CDDC39',
 	},
 	textTransform:'capitalize',
 }

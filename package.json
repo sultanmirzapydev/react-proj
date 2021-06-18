@@ -13,6 +13,8 @@
     "@testing-library/user-event": "^12.8.3",
     "axios": "^0.21.1",
     "clsx": "^1.1.1",
+    "google-trends-api": "^4.9.2",
+    "https-proxy-agent": "^5.0.0",
     "material-ui-popup-state": "^1.8.3",
     "pexels": "^1.2.1",
     "react": "^17.0.2",

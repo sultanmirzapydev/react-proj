@@ -12,12 +12,13 @@ const useStyles = makeStyles((theme)=> ({
 	alertroot: {
 		position:'absolute',
 		top:'7rem',
-		background:'#F57C00',
-		color: 'white',
-		padding:'.8rem 1rem',
+		background:'#F0F4C3',
+		padding:'.6rem .6rem',
 		zIndex: 3,
+		fontWeight:'500', 
 		left:'1rem',
-		borderRadius: '.6rem',
+		border:'.3rem solid #F57C00 ',
+		borderRadius: '.3rem',
 	},
 	showSlido: {
 
