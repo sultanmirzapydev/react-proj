@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
 			marginBottom: '1rem',
 		},
 		'&:hover': {
-			transform: 'scale(1.1)',
+			//transform: 'scale(1.1)',
 			boxShadow: '6px 5px 20px 4px rgba(0, 0, 0, 0.2)',
 
 		}
