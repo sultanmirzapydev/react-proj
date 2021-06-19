@@ -120,6 +120,8 @@ export const Home = () => {
 	 }
 	},[dispatch])
 
+	
+
 
 	return (
 		<>{isLoading ? <Loading/> :

@@ -17,7 +17,7 @@ import clsx from 'clsx';
 const useStyles = makeStyles((theme) => ({
 	mainContainer : {
 		width:'100%',
-		height:'100vh',
+		height:'35rem',
 		[theme.breakpoints.down(960)] : {
 			height:'21rem',
 		}
@@ -179,6 +179,9 @@ const useStyles = makeStyles((theme) => ({
 		'&:last-child':{
 		paddingBottom:'0rem',
 		
+	},
+	[theme.breakpoints.up(960)] : {
+		display:' none',
 	},
 	[theme.breakpoints.down(700)] : {
 			width:'79%',
