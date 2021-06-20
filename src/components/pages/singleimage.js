@@ -87,6 +87,7 @@ import {Link } from 'react-router-dom';
 			<Card classes={{root: classes.firstcontainer}}>
 			
 			<div className={classes.datacountcontainer}>
+			
 			<div className={ classes.datacount}> {item.count} </div>
 			
 			</div>

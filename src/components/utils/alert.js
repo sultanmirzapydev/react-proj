@@ -55,6 +55,7 @@ export const Alert = () => {
 	const whichLocation =  location.pathname
 	const currentLocation = whichLocation.substring(1);
 	const isHome = whichLocation === '/';
+	console.log(isHome)
 
 	
 

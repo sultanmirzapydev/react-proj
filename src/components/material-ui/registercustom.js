@@ -18,14 +18,16 @@ const  useStyles = makeStyles((theme) => ({
 		margin: '0 auto',
 		marginTop: '2rem',
 		boxShadow: '2px 4px 6px  3px rgba(0, 0, 0, 0.2)',
-
+		[theme.breakpoints.between(600,685)] : {
+			width:'90%',
+		},
 		[theme.breakpoints.down(600)]: {
 			width: '90%',
 			height: '28rem',
 		},
 		[theme.breakpoints.down(960)] : {
 
-			width: '85%',
+			width: '95%',
 			height: '31rem',
 		}
 	},

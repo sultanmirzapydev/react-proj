@@ -19,15 +19,17 @@ const useStyles = makeStyles((theme) => ({
 		background: '#F1F8E9',
 		borderRadius: '.7rem',
 		boxShadow: '2px 4px 6px  3px rgba(0, 0, 0, 0.2)',
+
 		[theme.breakpoints.down(800)] : {
 			width:'80%',
-		}
+		},
+		
 
 	}, 
 	username : {
 		margin: '0 auto',
 		padding: '0rem',
-		marginTop: '1.9rem',
+		marginTop: '1.3rem',
 	},
 	password: {
 		margin: '0 auto',
@@ -45,9 +47,10 @@ const useStyles = makeStyles((theme) => ({
  		boxShadow: '1px 3px 7px 2px rgba(33, 203, 243, .3)',
  	},
  	typography : {
- 		marginTop: '3rem',
- 		fontSize: '.9rem',
- 	}
+ 		marginTop: '4.7rem',
+ 		fontSize: '.8rem',
+ 	},
+ 	
 	}))
 		
 export default useStyles;

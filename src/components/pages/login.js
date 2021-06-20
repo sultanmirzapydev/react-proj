@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 //import {inputUsername, inputPassword, getToken} from '../../redux/ducks/users';
 import {Alert} from '../utils/alert';
 import { withStyles } from '@material-ui/core/styles';
@@ -40,6 +40,7 @@ const CssTextField = withStyles({
 	},
 	
 	
+	
 })(TextField);
 
 
@@ -47,7 +48,13 @@ const CssTextField = withStyles({
 export const Login = () => {
 	
 	const classes = useStyles();
+	const freezeData = Object.freeze({email:'', password:''})
+	console.log(freezeData);
+	const [iData, setIData] = useState(freezeData);
 	
+	const handleInput = (e) => {
+		
+	}
 	
 	return (
 		<>
@@ -55,7 +62,7 @@ export const Login = () => {
 		<Alert/>
 		<Grid item container classes={{root: classes.secondcontainer}}>
 		<Grid item>
-		 <Typography variant="body1" gutterBottom classes={{root: classes.typography}}>
+		 <Typography variant="body1" classes={{root: classes.typography}}>
 		 Haven't signed up, yet!! &nbsp;&nbsp;<span style={{color: 'green',}}> register here </span>
 		 </Typography>
 		</Grid>
@@ -65,6 +72,7 @@ export const Login = () => {
         label="enter your username"
         variant="outlined"
         id="custom-css-outlined-input"
+        onChange = {handleInput}
       	/>
 		</Grid>
 		<Grid item classes={{root: classes.password}} >
@@ -73,6 +81,7 @@ export const Login = () => {
         label="password"
         variant="outlined"
         id="custom-css-outlined-input"
+        onChange={handleInput}
       	/>
 		</Grid >
 		<Grid item classes={{root: classes.loginBtn}}>

@@ -231,7 +231,7 @@ const handleEmailInput = (e) => {
         
 		</AppBar>
 		{isnewsletter ? 
-      <div className={classes.mainmail}>
+      <div className={classes.mainmail} >
 
    <div className={clsx(classes.newslettercontainer,{[classes.shownewsletter]:isnewsletter})}>
    <div className={clsx(classes.getupdates,{[classes.hideupdates]:!showFirstAlert})}> subscribe to get updates </div> 
